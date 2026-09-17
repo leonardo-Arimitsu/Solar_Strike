@@ -1,0 +1,18 @@
+.cabecalho{
+    background-color: #111827;
+    position: relative;
+    display: inline;
+}
+
+.titulo{
+    color: #ffcc15;
+    width: 50%;
+}
+
+.BTN_sair{
+    color: red;
+    width: 5%;
+    margin-left: 92.5%;
+    margin-bottom: 20px;
+}
+

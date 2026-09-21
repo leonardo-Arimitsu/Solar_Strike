@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel = "stylesheet" href = "/LOGIN/CSS/login.css">
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class = "login-box">
+            <div class = "icone">
+                <h1>Login</h1>
+                <p>Bem-vindo de volta, acesse sua conta:</p>
+            </div>
+
+            <form class = "login">
+                <div class = "input-group">
+                    <input class = "input-login"
+                    type = "email"
+                    id = "email"
+                    name = "email"
+                    placeholder = "Digite seu E-mail"
+                    autocomplete = "email"
+                    required>
+
+                    <div class = "password-holder">
+                        <input class = "input-password"
+                        type = "password"
+                        id = "password"
+                        name = "password"
+                        placeholder = "Digite sua Senha"
+                        autocomplete = "current-password"
+                        required>
+
+                        <button type = "button"
+                        id = "toggle-password"
+                        aria-label = "Reveal password">
+                            <span> olhe </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class = "options">
+                    <a href = "#">Esqueci a Senha!</a>
+
+                    <button class = "login-entry" onclick="entrar()">
+                        <span>Entrar</span>
+                    </button>
+
+                    <label class = "remember-me">
+                        <input type = "checkbox" id = "remember-me">
+                        <span>Lembre de mim</span>
+                    </label>
+                    
+                    <span class = "no-account"> Não tem uma conta? <a href = "#"> Crie uma! </a> </span>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

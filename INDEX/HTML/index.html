@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Homo Habilis Caça & Pesca</title>
+
+    <link rel="stylesheet" href="/INDEX/CSS/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =========================
+         BARRA SUPERIOR
+    ========================== -->
+
+    <div class="topbar">
+        <div class="container topbar__content">
+            <span>🚚 Enviamos para todo o Brasil</span>
+            <span>Compra segura • Atendimento especializado</span>
+        </div>
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="container header__content">
+
+            <a href="index.html" class="logo">
+
+                <div class="logo__mark">
+                    HH
+                </div>
+
+                <div class="logo__text">
+                    <strong>HOMO HABILIS</strong>
+                    <span>CAÇA & PESCA</span>
+                </div>
+
+            </a>
+
+
+            <nav class="nav">
+
+                <a href="index.html" class="nav_link nav_link--active">
+                    Início
+                </a>
+
+                <a href="pesca.html" class="nav__link">
+                    Pesca
+                </a>
+
+                <a href="caca.html" class="nav__link">
+                    Caça
+                </a>
+
+                <a href="#artigos" class="nav__link">
+                    Artigos
+                </a>
+
+                <a href="#contato" class="nav__link">
+                    Contato
+                </a>
+
+            </nav>
+
+
+            <button class="cart-button" onclick="openCart()">
+
+                <span class="cart-icon">
+                    🛒
+                </span>
+
+                <span>
+                    Carrinho
+                </span>
+
+                <strong class="cart-count">
+                    0
+                </strong>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="hero_side hero_side--pesca">
+
+                <div class="hero__overlay"></div>
+
+                <div class="hero__content">
+
+                    <span class="hero__eyebrow">
+                        PESCA ESPORTIVA
+                    </span>
+
+                    <h1>
+                        O equipamento
+                        <strong>faz a diferença.</strong>
+                    </h1>
+
+                    <p>
+                        Varas, carretilhas, iscas e equipamentos
+                        selecionados para quem realmente vive a pesca.
+                    </p>
+
+                    <a href="pesca.html" class="btn btn--gold">
+                        Explorar Pesca
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero_side hero_side--caca">
+
+                <div class="hero__overlay"></div>
+
+                <div class="hero__content">
+
+                    <span class="hero__eyebrow">
+                        CAÇA & CAMPO
+                    </span>
+
+                    <h1>
+                        Prepare-se para
+                        <strong>o próximo desafio.</strong>
+                    </h1>
+
+                    <p>
+                        Equipamentos, vestuário, óptica e acessórios
+                        para suas aventuras em campo.
+                    </p>
+
+                    <a href="caca.html" class="btn btn--gold">
+                        Explorar Caça
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PRODUTOS EM DESTAQUE
+        ========================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            SELEÇÃO HOMO HABILIS
+                        </span>
+
+                        <h2>
+                            Produtos em destaque
+                        </h2>
+                    </div>
+
+                    <a href="pesca.html" class="section-link">
+                        Ver catálogo →
+                    </a>
+
+                </div>
+
+
+                <div class="product-grid">
+
+
+                    <!-- PRODUTO 1 -->
+
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <span class="product-badge">
+                                Destaque
+                            </span>
+
+                            <button class="favorite"
+                                onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+                                alt="Equipamento de pesca">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                PESCA
+                            </span>
+
+                            <h3>
+                                Vara de Pesca Profissional
+                            </h3>
+
+                            <p>
+                                Ação rápida e estrutura leve para pesca esportiva.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 389,90
+                            </div>
+
+                            <span class="installment">
+                                ou 6x de R$ 64,98
+                            </span>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart(
+                                    'Vara de Pesca Profissional',
+                                    389.90
+                                )">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUTO 2 -->
+
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <span class="product-badge product-badge--new">
+                                Novo
+                            </span>
+
+                            <button class="favorite"
+                                onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+                                alt="Equipamento esportivo">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                PESCA
+                            </span>
+
+                            <h3>
+                                Carretilha Pro 200
+                            </h3>
+
+                            <p>
+                                Sistema de arremesso preciso e recuperação suave.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 649,90
+                            </div>
+
+                            <span class="installment">
+                                ou 10x de R$ 64,99
+                            </span>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart(
+                                    'Carretilha Pro 200',
+                                    649.90
+                                )">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUTO 3 -->
+
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <span class="product-badge">
+                                Mais vendido
+                            </span>
+
+                            <button class="favorite"
+                                onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+                                alt="Isca de pesca">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                PESCA
+                            </span>
+
+                            <h3>
+                                Kit Iscas Tucunaré
+                            </h3>
+
+                            <p>
+                                Seleção de iscas para diferentes condições de água.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 149,90
+                            </div>
+
+                            <span class="installment">
+                                ou 3x de R$ 49,97
+                            </span>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart(
+                                    'Kit Iscas Tucunaré',
+                                    149.90
+                                )">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUTO 4 -->
+
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80"
+                                alt="Mochila para atividades outdoor">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                CAMPO
+                            </span>
+
+                            <h3>
+                                Mochila Expedition 45L
+                            </h3>
+
+                            <p>
+                                Grande capacidade e construção resistente.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 429,90
+                            </div>
+
+                            <span class="installment">
+                                ou 8x de R$ 53,74
+                            </span>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart(
+                                    'Mochila Expedition 45L',
+                                    429.90
+                                )">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PESCA
+        ========================== -->
+
+        <section class="category-section category-section--water">
+
+            <div class="container">
+
+                <div class="category-header">
+
+                    <div>
+
+                        <span class="section-label section-label--light">
+                            PARA QUEM VIVE A PESCA
+                        </span>
+
+                        <h2>
+                            Pesca
+                        </h2>
+
+                        <p>
+                            Tudo para transformar sua próxima pescaria
+                            em uma experiência melhor.
+                        </p>
+
+                    </div>
+
+                    <a href="pesca.html" class="btn btn--outline-light">
+                        Ver todos os produtos
+                    </a>
+
+                </div>
+
+
+                <div class="category-list">
+
+                    <a href="pesca.html#varas">
+                        <span>🎣</span>
+                        Varas
+                    </a>
+
+                    <a href="pesca.html#carretilhas">
+                        <span>⚙️</span>
+                        Carretilhas
+                    </a>
+
+                    <a href="pesca.html#molinetes">
+                        <span>◉</span>
+                        Molinetes
+                    </a>
+
+                    <a href="pesca.html#iscas">
+                        <span>🐟</span>
+                        Iscas
+                    </a>
+
+                    <a href="pesca.html#linhas">
+                        <span>〰</span>
+                        Linhas
+                    </a>
+
+                    <a href="pesca.html#acessorios">
+                        <span>◆</span>
+                        Acessórios
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PRODUTOS DE PESCA
+        ========================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            PESCA
+                        </span>
+
+                        <h2>
+                            Para sua próxima pescaria
+                        </h2>
+
+                    </div>
+
+                    <a href="pesca.html" class="section-link">
+                        Ver tudo →
+                    </a>
+
+                </div>
+
+
+                <div class="product-grid product-grid--four">
+
+
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+                                alt="Vara de pesca">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                VARAS
+                            </span>
+
+                            <h3>
+                                Vara Tucunaré 6'0"
+                            </h3>
+
+                            <p>
+                                Leve, rápida e ideal para iscas artificiais.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 299,90
+                            </div>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart('Vara Tucunaré 6', 299.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+                                alt="Carretilha">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                CARRETILHAS
+                            </span>
+
+                            <h3>
+                                Carretilha Titan 100
+                            </h3>
+
+                            <p>
+                                Controle preciso durante o arremesso.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 579,90
+                            </div>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart('Carretilha Titan 100', 579.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+                                alt="Isca artificial">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                ISCAS
+                            </span>
+
+                            <h3>
+                                Isca Artificial Predator
+                            </h3>
+
+                            <p>
+                                Perfil de natação desenvolvido para predadores.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 69,90
+                            </div>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart('Isca Artificial Predator', 69.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80"
+                                alt="Acessório de pesca">
+
+                        </div>
+
+                        <div class="product-info">

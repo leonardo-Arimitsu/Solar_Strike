@@ -1,5 +1,6 @@
 const CART_KEY = "homoHabilisCart";
 
+
         function getCart() {
 
             return JSON.parse(
@@ -23,9 +24,8 @@ const CART_KEY = "homoHabilisCart";
 
             const cart = getCart();
 
-            const existing = cart.find(
-                item => item.name === name
-            );
+            const existing =
+                cart.find(item => item.name === name);
 
             if (existing) {
 
@@ -34,8 +34,8 @@ const CART_KEY = "homoHabilisCart";
             } else {
 
                 cart.push({
-                    name: name,
-                    price: price,
+                    name,
+                    price,
                     quantity: 1
                 });
 
@@ -54,15 +54,63 @@ const CART_KEY = "homoHabilisCart";
 
             const cart = getCart();
 
-            const total = cart.reduce(
-                (sum, item) => sum + item.quantity,
+            const count = cart.reduce(
+                (sum, item) =>
+                    sum + item.quantity,
                 0
             );
 
-            document.querySelectorAll(".cart-count")
+            document
+                .querySelectorAll(".cart-count")
                 .forEach(element => {
-                    element.textContent = total;
+                    element.textContent = count;
                 });
+
+        }
+
+
+        function filterProducts(category, button) {
+
+            document
+                .querySelectorAll(".filter-button")
+                .forEach(btn => {
+                    btn.classList.remove(
+                        "filter-button--active"
+                    );
+                });
+
+            button.classList.add(
+                "filter-button--active"
+            );
+
+
+            document
+                .querySelectorAll(".product-card")
+                .forEach(card => {
+
+                    card.style.display =
+                        category === "todos" ||
+                        card.dataset.category === category
+                            ? "flex"
+                            : "none";
+
+                });
+
+        }
+
+
+        function toggleFavorite(button) {
+
+            button.classList.toggle(
+                "favorite--active"
+            );
+
+            button.textContent =
+                button.classList.contains(
+                    "favorite--active"
+                )
+                    ? "♥"
+                    : "♡";
 
         }
 
@@ -73,7 +121,9 @@ const CART_KEY = "homoHabilisCart";
 
             document
                 .getElementById("cartModal")
-                .classList.add("cart-modal--active");
+                .classList.add(
+                    "cart-modal--active"
+                );
 
         }
 
@@ -82,7 +132,9 @@ const CART_KEY = "homoHabilisCart";
 
             document
                 .getElementById("cartModal")
-                .classList.remove("cart-modal--active");
+                .classList.remove(
+                    "cart-modal--active"
+                );
 
         }
 
@@ -94,34 +146,27 @@ const CART_KEY = "homoHabilisCart";
             const container =
                 document.getElementById("cartItems");
 
-            const totalElement =
-                document.getElementById("cartTotal");
+            let total = 0;
 
-            if (cart.length === 0) {
+            if (!cart.length) {
 
-                container.innerHTML = `
-                    <div class="cart-empty">
-                        <span>🛒</span>
-                        <p>Seu carrinho está vazio.</p>
-                    </div>
-                `;
+                container.innerHTML =
+                    "<p>Seu carrinho está vazio.</p>";
 
-                totalElement.textContent = "R$ 0,00";
+                document.getElementById(
+                    "cartTotal"
+                ).textContent = "R$ 0,00";
 
                 return;
 
             }
 
 
-            let total = 0;
+            container.innerHTML =
+                cart.map((item, index) => {
 
-            container.innerHTML = cart.map(
-                (item, index) => {
-
-                    const subtotal =
+                    total +=
                         item.price * item.quantity;
-
-                    total += subtotal;
 
                     return `
                         <div class="cart-item">
@@ -133,9 +178,6 @@ const CART_KEY = "homoHabilisCart";
 
                                 <span>
                                     ${item.quantity}x
-                                    R$ ${item.price
-                                        .toFixed(2)
-                                        .replace(".", ",")}
                                 </span>
                             </div>
 
@@ -147,13 +189,15 @@ const CART_KEY = "homoHabilisCart";
                         </div>
                     `;
 
-                }
-            ).join("");
+                }).join("");
 
 
-            totalElement.textContent =
+            document.getElementById(
+                "cartTotal"
+            ).textContent =
                 "R$ " +
-                total.toFixed(2).replace(".", ",");
+                total.toFixed(2)
+                    .replace(".", ",");
 
         }
 
@@ -173,29 +217,4 @@ const CART_KEY = "homoHabilisCart";
         }
 
 
-        function toggleFavorite(button) {
-
-            button.classList.toggle(
-                "favorite--active"
-            );
-
-            button.textContent =
-                button.classList.contains("favorite--active")
-                    ? "♥"
-                    : "♡";
-
-        }
-
-
         updateCartCount();
-
-
-        document
-            .getElementById("cartModal")
-            .addEventListener("click", function(event) {
-
-                if (event.target === this) {
-                    closeCart();
-                }
-
-            });

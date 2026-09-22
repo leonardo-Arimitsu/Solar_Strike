@@ -532,7 +532,7 @@ button {
 .hero__side--pesca {
 
     background-image:
-        url("https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=1400&q=85");
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW1zjKdNRZIofj4HZuqgcJ47ZIJs1RUnpGKVBBXSmzraQQGF9VV91vWxbR&s=10");
 
 }
 
@@ -563,7 +563,7 @@ button {
 }
 
 
-.hero_side--caca .hero_overlay {
+.hero__side--caca .hero__overlay {
 
     background:
         linear-gradient(
@@ -1788,7 +1788,7 @@ button {
             rgba(3,40,43,.58)
         ),
 
-        url("https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=1800&q=85")
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW1zjKdNRZIofj4HZuqgcJ47ZIJs1RUnpGKVBBXSmzraQQGF9VV91vWxbR&s=10")
         center / cover;
 
 }

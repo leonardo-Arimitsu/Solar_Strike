@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Caça | Homo Habilis Caça & Pesca</title>
+
+    <link rel="stylesheet" href="/INDEX/CSS/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div class="topbar">
+
+        <div class="container topbar__content">
+
+            <span>🚚 Enviamos para todo o Brasil</span>
+
+            <span>
+                Equipamentos para campo e aventura
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <header class="header">
+
+        <div class="container header__content">
+
+            <a href="index.html" class="logo">
+
+                <div class="logo__mark">
+                    HH
+                </div>
+
+                <div class="logo__text">
+                    <strong>HOMO HABILIS</strong>
+                    <span>CAÇA & PESCA</span>
+                </div>
+
+            </a>
+
+
+            <nav class="nav">
+
+                <a href="index.html" class="nav__link">
+                    Início
+                </a>
+
+                <a href="pesca.html" class="nav__link">
+                    Pesca
+                </a>
+
+                <a href="caca.html"
+                   class="nav__link nav__link--active">
+                    Caça
+                </a>
+
+                <a href="index.html#artigos" class="nav__link">
+                    Artigos
+                </a>
+
+                <a href="index.html#contato" class="nav__link">
+                    Contato
+                </a>
+
+            </nav>
+
+
+            <button class="cart-button"
+                    onclick="openCart()">
+
+                🛒
+                Carrinho
+
+                <strong class="cart-count">
+                    0
+                </strong>
+
+            </button>
+
+            <button class="cart-button"
+                    onclick="openCart()">
+                Login
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <section class="catalog-hero catalog-hero--caca">
+
+            <div class="container">
+
+                <span class="section-label section-label--light">
+                    HOMO HABILIS
+                </span>
+
+                <h1>
+                    Caça & Campo
+                </h1>
+
+                <p>
+                    Equipamentos, vestuário e acessórios para
+                    quem está preparado para enfrentar o campo.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="catalog">
+
+            <div class="container">
+
+
+                <div class="filter-bar">
+
+                    <button class="filter-button filter-button--active"
+                            onclick="filterProducts('todos', this)">
+                        Todos
+                    </button>
+
+                    <button class="filter-button"
+                            onclick="filterProducts('vestuario', this)">
+                        Vestuário
+                    </button>
+
+                    <button class="filter-button"
+                            onclick="filterProducts('optica', this)">
+                        Óptica
+                    </button>
+
+                    <button class="filter-button"
+                            onclick="filterProducts('mochilas', this)">
+                        Mochilas
+                    </button>
+
+                    <button class="filter-button"
+                            onclick="filterProducts('equipamentos', this)">
+                        Equipamentos
+                    </button>
+
+                    <button class="filter-button"
+                            onclick="filterProducts('acessorios', this)">
+                        Acessórios
+                    </button>
+
+                </div>
+
+
+                <div class="product-grid">
+
+
+                    <article class="product-card"
+                             data-category="vestuario">
+
+                        <div class="product-image">
+
+                            <span class="product-badge">
+                                Destaque
+                            </span>
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+                                alt="Jaqueta de campo">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                VESTUÁRIO
+                            </span>
+
+                            <h3>
+                                Jaqueta Field Pro
+                            </h3>
+
+                            <p>
+                                Proteção e conforto para atividades outdoor.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 499,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Jaqueta Field Pro', 499.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="vestuario">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+                                alt="Colete">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                VESTUÁRIO
+                            </span>
+
+                            <h3>
+                                Colete Expedition
+                            </h3>
+
+                            <p>
+                                Organização e praticidade para campo.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 349,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Colete Expedition', 349.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="optica">
+
+                        <div class="product-image">
+
+                            <span class="product-badge product-badge--new">
+                                Novo
+                            </span>
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1517825738774-7de9363ef735?auto=format&fit=crop&w=800&q=80"
+                                alt="Binóculo">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                ÓPTICA
+                            </span>
+
+                            <h3>
+                                Binóculo Ranger 10x42
+                            </h3>
+
+                            <p>
+                                Observação clara e confortável.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 799,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Binóculo Ranger 10x42', 799.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="mochilas">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80"
+                                alt="Mochila">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                MOCHILAS
+                            </span>
+
+                            <h3>
+                                Mochila Expedition 45L
+                            </h3>
+
+                            <p>
+                                Capacidade e resistência para longas jornadas.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 429,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Mochila Expedition 45L', 429.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="equipamentos">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+                                alt="Equipamento outdoor">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                EQUIPAMENTOS
+                            </span>
+
+                            <h3>
+                                Kit Outdoor Field
+                            </h3>
+
+                            <p>
+                                Conjunto compacto para atividades de campo.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 259,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Kit Outdoor Field', 259.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="acessorios">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+                                alt="Acessório">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                ACESSÓRIOS
+                            </span>
+
+                            <h3>
+                                Kit Field Essentials
+                            </h3>
+
+                            <p>
+                                Acessórios essenciais para atividades outdoor.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 199,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Kit Field Essentials', 199.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="container footer__grid">
+
+            <div>
+
+                <a href="index.html" class="logo logo--footer">
+
+                    <div class="logo__mark">
+                        HH
+                    </div>
+
+                    <div class="logo__text">
+                        <strong>HOMO HABILIS</strong>
+                        <span>CAÇA & PESCA</span>
+                    </div>
+
+                </a>
+
+                <p class="footer__description">
+                    Equipamentos para quem vive a natureza.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Navegação</h3>
+
+                <a href="index.html">Início</a>
+                <a href="pesca.html">Pesca</a>
+                <a href="caca.html">Caça</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Atendimento</h3>
+
+                <a href="#">
+                    WhatsApp
+                </a>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    E-mail
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer__bottom">
+
+            <div class="container">
+
+                © 2026 Homo Habilis Caça & Pesca.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <div class="cart-modal" id="cartModal">
+
+        <div class="cart-modal__box">
+
+            <div class="cart-modal__header">
+
+                <h2>
+                    Seu carrinho
+                </h2>
+
+                <button onclick="closeCart()">
+                    ×
+                </button>
+
+            </div>
+
+            <div id="cartItems"
+                 class="cart-items">
+            </div>
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cartTotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="/INDEX/JS/caca.js"></script>
+
+</body>
+
+</html>

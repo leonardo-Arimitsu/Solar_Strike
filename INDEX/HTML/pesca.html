@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pesca | Homo Habilis Caça & Pesca</title>
+
+    <link rel="stylesheet" href="/INDEX/CSS/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <div class="container topbar__content">
+
+            <span>🚚 Enviamos para todo o Brasil</span>
+
+            <span>
+                Equipamentos para pesca esportiva
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <header class="header">
+
+        <div class="container header__content">
+
+            <a href="index.html" class="logo">
+
+                <div class="logo__mark">
+                    HH
+                </div>
+
+                <div class="logo__text">
+                    <strong>HOMO HABILIS</strong>
+                    <span>CAÇA & PESCA</span>
+                </div>
+
+            </a>
+
+
+            <nav class="nav">
+
+                <a href="index.html" class="nav__link">
+                    Início
+                </a>
+
+                <a href="pesca.html"
+                   class="nav__link nav__link--active">
+                    Pesca
+                </a>
+
+                <a href="caca.html" class="nav__link">
+                    Caça
+                </a>
+
+                <a href="index.html#artigos" class="nav__link">
+                    Artigos
+                </a>
+
+                <a href="index.html#contato" class="nav__link">
+                    Contato
+                </a>
+
+            </nav>
+
+
+            <button class="cart-button"
+                    onclick="openCart()">
+
+                🛒
+                Carrinho
+
+                <strong class="cart-count">
+                    0
+                </strong>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- CABEÇALHO -->
+
+        <section class="catalog-hero catalog-hero--pesca">
+
+            <div class="container">
+
+                <span class="section-label section-label--light">
+                    HOMO HABILIS
+                </span>
+
+                <h1>
+                    Pesca
+                </h1>
+
+                <p>
+                    Equipamentos para quem conhece a água,
+                    entende o peixe e não abre mão de bons equipamentos.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILTROS -->
+
+        <section class="catalog">
+
+            <div class="container">
+
+                <div class="filter-bar">
+
+                    <button class="filter-button filter-button--active"
+                            onclick="filterProducts('todos', this)">
+                        Todos
+                    </button>
+
+                    <button class="filter-button"
+                            onclick="filterProducts('varas', this)">
+                        Varas
+                    </button>
+
+                    <button class="filter-button"
+                            onclick="filterProducts('carretilhas', this)">
+                        Carretilhas
+                    </button>
+
+                    <button class="filter-button"
+                            onclick="filterProducts('molinetes', this)">
+                        Molinetes
+                    </button>
+
+                    <button class="filter-button"
+                            onclick="filterProducts('iscas', this)">
+                        Iscas
+                    </button>
+
+                    <button class="filter-button"
+                            onclick="filterProducts('acessorios', this)">
+                        Acessórios
+                    </button>
+
+                </div>
+
+
+                <div class="product-grid" id="productGrid">
+
+
+                    <article class="product-card"
+                             data-category="varas">
+
+                        <div class="product-image">
+
+                            <span class="product-badge">
+                                Destaque
+                            </span>
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDqtMYfgPnN_8LQR97HWVdS_9h_K9r9Xp4AZrGsNsw8aolnLbOvkMysdR&s=10"
+                                alt="Vara de pesca">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                VARAS
+                            </span>
+
+                            <h3>
+                                Vara Tucunaré 6'0"
+                            </h3>
+
+                            <p>
+                                Ação rápida para iscas artificiais.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 299,90
+                            </div>
+
+                            <span class="installment">
+                                ou 6x de R$ 49,98
+                            </span>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Vara Tucunaré 6', 299.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="varas">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDqtMYfgPnN_8LQR97HWVdS_9h_K9r9Xp4AZrGsNsw8aolnLbOvkMysdR&s=10"
+                                alt="Vara de pesca profissional">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                VARAS
+                            </span>
+
+                            <h3>
+                                Vara Predator Pro
+                            </h3>
+
+                            <p>
+                                Potência para peixes de maior porte.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 459,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Vara Predator Pro', 459.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="carretilhas">
+
+                        <div class="product-image">
+
+                            <span class="product-badge product-badge--new">
+                                Novo
+                            </span>
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+                                alt="Carretilha de pesca">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                CARRETILHAS
+                            </span>
+
+                            <h3>
+                                Carretilha Titan 100
+                            </h3>
+
+                            <p>
+                                Sistema de arremesso preciso.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 579,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Carretilha Titan 100', 579.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="carretilhas">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+                                alt="Carretilha">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                CARRETILHAS
+                            </span>
+
+                            <h3>
+                                Carretilha Black Water
+                            </h3>
+
+                            <p>
+                                Construção robusta para pesca esportiva.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 689,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Carretilha Black Water', 689.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="molinetes">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+                                alt="Molinete">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                MOLINETES
+                            </span>
+
+                            <h3>
+                                Molinete River 3000
+                            </h3>
+
+                            <p>
+                                Recuperação suave e estrutura leve.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 329,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Molinete River 3000', 329.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="iscas">
+
+                        <div class="product-image">
+
+                            <span class="product-badge">
+                                Mais vendido
+                            </span>
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+                                alt="Isca artificial">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                ISCAS
+                            </span>
+
+                            <h3>
+                                Kit Iscas Tucunaré
+                            </h3>
+
+                            <p>
+                                Seleção para diferentes condições de água.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 149,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Kit Iscas Tucunaré', 149.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="iscas">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+                                alt="Isca artificial">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                ISCAS
+                            </span>
+
+                            <h3>
+                                Isca Predator 110
+                            </h3>
+
+                            <p>
+                                Isca artificial para peixes predadores.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 69,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Isca Predator 110', 69.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card"
+                             data-category="acessorios">
+
+                        <div class="product-image">
+
+                            <button class="favorite"
+                                    onclick="toggleFavorite(this)">
+                                ♡
+                            </button>
+
+                            <img
+                                src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80"
+                                alt="Bolsa para pesca">
+
+                        </div>
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                ACESSÓRIOS
+                            </span>
+
+                            <h3>
+                                Bolsa Tackle Pro
+                            </h3>
+
+                            <p>
+                                Organização prática para seus equipamentos.
+                            </p>
+
+                            <div class="product-price">
+                                R$ 189,90
+                            </div>
+
+                            <button class="add-cart"
+                                onclick="addToCart('Bolsa Tackle Pro', 189.90)">
+                                Adicionar ao carrinho
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="container footer__grid">
+
+            <div>
+
+                <a href="index.html" class="logo logo--footer">
+
+                    <div class="logo__mark">
+                        HH
+                    </div>
+
+                    <div class="logo__text">
+                        <strong>HOMO HABILIS</strong>
+                        <span>CAÇA & PESCA</span>
+                    </div>
+
+                </a>
+
+                <p class="footer__description">
+                    Equipamentos para quem vive a natureza.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Navegação</h3>
+
+                <a href="index.html">Início</a>
+                <a href="pesca.html">Pesca</a>
+                <a href="caca.html">Caça</a>
+
+            </div>
+
+            <div>
+
+                <h3>Atendimento</h3>
+
+                <a href="#">WhatsApp</a>
+                <a href="#">Instagram</a>
+                <a href="#">E-mail</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+
+            <div class="container">
+
+                © 2026 Homo Habilis Caça & Pesca.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <div class="cart-modal" id="cartModal">
+
+        <div class="cart-modal__box">
+
+            <div class="cart-modal__header">
+
+                <h2>Seu carrinho</h2>
+
+                <button onclick="closeCart()">
+                    ×
+                </button>
+
+            </div>
+
+            <div id="cartItems" class="cart-items"></div>
+
+            <div class="cart-total">
+
+                <span>Total</span>
+
+                <strong id="cartTotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="/INDEX/JS/pesca.js"></script>
+
+</body>
+
+</html>

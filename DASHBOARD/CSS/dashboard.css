@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* Estilização da Barra Superior */
+
 .cabecalho{
     display: flex;
     flex-direction: row;
@@ -26,5 +28,6 @@
     color: rgb(252, 249, 249);
     width: 5%;
     padding: 20px;
+    border: none;
 }
 

@@ -1,54 +1,138 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DASHBOARD</title>
+
+    <title>Dashboard</title>
+
     <link rel="stylesheet" href="/DASHBOARD/CSS/dashboard.css">
 </head>
+
 <body>
-    <!-- Barra Superior -->
+
     <header class="cabecalho">
-        <h1 class="titulo">Gerenciamento do Sistema</h1>
-        <button id="BTN_sair" class="BTN_sair">
+
+        <h1 class="titulo">
+            Gerenciamento do Sistema
+        </h1>
+
+        <button id="BTN_sair" class="BTN_sair" type="button">
             SAIR
         </button>
+
     </header>
-    <!-- Dashboard -->
+
+
     <main class="dashboard">
-        <h2 class="BEMVINDO">
-            Seja bem vindo
-        </h2>
-        <!-- Opções do Sistema -->
-        <div class="cards">
-            <button class="card" onclick="abrirClientes()">
-                <p style="font-size: 80px;">🫂</p>
-                <h3>Clientes</h3>
-                <p>Cadastro dos Clientes</p>
+
+        <section class="boas-vindas">
+
+            <h2 class="BEMVINDO">
+                Seja bem-vindo!
+            </h2>
+
+            <p>
+                Selecione uma opção para continuar.
+            </p>
+
+        </section>
+
+
+        <section class="cards">
+
+            <button class="card" type="button" onclick="abrirClientes()">
+
+                <span class="card-icone">
+                    🫂
+                </span>
+
+                <h3>
+                    Clientes
+                </h3>
+
+                <p>
+                    Cadastro dos clientes
+                </p>
+
             </button>
-            <button class="card">
-                <p style="font-size: 80px;">🏢</p>
-                <h3>Fornecedores</h3>
-                <p>Cadastro de Fornecedores</p>
+
+
+            <button class="card" type="button">
+
+                <span class="card-icone">
+                    🏢
+                </span>
+
+                <h3>
+                    Fornecedores
+                </h3>
+
+                <p>
+                    Cadastro de fornecedores
+                </p>
+
             </button>
-            <button class="card" onclick="abrirFuncionarios()">
-                <p style="font-size: 80px;">🧑‍💼</p>
-                <h3>Funcionários</h3>
-                <p>Cadastro de Funcionários</p>
+
+
+            <button class="card" type="button" onclick="abrirFuncionarios()">
+
+                <span class="card-icone">
+                    🧑‍💼
+                </span>
+
+                <h3>
+                    Funcionários
+                </h3>
+
+                <p>
+                    Cadastro de funcionários
+                </p>
+
             </button>
-            <button class="card" onclick="abrirProdutos()">
-                <p style="font-size: 80px;">🎣/🦌</p>
-                <h3>Produtos</h3>
-                <p>Cadastro de Produtos</p>
+
+
+            <button class="card" type="button" onclick="abrirProdutos()">
+
+                <span class="card-icone">
+                    🎣 🦌
+                </span>
+
+                <h3>
+                    Produtos
+                </h3>
+
+                <p>
+                    Cadastro de produtos
+                </p>
+
             </button>
-            <button class="card" onclick="abrirManutencao()">
-                <p style="font-size: 80px;">⚙️</p>
-                <h3>Manutenção</h3>
-                <p>Manutenção de Sistema</p>
+
+
+            <button class="card" type="button" onclick="abrirManutencao()">
+
+                <span class="card-icone">
+                    ⚙️
+                </span>
+
+                <h3>
+                    Manutenção
+                </h3>
+
+                <p>
+                    Manutenção do sistema
+                </p>
+
             </button>
-        </div>
+
+        </section>
+
     </main>
 
-    <script type="text/javascript" src="/js/dashboard.js"></script>
+
+    <script src="/js/dashboard.js"></script>
+
 </body>
+
 </html>

@@ -204,6 +204,7 @@ body {
         repeat(auto-fit, minmax(200px, 1fr));
 
     gap: 20px;
+
 }
 
 
@@ -220,7 +221,7 @@ body {
     border: 1px solid var(--border);
     border-radius: var(--radius);
 
-    background-color: var(--white);
+    background-color: var(--water-500);
     color: var(--gray-800);
 
     box-shadow: var(--shadow-sm);

@@ -100,6 +100,56 @@ button {
     font-family: inherit;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 42px;
+    padding: 0 15px;
+
+    color: var(--green-900);
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+.header-login:hover {
+    color: #fff;
+    background: var(--green-800);
+    border-color: var(--green-800);
+
+    transform: translateY(-1px);
+}
+
+.header-login__icon {
+    font-size: 16px;
+}
 
 /* =========================================================
    CONTAINER

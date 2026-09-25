@@ -80,17 +80,22 @@
             </nav>
 
 
-            <button class="cart-button"
-                    onclick="openCart()">
+            <div class="header-actions">
 
-                🛒
-                Carrinho
+                <a href="login.html" class="header-login">
+                    <span class="header-login__icon">👤</span>
+                    <span>Entrar</span>
+                </a>
 
-                <strong class="cart-count">
-                    0
-                </strong>
+                <button class="cart-button" onclick="openCart()">
+                    <span class="cart-icon">🛒</span>
 
-            </button>
+                    <span>Carrinho</span>
+
+                    <strong class="cart-count">0</strong>
+                </button>
+
+            </div>
 
         </div>
 

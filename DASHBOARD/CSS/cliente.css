@@ -1,0 +1,197 @@
+/* ========================================
+   VARIÁVEIS
+======================================== */
+
+:root {
+
+    --green-950: #061c16;
+    --green-900: #082a20;
+    --green-800: #0d3b2d;
+    --green-700: #14513c;
+    --green-600: #1c6748;
+
+    --water-900: #063b45;
+    --water-800: #075665;
+    --water-700: #087084;
+    --water-500: #1495a5;
+
+    --yellow: #e4b52d;
+    --yellow-light: #f3d15c;
+
+    --orange: #d97b24;
+    --orange-dark: #ad5416;
+
+    --white: #ffffff;
+    --cream: #f5f4ed;
+
+    --gray-50: #fafafa;
+    --gray-100: #f0f1ee;
+    --gray-200: #dfe2dd;
+    --gray-400: #9aa29b;
+    --gray-600: #626b65;
+    --gray-800: #252c28;
+
+    --border: #e1e4df;
+
+    --shadow-sm:
+        0 4px 16px rgba(5, 35, 25, 0.08);
+
+    --shadow-md:
+        0 12px 35px rgba(5, 35, 25, 0.12);
+
+    --shadow-lg:
+        0 22px 60px rgba(5, 35, 25, 0.20);
+
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--cream);
+    color: var(--gray-800);
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    background-color: var(--gray-800);
+    box-shadow: var(--shadow-md);
+}
+
+.descricao{
+    color: var(--yellow-light);
+    font-size: clamp(18px, 3vw,18px);
+    font-weight: 600;
+    line-height: 1.2;
+    
+}
+
+
+.titulo {
+    color: var(--yellow-light);
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+/* ========================================
+   BOTÃO VOLTAR
+======================================== */
+
+.BTN_voltar {
+
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: var(--radius);
+
+    background-color: var(--orange-dark);
+    color: var(--white);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.BTN_voltar:hover {
+    background-color: var(--orange);
+    transform: translateY(-2px);
+}
+
+
+.BTN_voltar:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   BOTÃO LIMPAR
+======================================== */
+
+.btn-limpar {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--water-700);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+    
+}
+
+.btn-limpar:hover {
+    background-color: var(--water-800);
+    transform: translateY(-2px);
+}
+
+
+.btn-limpar:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   BOTÃO SALVAR
+======================================== */
+
+.btn-salvar{
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--water-700);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-salvar:hover {
+    background-color: var(--water-800);
+    transform: translateY(-2px);
+}
+
+
+.btn-salvar:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   Cadastro
+======================================== */
+
+.cadastro {
+    width: 300px;       /* largura obrigatória */
+    margin: 0 auto;
+}

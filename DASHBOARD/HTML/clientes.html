@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Clientes</title>
+    <link rel="stylesheet" href="/DASHBOARD/CSS/cliente.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="titulo">Cadastro de Clientes</h1>
+        <h3 class="descricao">Cadastro Manual de Clientes</h3>
+        <button class="BTN_voltar" id="BTN_voltar" type="button" onclick="voltarDashboard()">
+            Dashboard
+        </button>
+    </header>
+    <main>
+        <section>
+            <h2>Dados do Cliente</h2>
+            <!-- Formulário de Cadastro -->
+            <div class="cadastro">
+                <form id="formCliente">
+                    <input type="hidden" id="id">
+                    <div class="input-group">
+                        <label>Nome:</label>
+                        <br>
+                        <input type="text" id="nome" required>
+                    </div>
+                    <div class="input-group">
+                        <label>E-Mail:</label>
+                        <br>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Telefone:</label>
+                        <br>
+                        <input type="text" id="telefone" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Cidade</label>
+                        <br>
+                        <input type="text" id="cidade" required>
+                    </div>
+                    <div class="input-group">
+                        <label>UF</label>
+                        <br>
+                        <input type="text" id="uf" required>
+                    </div>
+                    <div class="input-group">
+                        <label>CEP</label>
+                        <br>
+                        <input type="text" id="cep" required>
+                    </div>
+                </div>
+                    <button class="btn-salvar" type="submit">
+                        Salvar Cliente
+                    </button>
+                    <button type="button" class="btn-limpar" onclick="limparFormulario()">
+                        Novo
+                    </button>
+                </form>
+        </section>
+        <section class="listar-clientes">
+            
+        </section>
+    </main>
+</body>
+</html>

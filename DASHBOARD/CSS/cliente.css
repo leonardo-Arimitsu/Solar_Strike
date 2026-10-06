@@ -191,7 +191,22 @@ body {
    Cadastro
 ======================================== */
 
-.cadastro {
-    width: 300px;       /* largura obrigatória */
-    margin: 0 auto;
+.input-group{
+    font-size: 35px;
+    padding-left: 12px;
+}
+
+.input-group input{
+    width: 1000px;
+    height: 40px;
+    font-size: 30px;
+    border-radius: var(--radius);
+    border-style: none;
+    background-color: var(--gray-400);
+    color: var(--gray-100);
+}
+
+.btn-salvar{
+    padding-left: 15px;
+    align-items: 10px;
 }

@@ -1,16 +1,62 @@
-body{
+:root {
 
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    --green-950: #061c16;
+    --green-900: #082a20;
+    --green-800: #0d3b2d;
+    --green-700: #14513c;
+    --green-600: #1c6748;
+
+    --water-900: #063b45;
+    --water-800: #075665;
+    --water-700: #087084;
+    --water-500: #1495a5;
+
+    --yellow: #e4b52d;
+    --yellow-light: #f3d15c;
+
+    --orange: #d97b24;
+    --orange-dark: #ad5416;
+
+    --white: #ffffff;
+    --cream: #f5f4ed;
+    --gray-50: #fafafa;
+    --gray-100: #f0f1ee;
+    --gray-200: #dfe2dd;
+    --gray-400: #9aa29b;
+    --gray-600: #626b65;
+    --gray-800: #252c28;
+
+    --border: #e1e4df;
+
+    --shadow-sm:
+        0 4px 16px rgba(5, 35, 25, .08);
+
+    --shadow-md:
+        0 12px 35px rgba(5, 35, 25, .12);
+
+    --shadow-lg:
+        0 22px 60px rgba(5, 35, 25, .20);
+
+    --radius: 12px;
+
+}
+
+body {
+    min-height: 100vh;                     /* Garante que o corpo ocupe pelo menos 100% da altura da tela */
+    overflow: hidden;                      /* Esconde barras de rolagem desnecessárias */
+    font-family: "Roboto Slab", serif;     /* Aplica a fonte importada */
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;                         /* Transforma o body em flexbox */
+    justify-content: center;               /* Centraliza horizontalmente o conteúdo interno */
+    align-items: center;                   /* Centraliza verticalmente o conteúdo interno */
     position: relative;
-    overflow: hidden;
+}
 
-};
-
-.login-box {
-    background-color:bisque;
-    
-};
-
+.login-container {
+    background-color: var(--green-600);
+    height: 600px;
+    border: var(--border);
+    border-radius: var(--radius);
+}

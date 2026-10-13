@@ -194,19 +194,32 @@ body {
 .input-group{
     font-size: 35px;
     padding-left: 12px;
+    line-height: 25px;
+    padding-top: 10px;
 }
 
 .input-group input{
+    padding-left: 5px;
     width: 1000px;
-    height: 40px;
-    font-size: 30px;
-    border-radius: var(--radius);
+    height: 30px;
+    font-size: 25px;
+    border-radius: 6px;
     border-style: none;
     background-color: var(--gray-400);
-    color: var(--gray-100);
+    color: var(--green-900);
 }
 
-.btn-salvar{
-    padding-left: 15px;
-    align-items: 10px;
+.input-group ::placeholder{
+    font-style: italic;
+    opacity: 1;
+}
+
+.BTNs{
+    width: 1000px;
+    padding-top: 20px;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
 }

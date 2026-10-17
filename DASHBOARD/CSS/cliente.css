@@ -223,3 +223,26 @@ body {
     justify-content: space-between;
     padding: 0 32px;
 }
+
+.h2{
+    padding-bottom: 15px;
+}
+
+.tabela {
+    margin: auto;
+    border-collapse: collapse;
+    height: 30px;
+    width: 1250px;
+    background-color: var(--gray-600);
+    color: var(--green-950);
+}
+
+tr {
+    display: table-row; /* Garante que cada linha quebre corretamente */
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid var(--green-900);
+    text-align: left;
+}

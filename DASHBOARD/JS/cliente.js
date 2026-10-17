@@ -1,3 +1,7 @@
+function voltarDashboard(){
+    window.location.href = "index.html";
+}
+
 function salvarDados(){
     // Captura os dados dos inputs
     const nome = document.getElementById("nome").value;

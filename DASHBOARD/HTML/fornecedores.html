@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Fornecedores</title>
+    <link rel="stylesheet" href="/DASHBOARD/CSS/cliente.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="titulo">Cadastro de Fornecedores</h1>
+        <h3 class="descricao">Cadastro Manual de Fornecedores</h3>
+        <button class="BTN_voltar" id="BTN_voltar" type="button" onclick="voltarDashboard()">
+            Dashboard
+        </button>
+    </header>
+    <main>
+        <section>
+            <h2>Dados do Fornecedor</h2>
+            <!-- Formulário de Cadastro -->
+            <div class="cadastro">
+                <form id="formFornecedor">
+                    <input type="hidden" id="id">
+                    <div class="input-group">
+                        <label>Nome:</label>
+                        <br>
+                        <input type="text" id="nome" required placeholder="Digite o nome da empresa fornecedora">
+                    </div>
+                    <div class="input-group">
+                        <label>WhatsApp:</label>
+                        <br>
+                        <input type="text" id="whatsapp" required placeholder="Digite o WhatsApp da empresa fornecedora">
+                    </div>
+                    <div class="input-group">
+                        <label>Telefone:</label>
+                        <br>
+                        <input type="text" id="telefone" required placeholder="Digite o telefone da empresa fornecedora">
+                    </div>
+                    <div class="input-group">
+                        <label>E-mail:</label>
+                        <br>
+                        <input type="text" id="email" required placeholder="Digite o email da empresa fornecedora">
+                    </div>
+                    <div class="input-group">
+                        <label>Endereço:</label>
+                        <br>
+                        <input type="text" id="endereço" required placeholder="Digite o E-Mail da empresa fornecedora">
+                    </div>
+                    <div class="input-group">
+                        <label>Produto:</label>
+                        <br>
+                        <input type="text" id="produto" required placeholder="Digite o produto fornecido pela empresa">
+                    </div>
+                    <!-- <div class="input-group">
+                        <label>Status:</label>
+                        <br>
+                        <input type="text" id="status" required placeholder="Digite o UF da empresa fornecedora">
+                    </div> -->
+                    <div class="BTNs">
+                        <button class="btn-salvar" type="submit">
+                            Salvar Fornecedor
+                        </button>
+                        <button type="button" class="btn-limpar" onclick="limparFormulario()">
+                            Novo
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="listar-fornecedores">
+            <h2 class="h2">Fornecedores Cadastrados</h2>
+            <table border="1" class="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                        <th>Cidade</th>
+                        <th>UF</th>
+                        <th>CEP</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela">
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="/DASHBOARD/JS/cliente.js"></script>
+</body>
+</html>

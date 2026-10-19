@@ -5,7 +5,7 @@ function voltarDashboard(){
 function salvarDados(){
     // Captura os dados dos inputs
     const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
+    const whatsapp = document.getElementById("whatsapp").value;
     const telefone = document.getElementById("telefone").value;
     const cidade = document.getElementById("cidade").value;
     const uf = document.getElementById("uf").value;

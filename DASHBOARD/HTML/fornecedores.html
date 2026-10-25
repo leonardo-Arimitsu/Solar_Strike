@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Fornecedores</title>
-    <link rel="stylesheet" href="/DASHBOARD/CSS/cliente.css">
+    <link rel="stylesheet" href="/DASHBOARD/CSS/fornecedores.css">
 </head>
 <body>
     <header class="cabecalho">
@@ -44,18 +44,22 @@
                     <div class="input-group">
                         <label>Endereço:</label>
                         <br>
-                        <input type="text" id="endereço" required placeholder="Digite o E-Mail da empresa fornecedora">
+                        <input type="text" id="endereco" required placeholder="Digite o E-Mail da empresa fornecedora">
                     </div>
                     <div class="input-group">
                         <label>Produto:</label>
                         <br>
                         <input type="text" id="produto" required placeholder="Digite o produto fornecido pela empresa">
                     </div>
-                    <!-- <div class="input-group">
-                        <label>Status:</label>
-                        <br>
-                        <input type="text" id="status" required placeholder="Digite o UF da empresa fornecedora">
-                    </div> -->
+                    <div class="input-group">
+                        <select id="status" class="status" required>
+                            <option value="" selected disabled>
+                                Selecione o status
+                            </option>
+                            <option value="Ativo">Ativo</option>
+                            <option value="Inativo">Inativo</option>
+                        </select>
+                    </div>
                     <div class="BTNs">
                         <button class="btn-salvar" type="submit">
                             Salvar Fornecedor
@@ -73,11 +77,12 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>E-mail</th>
+                        <th>WhatsApp</th>
                         <th>Telefone</th>
-                        <th>Cidade</th>
-                        <th>UF</th>
-                        <th>CEP</th>
+                        <th>E-mail</th>
+                        <th>Endereço</th>
+                        <th>Produto</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody id="tabela">
@@ -85,6 +90,6 @@
             </table>
         </section>
     </main>
-    <script src="/DASHBOARD/JS/cliente.js"></script>
+    <script src="/DASHBOARD/JS/fornecedores.js"></script>
 </body>
 </html>

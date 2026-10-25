@@ -5,17 +5,17 @@ function voltarDashboard(){
 function salvarDados(){
     // Captura os dados dos inputs
     const nome = document.getElementById("nome").value;
-    const whatsapp = document.getElementById("whatsapp").value;
+    const email = document.getElementById("email").value;
     const telefone = document.getElementById("telefone").value;
     const cidade = document.getElementById("cidade").value;
     const uf = document.getElementById("uf").value;
     const cep = document.getElementById("cep").value;
 
     // Reuperar dados salvos
-    let dados = JSON.parse(localStorage.getItem("dados")) || [];
+    let dadoscli = JSON.parse(localStorage.getItem("clientes")) || [];
 
     // Adiciona um novo registro
-    dados.push({
+    dadoscli.push({
         nome: nome,
         email: email,
         telefone: telefone,
@@ -25,14 +25,14 @@ function salvarDados(){
     });
 
     // Salva os dados em formato JSON
-    localStorage.setItem("dados", JSON.stringify(dados));
+    localStorage.setItem("clientes", JSON.stringify(dadoscli));
 
     // Atualizar a tabela
     mostrarDados()
 }
 
 function mostrarDados(){
-    const dados = JSON.parse(localStorage.getItem("dados")) || [];
+    const dados = JSON.parse(localStorage.getItem("clientes")) || [];
     const tabela = document.getElementById("tabela");
 
     tabela.innerHTML = "";

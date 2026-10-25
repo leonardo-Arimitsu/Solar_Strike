@@ -5,3 +5,7 @@ function abrirClientes(){
 function abrirFornecedores(){
     window.open("fornecedores.html");
 }
+
+function abrirFuncionarios(){
+    window.open("funcionarios.html");
+}

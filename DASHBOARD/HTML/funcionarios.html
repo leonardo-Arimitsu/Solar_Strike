@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Funcionários</title>
+    <link rel="stylesheet" href="/DASHBOARD/CSS/funcionarios.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="titulo">Cadastro de Funcionários</h1>
+        <h3 class="descricao">Cadastro Manual de Funcionários</h3>
+        <button class="BTN_voltar" id="BTN_voltar" type="button" onclick="voltarDashboard()">
+            Dashboard
+        </button>
+    </header>
+    <main>
+        <section>
+            <h2>Dados do Funcionário</h2>
+            <!-- Formulário de Cadastro -->
+            <div class="cadastro">
+                <form id="formFuncionario">
+                    <input type="hidden" id="id">
+                    <div class="input-group">
+                        <label>Nome:</label>
+                        <br>
+                        <input type="text" id="nome" required placeholder="Digite o nome do funcionario">
+                    </div>
+                    <div class="input-group">
+                        <label>CPF:</label>
+                        <br>
+                        <input type="text" id="cpf" required placeholder="Digite o CPF do funcionario">
+                    </div>
+                    <div class="input-group">
+                        <label>Telefone:</label>
+                        <br>
+                        <input type="text" id="telefone" required placeholder="Digite o telefone do funcionario">
+                    </div>
+                    <div class="input-group">
+                        <label>E-mail:</label>
+                        <br>
+                        <input type="text" id="email" required placeholder="Digite o email do funcionario">
+                    </div>
+                    <div class="input-group">
+                        <label>Cargo:</label>
+                        <br>
+                        <input type="text" id="cargo" required placeholder="Digite o cargo do funcionario">
+                    </div>
+                    <div class="input-group">
+                        <label>Departamento:</label>
+                        <br>
+                        <input type="text" id="departamento" required placeholder="Digite o departamento do funcionario">
+                    </div>
+                    <div class="input-group">
+                        <label>Data de adimissão:</label>
+                        <br>
+                        <input type="text" id="adimissao" required placeholder="Digite quando o funcionario foi contratado">
+                    </div>
+                    <div class="input-group">
+                        <label>Turno:</label>
+                        <br>
+                        <input type="text" id="turno" required placeholder="Digite o turno do funcionario">
+                    </div>
+                    <div class="input-group">
+                        <select id="status" class="status" required>
+                            <option value="" selected disabled>
+                                Selecione o status
+                            </option>
+                            <option value="Ativo">Ativo</option>
+                            <option value="Desligado">Desligado</option>
+                        </select>
+                    </div>
+                    <div class="BTNs">
+                        <button class="btn-salvar" type="submit">
+                            Salvar Funcionário
+                        </button>
+                        <button type="button" class="btn-limpar" onclick="limparFormulario()">
+                            Novo
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="listar-funcionarios">
+            <h2 class="h2">FuncionáriosCadastrados</h2>
+            <table border="1" class="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Cargo</th>
+                        <th>Departamento</th>
+                        <th>Adimissao</th>
+                        <th>Turno</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela">
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="/DASHBOARD/JS/funcionarios.js"></script>
+</body>
+</html>

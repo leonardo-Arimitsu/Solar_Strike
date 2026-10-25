@@ -1,0 +1,312 @@
+[
+  {
+    "id": "vara-pesca-profissional",
+    "nome": "Vara de Pesca Profissional",
+    "categoria": "pesca",
+    "subcategoria": "varas",
+    "badge": "Destaque",
+    "resumo": "Ação rápida e estrutura leve para pesca esportiva.",
+    "descricao": "Vara desenvolvida para quem pesca com frequência e precisa de resposta rápida na ferrada. Estrutura leve que reduz o cansaço em longas jornadas e boa sensibilidade para perceber o ataque.",
+    "preco": 389.90,
+    "parcelas": 6,
+    "estoque": 12,
+    "imagens": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDqtMYfgPnN_8LQR97HWVdS_9h_K9r9Xp4AZrGsNsw8aolnLbOvkMysdR&s=10"
+    ],
+    "especificacoes": {
+      "Comprimento": "6'0\"",
+      "Ação": "Rápida",
+      "Material": "Carbono",
+      "Indicada para": "Iscas artificiais"
+    }
+  },
+  {
+    "id": "vara-tucunare-6",
+    "nome": "Vara Tucunaré 6'0\"",
+    "categoria": "pesca",
+    "subcategoria": "varas",
+    "badge": "Destaque",
+    "resumo": "Leve, rápida e ideal para iscas artificiais.",
+    "descricao": "Vara pensada para a pesca do tucunaré com iscas artificiais. Leve, com ação rápida e boa capacidade de arremesso.",
+    "preco": 299.90,
+    "parcelas": 6,
+    "estoque": 20,
+    "imagens": [
+      "https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Comprimento": "6'0\"",
+      "Ação": "Rápida",
+      "Indicada para": "Tucunaré"
+    }
+  },
+  {
+    "id": "vara-predator-pro",
+    "nome": "Vara Predator Pro",
+    "categoria": "pesca",
+    "subcategoria": "varas",
+    "badge": "",
+    "resumo": "Potência para peixes de maior porte.",
+    "descricao": "Vara com mais potência no blank, indicada para peixes de maior porte e pescarias em estruturas fechadas.",
+    "preco": 459.90,
+    "parcelas": 8,
+    "estoque": 8,
+    "imagens": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDqtMYfgPnN_8LQR97HWVdS_9h_K9r9Xp4AZrGsNsw8aolnLbOvkMysdR&s=10"
+    ],
+    "especificacoes": {
+      "Ação": "Moderada-rápida",
+      "Material": "Carbono",
+      "Indicada para": "Peixes de maior porte"
+    }
+  },
+  {
+    "id": "carretilha-pro-200",
+    "nome": "Carretilha Pro 200",
+    "categoria": "pesca",
+    "subcategoria": "carretilhas",
+    "badge": "Novo",
+    "resumo": "Sistema de arremesso preciso e recuperação suave.",
+    "descricao": "Carretilha com freio de arremesso ajustável e recuperação suave, para quem busca precisão em cada lançamento.",
+    "preco": 649.90,
+    "parcelas": 10,
+    "estoque": 6,
+    "imagens": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Modelo": "200",
+      "Freio": "Magnético ajustável",
+      "Indicada para": "Pesca esportiva"
+    }
+  },
+  {
+    "id": "carretilha-titan-100",
+    "nome": "Carretilha Titan 100",
+    "categoria": "pesca",
+    "subcategoria": "carretilhas",
+    "badge": "Novo",
+    "resumo": "Controle preciso durante o arremesso.",
+    "descricao": "Carretilha de perfil baixo com controle preciso durante o arremesso e construção resistente.",
+    "preco": 579.90,
+    "parcelas": 10,
+    "estoque": 9,
+    "imagens": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Modelo": "100",
+      "Perfil": "Baixo"
+    }
+  },
+  {
+    "id": "carretilha-black-water",
+    "nome": "Carretilha Black Water",
+    "categoria": "pesca",
+    "subcategoria": "carretilhas",
+    "badge": "",
+    "resumo": "Construção robusta para pesca esportiva.",
+    "descricao": "Carretilha robusta, pensada para pescarias intensas e uso frequente.",
+    "preco": 689.90,
+    "parcelas": 10,
+    "estoque": 5,
+    "imagens": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Construção": "Reforçada",
+      "Indicada para": "Pesca esportiva"
+    }
+  },
+  {
+    "id": "molinete-river-3000",
+    "nome": "Molinete River 3000",
+    "categoria": "pesca",
+    "subcategoria": "molinetes",
+    "badge": "",
+    "resumo": "Recuperação suave e estrutura leve.",
+    "descricao": "Molinete leve, com recuperação suave e tamanho versátil para diferentes tipos de pescaria.",
+    "preco": 329.90,
+    "parcelas": 6,
+    "estoque": 15,
+    "imagens": [
+      "https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tamanho": "3000",
+      "Estrutura": "Leve"
+    }
+  },
+  {
+    "id": "kit-iscas-tucunare",
+    "nome": "Kit Iscas Tucunaré",
+    "categoria": "pesca",
+    "subcategoria": "iscas",
+    "badge": "Mais vendido",
+    "resumo": "Seleção de iscas para diferentes condições de água.",
+    "descricao": "Kit com iscas variadas para você se adaptar às condições da água, da superfície ao fundo.",
+    "preco": 149.90,
+    "parcelas": 3,
+    "estoque": 30,
+    "imagens": [
+      "https://images.tcdn.com.br/img/img_prod/685751/kit_com_as_principais_iscas_artificiais_para_pescaria_de_tucunare_na_amazonia_35393_1_8f6efe62d75bb4ac7ff594cc55d5d89b_20250918024125.jpg"
+    ],
+    "especificacoes": {
+      "Conteúdo": "Kit com iscas variadas",
+      "Indicado para": "Tucunaré"
+    }
+  },
+  {
+    "id": "isca-predator-110",
+    "nome": "Isca Predator 110",
+    "categoria": "pesca",
+    "subcategoria": "iscas",
+    "badge": "",
+    "resumo": "Perfil de natação desenvolvido para predadores.",
+    "descricao": "Isca artificial com perfil de natação pensado para atrair peixes predadores.",
+    "preco": 69.90,
+    "parcelas": 1,
+    "estoque": 40,
+    "imagens": [
+      "https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tamanho": "110 mm",
+      "Tipo": "Artificial"
+    }
+  },
+  {
+    "id": "bolsa-tackle-pro",
+    "nome": "Bolsa Tackle Pro",
+    "categoria": "pesca",
+    "subcategoria": "acessorios",
+    "badge": "",
+    "resumo": "Organização prática para equipamentos e iscas.",
+    "descricao": "Bolsa com compartimentos para organizar iscas, anzóis e acessórios na hora da pescaria.",
+    "preco": 189.90,
+    "parcelas": 3,
+    "estoque": 14,
+    "imagens": [
+      "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tipo": "Bolsa organizadora",
+      "Uso": "Pesca"
+    }
+  },
+  {
+    "id": "mochila-expedition-45l",
+    "nome": "Mochila Expedition 45L",
+    "categoria": "caca",
+    "subcategoria": "mochilas",
+    "badge": "",
+    "resumo": "Grande capacidade e construção resistente.",
+    "descricao": "Mochila de grande capacidade, com construção resistente para longas jornadas em campo.",
+    "preco": 429.90,
+    "parcelas": 8,
+    "estoque": 10,
+    "imagens": [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Capacidade": "45 litros",
+      "Uso": "Campo e expedição"
+    }
+  },
+  {
+    "id": "jaqueta-field-pro",
+    "nome": "Jaqueta Field Pro",
+    "categoria": "caca",
+    "subcategoria": "vestuario",
+    "badge": "Destaque",
+    "resumo": "Proteção e conforto para atividades ao ar livre.",
+    "descricao": "Jaqueta para atividades ao ar livre, com foco em proteção e conforto durante todo o dia.",
+    "preco": 499.90,
+    "parcelas": 8,
+    "estoque": 11,
+    "imagens": [
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tipo": "Jaqueta",
+      "Uso": "Campo"
+    }
+  },
+  {
+    "id": "colete-expedition",
+    "nome": "Colete Expedition",
+    "categoria": "caca",
+    "subcategoria": "vestuario",
+    "badge": "",
+    "resumo": "Organização e praticidade para campo.",
+    "descricao": "Colete com bolsos para manter o essencial sempre à mão durante a atividade.",
+    "preco": 349.90,
+    "parcelas": 6,
+    "estoque": 7,
+    "imagens": [
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tipo": "Colete",
+      "Uso": "Campo"
+    }
+  },
+  {
+    "id": "binoculo-ranger-10x42",
+    "nome": "Binóculo Ranger 10x42",
+    "categoria": "caca",
+    "subcategoria": "optica",
+    "badge": "Novo",
+    "resumo": "Visão clara para observação em campo.",
+    "descricao": "Binóculo com ampliação de 10x e lentes de 42 mm, para observação clara e confortável.",
+    "preco": 799.90,
+    "parcelas": 10,
+    "estoque": 4,
+    "imagens": [
+      "https://images.unsplash.com/photo-1517825738774-7de9363ef735?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Ampliação": "10x",
+      "Objetiva": "42 mm"
+    }
+  },
+  {
+    "id": "kit-outdoor-field",
+    "nome": "Kit Outdoor Field",
+    "categoria": "caca",
+    "subcategoria": "equipamentos",
+    "badge": "",
+    "resumo": "Conjunto compacto para atividades em campo.",
+    "descricao": "Conjunto compacto com itens essenciais para atividades em campo.",
+    "preco": 259.90,
+    "parcelas": 4,
+    "estoque": 18,
+    "imagens": [
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tipo": "Kit",
+      "Uso": "Campo"
+    }
+  },
+  {
+    "id": "kit-field-essentials",
+    "nome": "Kit Field Essentials",
+    "categoria": "caca",
+    "subcategoria": "acessorios",
+    "badge": "",
+    "resumo": "Acessórios essenciais para atividades outdoor.",
+    "descricao": "Acessórios essenciais reunidos em um único kit para suas atividades outdoor.",
+    "preco": 199.90,
+    "parcelas": 3,
+    "estoque": 22,
+    "imagens": [
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tipo": "Kit de acessórios",
+      "Uso": "Campo"
+    }
+  }
+]

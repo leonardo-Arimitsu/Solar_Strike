@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produto | Homo Habilis Caça & Pesca</title>
+
+    <link rel="stylesheet" href="/INDEX/CSS/index.css">
+    <link rel="stylesheet" href="/INDEX/CSS/produto.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="topbar">
+        <div class="container topbar__content">
+            <span>🚚 Enviamos para todo o Brasil</span>
+            <span>Compra segura • Atendimento especializado</span>
+        </div>
+    </div>
+
+
+    <header class="header">
+        <div class="container header__content">
+
+            <a href="index.html" class="logo">
+                <div class="logo__mark">HH</div>
+                <div class="logo__text">
+                    <strong>HOMO HABILIS</strong>
+                    <span>CAÇA & PESCA</span>
+                </div>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Início</a>
+                <a href="pesca.html" class="nav__link" id="navPesca">Pesca</a>
+                <a href="caca.html" class="nav__link" id="navCaca">Caça</a>
+                <a href="index.html#artigos" class="nav__link">Artigos</a>
+                <a href="index.html#contato" class="nav__link">Contato</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="header-login">
+                    <span class="header-login__icon">👤</span>
+                    <span>Entrar</span>
+                </a>
+
+                <button class="cart-button" onclick="openCart()">
+                    <span class="cart-icon">🛒</span>
+                    <span>Carrinho</span>
+                    <strong class="cart-count">0</strong>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- O conteúdo é montado pelo produto.js -->
+        <section class="product-page">
+            <div class="container" id="productRoot">
+                <p class="product-loading">Carregando produto…</p>
+            </div>
+        </section>
+
+        <section class="section related" id="relatedSection" hidden>
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <h2>Você também pode gostar</h2>
+                    </div>
+                </div>
+                <div class="product-grid" id="relatedGrid"></div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container footer__grid">
+
+            <div>
+                <a href="index.html" class="logo logo--footer">
+                    <div class="logo__mark">HH</div>
+                    <div class="logo__text">
+                        <strong>HOMO HABILIS</strong>
+                        <span>CAÇA & PESCA</span>
+                    </div>
+                </a>
+                <p class="footer__description">
+                    Equipamentos para quem vive a natureza.
+                </p>
+            </div>
+
+            <div>
+                <h3>Navegação</h3>
+                <a href="index.html">Início</a>
+                <a href="pesca.html">Pesca</a>
+                <a href="caca.html">Caça</a>
+            </div>
+
+            <div>
+                <h3>Atendimento</h3>
+                <a href="#">WhatsApp</a>
+                <a href="#">Instagram</a>
+                <a href="#">E-mail</a>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                © 2026 Homo Habilis Caça & Pesca.
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal__box">
+
+            <div class="cart-modal__header">
+                <h2>Seu carrinho</h2>
+                <button onclick="closeCart()">×</button>
+            </div>
+
+            <div id="cartItems" class="cart-items"></div>
+
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">R$ 0,00</strong>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="/INDEX/JS/produto.js"></script>
+
+</body>
+
+</html>

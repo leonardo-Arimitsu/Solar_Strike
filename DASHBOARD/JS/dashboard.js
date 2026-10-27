@@ -9,3 +9,7 @@ function abrirFornecedores(){
 function abrirFuncionarios(){
     window.open("funcionarios.html");
 }
+
+function abrirProdutos(){
+    window.open("produtos.html");
+}

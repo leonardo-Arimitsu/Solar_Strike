@@ -277,6 +277,10 @@ th, td {
     color: var(--green-900);
 }
 
+.label{
+    padding-bottom: 1200px;
+}
+
     [contentEditable="true"] {
       &:empty {
         &:not(:focus) {

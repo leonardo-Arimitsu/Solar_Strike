@@ -43,20 +43,38 @@
 
 body {
     min-height: 100vh;                     /* Garante que o corpo ocupe pelo menos 100% da altura da tela */
-    overflow: hidden;                      /* Esconde barras de rolagem desnecessárias */
-    font-family: "Roboto Slab", serif;     /* Aplica a fonte importada */
+    margin: 0;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     display: flex;                         /* Transforma o body em flexbox */
     justify-content: center;               /* Centraliza horizontalmente o conteúdo interno */
     align-items: center;                   /* Centraliza verticalmente o conteúdo interno */
-    position: relative;
 }
 
 .login-container {
-    background-color: var(--green-600);
-    height: 600px;
-    border: var(--border);
-    border-radius: var(--radius);
+    min-height: 600px;
+    width: 500px;
+    box-sizing: border-box;
+}
+
+.icone h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
+.icone p{
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.input-login {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    box-sizing: border-box;
 }

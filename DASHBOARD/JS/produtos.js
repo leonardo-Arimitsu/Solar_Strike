@@ -12,40 +12,38 @@ textarea.addEventListener("input", function() {
 function salvarDados(){
     // Captura os dados dos inputs
     const nome = document.getElementById("nome").value;
-    const cpf = document.getElementById("cpf").value;
-    const telefone = document.getElementById("telefone").value;
-    const email = document.getElementById("email").value;
-    const cargo = document.getElementById("cargo").value;
-    const departamento = document.getElementById("departamento").value;
-    const adimissao = document.getElementById("adimissao").value;
-    const turno = document.getElementById("turno").value;
+    const descricao = document.getElementById("descricao").value;
+    const categoria = document.getElementById("categoria").value;
+    const marca = document.getElementById("marca").value;
+    const fornecedor_produto = document.getElementById("fornecedor_produto").value;
+    const preco = document.getElementById("preco").value;
+    const estoque = document.getElementById("estoque").value;
     const status = document.getElementById("status").value;
 
     // Reuperar dados salvos
-    let dadosfun = JSON.parse(localStorage.getItem("funcionarios")) || [];
+    let dadospro = JSON.parse(localStorage.getItem("funcionarios")) || [];
 
     // Adiciona um novo registro
-    dadosfun.push({
+    dadospro.push({
         nome: nome,
-        cpf: cpf,
-        telefone: telefone,
-        email: email,
-        cargo: cargo,
-        departamento: departamento,
-        adimissao: adimissao,
-        turno: turno,
+        descricao: descricao,
+        categoria: categoria,
+        marca: marca,
+        fornecedor_produto: fornecedor_produto,
+        preco: preco,
+        estoque: estoque,
         status: status
     });
 
     // Salva os dados em formato JSON
-    localStorage.setItem("funcionarios", JSON.stringify(dadosfun));
+    localStorage.setItem("produtos", JSON.stringify(dadospro));
 
     // Atualizar a tabela
     mostrarDados()
 }
 
 function mostrarDados(){
-    const dados = JSON.parse(localStorage.getItem("funcionarios")) || [];
+    const dados = JSON.parse(localStorage.getItem("produtos")) || [];
     const tabela = document.getElementById("tabela");
 
     tabela.innerHTML = "";
@@ -56,39 +54,35 @@ function mostrarDados(){
         const colunaNome = document.createElement("td");
         colunaNome.textContent = item.nome;
 
-        const colunaCPF = document.createElement("td");
-        colunaCPF.textContent = item.cpf;
+        const colunaDescricao = document.createElement("td");
+        colunaDescricao.textContent = item.descricao;
 
-        const colunaTelefone = document.createElement("td");
-        colunaTelefone.textContent = item.telefone;
+        const colunaCategoria = document.createElement("td");
+        colunaCategoria.textContent = item.categoria;
 
-        const colunaEmail = document.createElement("td");
-        colunaEmail.textContent = item.email;
+        const colunaMarca = document.createElement("td");
+        colunaMarca.textContent = item.marca;
 
-        const colunaCargo = document.createElement("td");
-        colunaCargo.textContent = item.cargo;
+        const colunaFornecedor_produto = document.createElement("td");
+        colunaFornecedor_produto.textContent = item.fornecedor_produto;
 
-        const colunaDepartamento = document.createElement("td");
-        colunaDepartamento.textContent = item.departamento;
+        const colunaPreco = document.createElement("td");
+        colunaPreco.textContent = item.preco;
 
-        const colunaAdimissao = document.createElement("td");
-        colunaAdimissao.textContent = item.adimissao;
-
-        const colunaTurno = document.createElement("td");
-        colunaTurno.textContent = item.turno;
+        const colunaEstoque = document.createElement("td");
+        colunaEstoque.textContent = item.estoque;
 
         const colunaStatus = document.createElement("td");
         colunaStatus.textContent = item.status;
 
         linha.append(
             colunaNome,
-            colunaCPF,
-            colunaTelefone,
-            colunaEmail,
-            colunaCargo,
-            colunaDepartamento,
-            colunaAdimissao,
-            colunaTurno,
+            colunaDescricao,
+            colunaCategoria,
+            colunaMarca,
+            colunaFornecedor_produto,
+            colunaPreco,
+            colunaEstoque,
             colunaStatus
         );
 
@@ -97,7 +91,7 @@ function mostrarDados(){
 }
 
 // Detecta quando o formulário é enviado
-document.getElementById("formFuncionario").addEventListener("submit", function(event) {
+document.getElementById("formProduto").addEventListener("submit", function(event) {
     event.preventDefault();
     salvarDados();
 });
@@ -106,5 +100,5 @@ document.getElementById("formFuncionario").addEventListener("submit", function(e
 mostrarDados();
 
 function limparFormulario() {
-    document.getElementById("formFuncionario").reset();
+    document.getElementById("formProduto").reset();
 }

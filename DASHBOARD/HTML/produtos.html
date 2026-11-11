@@ -37,6 +37,11 @@
                         <input type="text" id="categoria" required placeholder="Digite a categoria do produto">
                     </div>
                     <div class="input-group">
+                        <label>Marca:</label>
+                        <br>
+                        <input type="text" id="marca" required placeholder="Digite a marca do produto">
+                    </div>
+                    <div class="input-group">
                         <label>Fornecedor:</label>
                         <br>
                         <input type="text" id="fornecedor_produto" required placeholder="Digite o fornecedor do produto">
@@ -44,7 +49,7 @@
                     <div class="input-group">
                         <label>Preço:</label>
                         <br>
-                        <input type="number" id="preco" required placeholder="Digite o preço do produto">
+                        <input type="number" min="0" value="0" step="0.01" id="preco" required placeholder="Digite o preço do produto">
                     </div>
                     <div class="input-group">
                         <label>Estoque:</label>

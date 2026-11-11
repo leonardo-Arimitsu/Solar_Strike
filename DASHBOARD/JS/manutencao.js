@@ -3,7 +3,7 @@
 ======================================== */
 
 const CHAVE_STORAGE = "manutencoes";
-const URL_DASHBOARD = "/DASHBOARD/dashboard.html"; 
+const URL_DASHBOARD = "/DASHBOARD/HTML/index.html"; 
 
 /* ========================================
    ELEMENTOS

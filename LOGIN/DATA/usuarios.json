@@ -1,0 +1,26 @@
+[
+  {
+    "id": "a1f3c9d2",
+    "nome": "Administrador",
+    "email": "admin@homohabilis.com",
+    "senha": "Admin@2026",
+    "perfil": "admin",
+    "criadoEm": "2026-01-11T10:00:00.000Z"
+  },
+  {
+    "id": "b7e2d4a8",
+    "nome": "Carlos Mendes",
+    "email": "carlos@homohabilis.com",
+    "senha": "Pesca@1234",
+    "perfil": "usuario",
+    "criadoEm": "2026-02-12T10:00:00.000Z"
+  },
+  {
+    "id": "c4d8e1f6",
+    "nome": "Marina Souza",
+    "email": "marina@homohabilis.com",
+    "senha": "Cacar@5678",
+    "perfil": "usuario",
+    "criadoEm": "2026-03-13T10:00:00.000Z"
+  }
+]

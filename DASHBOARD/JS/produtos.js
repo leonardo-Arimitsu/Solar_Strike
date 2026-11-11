@@ -2,6 +2,13 @@ function voltarDashboard(){
     window.location.href = "index.html";
 }
 
+const textarea = document.getElementById("descricao");
+
+textarea.addEventListener("input", function() {
+    this.style.height = "auto";
+    this.style.height = this.scrollHeight + "px";
+});
+
 function salvarDados(){
     // Captura os dados dos inputs
     const nome = document.getElementById("nome").value;

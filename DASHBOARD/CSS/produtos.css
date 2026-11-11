@@ -194,8 +194,12 @@ body {
 .input-group{
     font-size: 35px;
     padding-left: 12px;
-    line-height: 25px;
     padding-top: 10px;
+}
+
+.input-group label{
+    display: block;
+    margin-bottom: 5px;
 }
 
 .input-group input{
@@ -207,11 +211,27 @@ body {
     border-style: none;
     background-color: var(--gray-400);
     color: var(--green-900);
+    margin-bottom: 10px;
 }
 
 .input-group ::placeholder{
     font-style: italic;
     opacity: 1;
+}
+
+.descricao-produto {
+    padding-left: 5px;
+    width: 1000px;
+    min-height: 50px;
+    max-height: 300px;
+    resize: none;
+    overflow-y: auto;
+    box-sizing: border-box;
+    font-size: 25px;
+    border-radius: 6px;
+    border-style: none;
+    background-color: var(--gray-400);
+    color: var(--green-900);
 }
 
 .status{
@@ -262,31 +282,3 @@ th, td {
     text-align: left;
 }
 
-.descricao-produto {
-    display: block;
-    min-height: 60px;
-    max-height: 98px;
-    overflow-x: auto;
-    width: 1000px;
-    line-height: 21px;
-    padding: 10px;
-    font-size: 25px;
-    border-radius: 6px;
-    border-style: none;
-    background-color: var(--gray-400);
-    color: var(--green-900);
-}
-
-.label{
-    padding-bottom: 1200px;
-}
-
-    [contentEditable="true"] {
-      &:empty {
-        &:not(:focus) {
-          &:before {
-            content: attr(data-text);
-          }
-        }
-      }
-    }

@@ -191,47 +191,29 @@ body {
    Cadastro
 ======================================== */
 
-.input-group{
+.input-group {
     font-size: 35px;
     padding-left: 12px;
     padding-top: 10px;
 }
 
-.input-group label{
+.input-group input,
+.input-group textarea {
     display: block;
-    margin-bottom: 5px;
-}
-
-.input-group input{
+    margin: 0 0 15px 0;
     padding-left: 5px;
     width: 1000px;
-    height: 30px;
-    font-size: 25px;
-    border-radius: 6px;
-    border-style: none;
-    background-color: var(--gray-400);
-    color: var(--green-900);
-    margin-bottom: 10px;
-}
-
-.input-group ::placeholder{
-    font-style: italic;
-    opacity: 1;
-}
-
-.descricao-produto {
-    padding-left: 5px;
-    width: 1000px;
-    min-height: 50px;
-    max-height: 300px;
-    resize: none;
-    overflow-y: auto;
     box-sizing: border-box;
     font-size: 25px;
     border-radius: 6px;
     border-style: none;
     background-color: var(--gray-400);
     color: var(--green-900);
+}
+
+.input-group ::placeholder{
+    font-style: italic;
+    opacity: 1;
 }
 
 .status{

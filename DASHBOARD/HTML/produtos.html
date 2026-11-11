@@ -32,37 +32,39 @@
                         <textarea id="descricao" class="descricao-produto" placeholder="Digite a descrição do produto" ></textarea>
                     </div>
                     <div class="input-group">
-                        <label>Telefone:</label>
+                        <label>Categoria:</label>
                         <br>
-                        <input type="text" id="telefone" required placeholder="Digite o telefone da empresa fornecedora">
+                        <input type="text" id="categoria" required placeholder="Digite a categoria do produto">
                     </div>
                     <div class="input-group">
-                        <label>E-mail:</label>
+                        <label>Fornecedor:</label>
                         <br>
-                        <input type="text" id="email" required placeholder="Digite o E-Mail da empresa fornecedora">
+                        <input type="text" id="fornecedor_produto" required placeholder="Digite o fornecedor do produto">
                     </div>
                     <div class="input-group">
-                        <label>Endereço:</label>
+                        <label>Preço:</label>
                         <br>
-                        <input type="text" id="endereco" required placeholder="Digite o endereço da empresa fornecedora">
+                        <input type="number" id="preco" required placeholder="Digite o preço do produto">
                     </div>
                     <div class="input-group">
-                        <label>Produto:</label>
+                        <label>Estoque:</label>
                         <br>
-                        <input type="text" id="produto" required placeholder="Digite o produto fornecido pela empresa">
+                        <input type="number" id="estoque" required placeholder="Digite o o estoque do produto">
                     </div>
                     <div class="input-group">
+                        <label>Status do produto:</label>
                         <select id="status" class="status" required>
                             <option value="" selected disabled>
                                 Selecione o status
                             </option>
-                            <option value="Ativo">Ativo</option>
-                            <option value="Inativo">Inativo</option>
+                            <option value="disponivel">Disponivel</option>
+                            <option value="indisponivel">Indisponivel</option>
+                            <option value="descontinuado">Descontinuado</option>
                         </select>
                     </div>
                     <div class="BTNs">
                         <button class="btn-salvar" type="submit">
-                            Salvar Fornecedor
+                            Salvar Produto
                         </button>
                         <button type="button" class="btn-limpar" onclick="limparFormulario()">
                             Novo
@@ -77,11 +79,11 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Código SKU</th>
-                        <th>Telefone</th>
-                        <th>E-mail</th>
-                        <th>Endereço</th>
-                        <th>Produto</th>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                        <th>Fornecedor</th>
+                        <th>Preço</th>
+                        <th>Estoque</th>
                         <th>Status</th>
                     </tr>
                 </thead>

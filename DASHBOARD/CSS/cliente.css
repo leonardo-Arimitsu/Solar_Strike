@@ -1,9 +1,9 @@
+
 /* ========================================
    VARIÁVEIS
 ======================================== */
 
 :root {
-
     --green-950: #061c16;
     --green-900: #082a20;
     --green-800: #0d3b2d;
@@ -33,14 +33,9 @@
 
     --border: #e1e4df;
 
-    --shadow-sm:
-        0 4px 16px rgba(5, 35, 25, 0.08);
-
-    --shadow-md:
-        0 12px 35px rgba(5, 35, 25, 0.12);
-
-    --shadow-lg:
-        0 22px 60px rgba(5, 35, 25, 0.20);
+    --shadow-sm: 0 4px 16px rgba(5, 35, 25, 0.08);
+    --shadow-md: 0 12px 35px rgba(5, 35, 25, 0.12);
+    --shadow-lg: 0 22px 60px rgba(5, 35, 25, 0.20);
 
     --radius: 12px;
 }
@@ -51,15 +46,25 @@
     box-sizing: border-box;
 }
 
-
 body {
     min-height: 100vh;
-
     font-family: Arial, Helvetica, sans-serif;
-
     background-color: var(--cream);
     color: var(--gray-800);
 }
+
+main {
+    width: 85%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.cadastro,
+.listar-clientes {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 
 
 /* ========================================
@@ -71,19 +76,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px;
+    gap: 16px;
+    padding: 12px 32px;
     background-color: var(--gray-800);
     box-shadow: var(--shadow-md);
 }
 
-.descricao{
+.descricao {
     color: var(--yellow-light);
-    font-size: clamp(18px, 3vw,18px);
+    font-size: 18px;
     font-weight: 600;
     line-height: 1.2;
-    
 }
-
 
 .titulo {
     color: var(--yellow-light);
@@ -96,153 +100,214 @@ body {
    BOTÕES
 ======================================== */
 
-/* ========================================
-   BOTÃO VOLTAR
-======================================== */
-
-.BTN_voltar {
-
+.BTN_voltar,
+.btn-limpar,
+.btn-salvar {
     padding: 12px 24px;
-
     border: none;
     border-radius: var(--radius);
-
-    background-color: var(--orange-dark);
     color: var(--white);
-
     font-size: 15px;
     font-weight: 700;
-
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
 
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
+.BTN_voltar {
+    background-color: var(--orange-dark);
 }
 
 .BTN_voltar:hover {
     background-color: var(--orange);
-    transform: translateY(-2px);
 }
 
-
-.BTN_voltar:active {
-    transform: translateY(0);
-}
-
-/* ========================================
-   BOTÃO LIMPAR
-======================================== */
-
-.btn-limpar {
-    padding: 12px 24px;
-    border: none;
-    border-radius: var(--radius);
+.btn-limpar,
+.btn-salvar {
     background-color: var(--water-700);
-    color: var(--white);
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
-    
 }
 
-.btn-limpar:hover {
-    background-color: var(--water-800);
-    transform: translateY(-2px);
-}
-
-
-.btn-limpar:active {
-    transform: translateY(0);
-}
-
-/* ========================================
-   BOTÃO SALVAR
-======================================== */
-
-.btn-salvar{
-    padding: 12px 24px;
-    border: none;
-    border-radius: var(--radius);
-    background-color: var(--water-700);
-    color: var(--white);
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
-}
-
+.btn-limpar:hover,
 .btn-salvar:hover {
     background-color: var(--water-800);
+}
+
+.BTN_voltar:hover,
+.btn-limpar:hover,
+.btn-salvar:hover {
     transform: translateY(-2px);
 }
 
-
+.BTN_voltar:active,
+.btn-limpar:active,
 .btn-salvar:active {
     transform: translateY(0);
 }
 
 /* ========================================
-   Cadastro
+   CADASTRO
 ======================================== */
 
-.input-group{
-    font-size: 35px;
-    padding-left: 12px;
-    line-height: 25px;
-    padding-top: 10px;
+.cadastro {
+    padding: 24px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
 }
 
-.input-group input{
-    padding-left: 5px;
-    width: 1000px;
-    height: 30px;
-    font-size: 25px;
-    border-radius: 6px;
-    border-style: none;
-    background-color: var(--gray-400);
+h2 {
+    color: var(--green-800);
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+/* Grade de campos */
+
+.grade {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 24px;
+}
+
+/* Campos do formulário */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 18px;
+    font-weight: 600;
     color: var(--green-900);
 }
 
-.input-group ::placeholder{
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 8px 10px;
+    font-family: inherit;
+    font-size: 18px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background-color: var(--gray-200);
+    color: var(--green-900);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.input-group input,
+.input-group select {
+    height: 44px;
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.input-group ::placeholder {
     font-style: italic;
+    color: var(--gray-600);
     opacity: 1;
 }
 
-.BTNs{
-    width: 1000px;
-    padding-top: 20px;
-    min-height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 32px;
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--water-700);
+    background-color: var(--white);
 }
 
-.h2{
-    padding-bottom: 15px;
+/* Campo que ocupa a grade inteira */
+
+.input-group--cheio {
+    grid-column: 1 / -1;
 }
+
+/* Mensagem de erro */
+
+.erro {
+    margin-top: 16px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background-color: #fbe9dc;
+    color: var(--orange-dark);
+    font-weight: 700;
+}
+
+/* ========================================
+   BOTÕES DO FORMULÁRIO
+======================================== */
+
+.BTNs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 24px;
+}
+
+/* ========================================
+   TÍTULOS
+======================================== */
+
+.h2 {
+    margin-bottom: 15px;
+}
+
+/* ========================================
+   TABELA
+======================================== */
 
 .tabela {
-    margin: auto;
+    width: 100%;
     border-collapse: collapse;
-    height: 30px;
-    width: 1250px;
-    background-color: var(--gray-600);
-    color: var(--green-950);
 }
 
-tr {
-    display: table-row; /* Garante que cada linha quebre corretamente */
-}
-
-th, td {
+.tabela th,
+.tabela td {
+    border: 1px solid var(--gray-200);
     padding: 8px;
-    border: 1px solid var(--green-900);
     text-align: left;
+}
+
+.tabela thead th {
+    background-color: var(--gray-800);
+    color: var(--yellow-light);
+    font-size: 15px;
+}
+
+.tabela-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 640px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+
+    .grade {
+        grid-template-columns: 1fr;
+    }
+
+    .BTNs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
 }

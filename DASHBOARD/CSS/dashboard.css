@@ -147,7 +147,11 @@ body {
 
     padding: 60px 40px;
 
-    background-color: var(--green-700);
+    background:
+        var(--cream);
+
+    color:
+        var(--gray-800);
 
     display: flex;
     flex-direction: column;
@@ -174,7 +178,7 @@ body {
 
     margin-bottom: 10px;
 
-    color: var(--yellow);
+    color: var(--green-600);
 
     font-size: clamp(32px, 5vw, 60px);
     font-weight: 700;
@@ -183,7 +187,7 @@ body {
 
 .boas-vindas p {
 
-    color: var(--cream);
+    color: var(--gray-600);
 
     font-size: 18px;
 }
@@ -221,7 +225,7 @@ body {
     border: 1px solid var(--border);
     border-radius: var(--radius);
 
-    background-color: var(--water-500);
+    background-color: var(--white);
     color: var(--gray-800);
 
     box-shadow: var(--shadow-sm);
@@ -239,8 +243,34 @@ body {
         transform 0.25s ease,
         box-shadow 0.25s ease,
         border-color 0.25s ease;
+    border-color: var(--border);
 }
 
+.card:nth-child(1) {border-left: 6px solid var(--yellow);}
+.card:nth-child(2) {border-left: 6px solid var(--green-800);}
+.card:nth-child(3) {border-left: 6px solid var(--orange);}
+.card:nth-child(4) {
+    position: relative;
+    overflow: hidden;
+}
+
+.card:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+
+    background: linear-gradient(
+        to bottom,
+        var(--water-800),
+        var(--green-800)
+    );
+
+    border-radius: var(--radius) 0 0 var(--radius);
+}
+.card:nth-child(5) {border-left: 6px solid var(--gray-600);}
 
 .card:hover {
 
@@ -282,7 +312,7 @@ body {
 
     margin-bottom: 10px;
 
-    color: var(--green-800);
+    color: var(--gray-800);
 
     font-size: 24px;
 }
@@ -294,7 +324,7 @@ body {
 
 .card p {
 
-    color: var(--yellow);
+    color: var(--gray-600);
 
     font-size: 15px;
 

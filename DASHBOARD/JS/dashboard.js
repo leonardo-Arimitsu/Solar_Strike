@@ -10,6 +10,12 @@ function abrirFuncionarios(){
     window.open("funcionarios.html");
 }
 
+
+function abrirProdutos(){
+    window.open("produtos.html");
+}
+
+
 function abrirManutencao(){
     window.open("manutencao.html");
 }

@@ -272,7 +272,7 @@ h2 {
 .tabela td {
     border: 1px solid var(--gray-200);
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
 .tabela thead th {

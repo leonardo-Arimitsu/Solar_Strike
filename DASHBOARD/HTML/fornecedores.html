@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Fornecedores</title>
-    <link rel="stylesheet" href="/DASHBOARD/CSS/fornecedores.css">
+    <link rel="stylesheet" href="/DASHBOARD/CSS/abas.css">
 </head>
 <body>
     <header class="cabecalho">
@@ -15,50 +15,46 @@
         </button>
     </header>
     <main>
-        <section>
+        <section class="cadastro">
             <h2>Dados do Fornecedor</h2>
             <!-- Formulário de Cadastro -->
-            <div class="cadastro">
                 <form id="formFornecedor">
                     <input type="hidden" id="id">
-                    <div class="input-group">
-                        <label>Nome:</label>
-                        <br>
-                        <input type="text" id="nome" required placeholder="Digite o nome da empresa fornecedora">
-                    </div>
-                    <div class="input-group">
-                        <label>WhatsApp:</label>
-                        <br>
-                        <input type="text" id="whatsapp" required placeholder="Digite o WhatsApp da empresa fornecedora">
-                    </div>
-                    <div class="input-group">
-                        <label>Telefone:</label>
-                        <br>
-                        <input type="text" id="telefone" required placeholder="Digite o telefone da empresa fornecedora">
-                    </div>
-                    <div class="input-group">
-                        <label>E-mail:</label>
-                        <br>
-                        <input type="text" id="email" required placeholder="Digite o E-Mail da empresa fornecedora">
-                    </div>
-                    <div class="input-group">
-                        <label>Endereço:</label>
-                        <br>
-                        <input type="text" id="endereco" required placeholder="Digite o endereço da empresa fornecedora">
-                    </div>
-                    <div class="input-group">
-                        <label>Produto:</label>
-                        <br>
-                        <input type="text" id="produto" required placeholder="Digite o produto fornecido pela empresa">
-                    </div>
-                    <div class="input-group">
-                        <select id="status" class="status" required>
-                            <option value="" selected disabled>
-                                Selecione o status
-                            </option>
-                            <option value="Ativo">Ativo</option>
-                            <option value="Inativo">Inativo</option>
-                        </select>
+                    <div class="grade">
+                        <div class="input-group">
+                            <label>Nome:</label>
+                            <input type="text" id="nome" required placeholder="Digite o nome da empresa fornecedora">
+                        </div>
+                        <div class="input-group">
+                            <label>WhatsApp:</label>
+                            <input type="text" id="whatsapp" required placeholder="Digite o WhatsApp da empresa fornecedora">
+                        </div>
+                        <div class="input-group">
+                            <label>Telefone:</label>
+                            <input type="text" id="telefone" required placeholder="Digite o telefone da empresa fornecedora">
+                        </div>
+                        <div class="input-group">
+                            <label>E-mail:</label>
+                            <input type="text" id="email" required placeholder="Digite o E-Mail da empresa fornecedora">
+                        </div>
+                        <div class="input-group">
+                            <label>Endereço:</label>
+                            <input type="text" id="endereco" required placeholder="Digite o endereço da empresa fornecedora">
+                        </div>
+                        <div class="input-group">
+                            <label>Produto:</label>
+                            <input type="text" id="produto" required placeholder="Digite o produto fornecido pela empresa">
+                        </div>
+                        <div class="input-group">
+                            <label>Status do Fornecedor</label>
+                            <select id="status" class="status" required>
+                                <option value="" selected disabled>
+                                    Selecione o status
+                                </option>
+                                <option value="Ativo">Ativo</option>
+                                <option value="Inativo">Inativo</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="BTNs">
                         <button class="btn-salvar" type="submit">
@@ -67,27 +63,28 @@
                         <button type="button" class="btn-limpar" onclick="limparFormulario()">
                             Novo
                         </button>
-                    </div>
                 </form>
             </div>
         </section>
         <section class="listar-fornecedores">
-            <h2 class="h2">Fornecedores Cadastrados</h2>
-            <table border="1" class="tabela">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>WhatsApp</th>
-                        <th>Telefone</th>
-                        <th>E-mail</th>
-                        <th>Endereço</th>
-                        <th>Produto</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody id="tabela">
-                </tbody>
-            </table>
+            <div class="tabela-wrapper">
+                <h2 class="h2">Fornecedores Cadastrados</h2>
+                <table border="1" class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>WhatsApp</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Endereço</th>
+                            <th>Produto</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela">
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
     <script src="/DASHBOARD/JS/fornecedores.js"></script>

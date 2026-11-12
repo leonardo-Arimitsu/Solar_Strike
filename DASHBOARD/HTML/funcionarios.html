@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Funcionários</title>
-    <link rel="stylesheet" href="/DASHBOARD/CSS/funcionarios.css">
+    <link rel="stylesheet" href="/DASHBOARD/CSS/abas.css">
 </head>
 <body>
     <header class="cabecalho">
@@ -15,60 +15,54 @@
         </button>
     </header>
     <main>
-        <section>
+        <section class="cadastro">
             <h2>Dados do Funcionário</h2>
             <!-- Formulário de Cadastro -->
-            <div class="cadastro">
                 <form id="formFuncionario">
                     <input type="hidden" id="id">
-                    <div class="input-group">
-                        <label>Nome:</label>
-                        <br>
-                        <input type="text" id="nome" required placeholder="Digite o nome do funcionario">
-                    </div>
-                    <div class="input-group">
-                        <label>CPF:</label>
-                        <br>
-                        <input type="text" id="cpf" required placeholder="Digite o CPF do funcionario">
-                    </div>
-                    <div class="input-group">
-                        <label>Telefone:</label>
-                        <br>
-                        <input type="text" id="telefone" required placeholder="Digite o telefone do funcionario">
-                    </div>
-                    <div class="input-group">
-                        <label>E-mail:</label>
-                        <br>
-                        <input type="text" id="email" required placeholder="Digite o email do funcionario">
-                    </div>
-                    <div class="input-group">
-                        <label>Cargo:</label>
-                        <br>
-                        <input type="text" id="cargo" required placeholder="Digite o cargo do funcionario">
-                    </div>
-                    <div class="input-group">
-                        <label>Departamento:</label>
-                        <br>
-                        <input type="text" id="departamento" required placeholder="Digite o departamento do funcionario">
-                    </div>
-                    <div class="input-group">
-                        <label>Data de adimissão:</label>
-                        <br>
-                        <input type="text" id="adimissao" required placeholder="Digite quando o funcionario foi contratado">
-                    </div>
-                    <div class="input-group">
-                        <label>Turno:</label>
-                        <br>
-                        <input type="text" id="turno" required placeholder="Digite o turno do funcionario">
-                    </div>
-                    <div class="input-group">
-                        <select id="status" class="status" required>
-                            <option value="" selected disabled>
-                                Selecione o status
-                            </option>
-                            <option value="Ativo">Ativo</option>
-                            <option value="Desligado">Desligado</option>
-                        </select>
+                    <div class="grade">
+                        <div class="input-group">
+                            <label>Nome:</label>
+                            <input type="text" id="nome" required placeholder="Digite o nome do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>CPF:</label>
+                            <input type="text" id="cpf" required placeholder="Digite o CPF do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>Telefone:</label>
+                            <input type="text" id="telefone" required placeholder="Digite o telefone do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>E-mail:</label>
+                            <input type="text" id="email" required placeholder="Digite o email do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>Cargo:</label>
+                            <input type="text" id="cargo" required placeholder="Digite o cargo do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>Departamento:</label>
+                            <input type="text" id="departamento" required placeholder="Digite o departamento do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>Data de adimissão:</label>
+                            <input type="text" id="adimissao" required placeholder="Digite quando o funcionario foi contratado">
+                        </div>
+                        <div class="input-group">
+                            <label>Turno:</label>
+                            <input type="text" id="turno" required placeholder="Digite o turno do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>Status do funcionario</label>
+                            <select id="status" class="status" required>
+                                <option value="" selected disabled>
+                                    Selecione o status
+                                </option>
+                                <option value="Ativo">Ativo</option>
+                                <option value="Desligado">Desligado</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="BTNs">
                         <button class="btn-salvar" type="submit">
@@ -79,7 +73,6 @@
                         </button>
                     </div>
                 </form>
-            </div>
         </section>
         <section class="listar-funcionarios">
             <h2 class="h2">FuncionáriosCadastrados</h2>

@@ -1,0 +1,313 @@
+
+/* ========================================
+   VARIÁVEIS
+======================================== */
+
+:root {
+    --green-950: #061c16;
+    --green-900: #082a20;
+    --green-800: #0d3b2d;
+    --green-700: #14513c;
+    --green-600: #1c6748;
+
+    --water-900: #063b45;
+    --water-800: #075665;
+    --water-700: #087084;
+    --water-500: #1495a5;
+
+    --yellow: #e4b52d;
+    --yellow-light: #f3d15c;
+
+    --orange: #d97b24;
+    --orange-dark: #ad5416;
+
+    --white: #ffffff;
+    --cream: #f5f4ed;
+
+    --gray-50: #fafafa;
+    --gray-100: #f0f1ee;
+    --gray-200: #dfe2dd;
+    --gray-400: #9aa29b;
+    --gray-600: #626b65;
+    --gray-800: #252c28;
+
+    --border: #e1e4df;
+
+    --shadow-sm: 0 4px 16px rgba(5, 35, 25, 0.08);
+    --shadow-md: 0 12px 35px rgba(5, 35, 25, 0.12);
+    --shadow-lg: 0 22px 60px rgba(5, 35, 25, 0.20);
+
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cream);
+    color: var(--gray-800);
+}
+
+main {
+    width: 85%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.cadastro,
+.listar-clientes {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 32px;
+    background-color: var(--gray-800);
+    box-shadow: var(--shadow-md);
+}
+
+.descricao {
+    color: var(--yellow-light);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.titulo {
+    color: var(--yellow-light);
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.BTN_voltar,
+.btn-limpar,
+.btn-salvar {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.BTN_voltar {
+    background-color: var(--orange-dark);
+}
+
+.BTN_voltar:hover {
+    background-color: var(--orange);
+}
+
+.btn-limpar,
+.btn-salvar {
+    background-color: var(--water-700);
+}
+
+.btn-limpar:hover,
+.btn-salvar:hover {
+    background-color: var(--water-800);
+}
+
+.BTN_voltar:hover,
+.btn-limpar:hover,
+.btn-salvar:hover {
+    transform: translateY(-2px);
+}
+
+.BTN_voltar:active,
+.btn-limpar:active,
+.btn-salvar:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   CADASTRO
+======================================== */
+
+.cadastro {
+    padding: 24px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+h2 {
+    color: var(--green-800);
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+/* Grade de campos */
+
+.grade {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 24px;
+}
+
+/* Campos do formulário */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--green-900);
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 8px 10px;
+    font-family: inherit;
+    font-size: 18px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background-color: var(--gray-200);
+    color: var(--green-900);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.input-group input,
+.input-group select {
+    height: 44px;
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.input-group ::placeholder {
+    font-style: italic;
+    color: var(--gray-600);
+    opacity: 1;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--water-700);
+    background-color: var(--white);
+}
+
+/* Campo que ocupa a grade inteira */
+
+.input-group--cheio {
+    grid-column: 1 / -1;
+}
+
+/* Mensagem de erro */
+
+.erro {
+    margin-top: 16px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background-color: #fbe9dc;
+    color: var(--orange-dark);
+    font-weight: 700;
+}
+
+/* ========================================
+   BOTÕES DO FORMULÁRIO
+======================================== */
+
+.BTNs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 24px;
+}
+
+/* ========================================
+   TÍTULOS
+======================================== */
+
+.h2 {
+    margin-bottom: 15px;
+}
+
+/* ========================================
+   TABELA
+======================================== */
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th,
+.tabela td {
+    border: 1px solid var(--gray-200);
+    padding: 8px;
+    text-align: center;
+}
+
+.tabela thead th {
+    background-color: var(--gray-800);
+    color: var(--yellow-light);
+    font-size: 15px;
+}
+
+.tabela-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 640px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+
+    .grade {
+        grid-template-columns: 1fr;
+    }
+
+    .BTNs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}

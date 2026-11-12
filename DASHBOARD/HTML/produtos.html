@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Produtos</title>
-    <link rel="stylesheet" href="/DASHBOARD/CSS/produtos.css">
+    <link rel="stylesheet" href="/DASHBOARD/CSS/abas.css">
 </head>
 <body>
     <header class="cabecalho">
@@ -15,57 +15,52 @@
         </button>
     </header>
     <main>
-        <section>
+        <section class="cadastro">
             <h2>Dados do Produto</h2>
             <!-- Formulário de Cadastro -->
-            <div class="cadastro">
+            
                 <form id="formProduto">
                     <input type="hidden" id="id">
-                    <div class="input-group">
-                        <label>Nome:</label>
-                        <br>
-                        <input type="text" id="nome" required placeholder="Digite o nome do produto">
-                    </div>
-                    <div class="input-group">
-                        <label class="label">Descrição:</label>
-                        <br>
-                        <textarea id="descricao" class="descricao-produto" placeholder="Digite a descrição do produto" ></textarea>
-                    </div>
-                    <div class="input-group">
-                        <label>Categoria:</label>
-                        <br>
-                        <input type="text" id="categoria" required placeholder="Digite a categoria do produto">
-                    </div>
-                    <div class="input-group">
-                        <label>Marca:</label>
-                        <br>
-                        <input type="text" id="marca" required placeholder="Digite a marca do produto">
-                    </div>
-                    <div class="input-group">
-                        <label>Fornecedor:</label>
-                        <br>
-                        <input type="text" id="fornecedor_produto" required placeholder="Digite o fornecedor do produto">
-                    </div>
-                    <div class="input-group">
-                        <label>Preço:</label>
-                        <br>
-                        <input type="number" min="0" value="0" step="0.01" id="preco" required placeholder="Digite o preço do produto">
-                    </div>
-                    <div class="input-group">
-                        <label>Estoque:</label>
-                        <br>
-                        <input type="number" id="estoque" required placeholder="Digite o o estoque do produto">
-                    </div>
-                    <div class="input-group">
-                        <label>Status do produto:</label>
-                        <select id="status" class="status" required>
-                            <option value="" selected disabled>
-                                Selecione o status
-                            </option>
-                            <option value="disponivel">Disponivel</option>
-                            <option value="indisponivel">Indisponivel</option>
-                            <option value="descontinuado">Descontinuado</option>
-                        </select>
+                    <div class="grade">
+                        <div class="input-group">
+                            <label>Nome:</label>
+                            <input type="text" id="nome" required placeholder="Digite o nome do produto">
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Descrição:</label>
+                            <textarea id="descricao" class="descricao-produto" placeholder="Digite a descrição do produto" ></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>Categoria:</label>
+                            <input type="text" id="categoria" required placeholder="Digite a categoria do produto">
+                        </div>
+                        <div class="input-group">
+                            <label>Marca:</label>
+                            <input type="text" id="marca" required placeholder="Digite a marca do produto">
+                        </div>
+                        <div class="input-group">
+                            <label>Fornecedor:</label>
+                            <input type="text" id="fornecedor_produto" required placeholder="Digite o fornecedor do produto">
+                        </div>
+                        <div class="input-group">
+                            <label>Preço:</label>
+                            <input type="number" min="0" value="0" step="0.01" id="preco" required placeholder="Digite o preço do produto">
+                        </div>
+                        <div class="input-group">
+                            <label>Estoque:</label>
+                            <input type="number" id="estoque" required placeholder="Digite o o estoque do produto">
+                        </div>
+                        <div class="input-group">
+                            <label>Status do produto:</label>
+                            <select id="status" class="status" required>
+                                <option value="" selected disabled>
+                                    Selecione o status
+                                </option>
+                                <option value="disponivel">Disponivel</option>
+                                <option value="indisponivel">Indisponivel</option>
+                                <option value="descontinuado">Descontinuado</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="BTNs">
                         <button class="btn-salvar" type="submit">
@@ -76,7 +71,6 @@
                         </button>
                     </div>
                 </form>
-            </div>
         </section>
         <section class="listar-produtos">
             <h2 class="h2">Produtos Cadastrados</h2>

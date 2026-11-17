@@ -89,7 +89,7 @@ body {
 
 .titulo {
 
-    color: var(--yellow-light);
+    color: var(--yellow);
 
     font-size: clamp(24px, 3vw, 40px);
     font-weight: 600;
@@ -249,27 +249,7 @@ body {
 .card:nth-child(1) {border-left: 6px solid var(--yellow);}
 .card:nth-child(2) {border-left: 6px solid var(--green-800);}
 .card:nth-child(3) {border-left: 6px solid var(--orange);}
-.card:nth-child(4) {
-    position: relative;
-    overflow: hidden;
-}
-
-.card:nth-child(4)::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 6px;
-    height: 100%;
-
-    background: linear-gradient(
-        to bottom,
-        var(--water-800),
-        var(--green-800)
-    );
-
-    border-radius: var(--radius) 0 0 var(--radius);
-}
+.card:nth-child(4) {border-left: 6px solid var(--green-600);}
 .card:nth-child(5) {border-left: 6px solid var(--gray-600);}
 
 .card:hover {

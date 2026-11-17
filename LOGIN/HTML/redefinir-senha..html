@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Homo Habilis: Caça e Pesca</title>
+    <link rel="stylesheet" href="/LOGIN/CSS/login.css">
+</head>
+<body>
+    <main>
+        <div class="login-container">
+
+            <div class="icone">
+                <h1>Altere sua senha</h1>
+                <p>Digite sua nova senha abaixo:</p>
+            </div>
+
+            <form class="login" id="form-cadastro" novalidate>
+
+                <div class="input-group">
+
+                    <span class="password-label"> Senha:</span>
+
+                    <div class="password-holder input-password-field">
+
+                        <input class="input-password"
+                               type="password"
+                               id="password"
+                               name="password"
+                               placeholder="Digite sua Senha"
+                               autocomplete="new-password"
+                               aria-label="Senha"
+                               required>
+
+                        <button type="button"
+                                class="toggle-password"
+                                aria-label="Mostrar senha"
+                                aria-pressed="false">
+                            <img src="/Imagens/eye-icon-size_16.png" alt="">
+                        </button>
+
+                    </div>
+
+                    <span class="confirm-password-label">Confirme sua Senha:</span>
+
+                    <div class="password-holder input-confirm-field">
+
+                        <input class="input-password"
+                               type="password"
+                               id="confirm-password"
+                               name="confirm-password"
+                               placeholder="Confirme sua Senha"
+                               autocomplete="new-password"
+                               aria-label="Confirmar senha"
+                               required>
+
+                        <button type="button"
+                                class="toggle-password"
+                                aria-label="Mostrar senha"
+                                aria-pressed="false">
+                            <img src="/Imagens/eye-icon-size_16.png" alt="">
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="options">
+
+                    <button class="login-entry"
+                            id="btn-cadastrar"
+                            type="submit">
+                        <span>Alterar Senha</span>
+                    </button>
+
+                    <span class="no-account">Não esqueça dela dessa vez, ok?</span>
+
+                </div>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -9,14 +9,19 @@
 <body>
     <main>
         <div class="login-container">
+
             <div class="icone">
                 <h1>Login</h1>
                 <p>Bem-vindo de volta, acesse sua conta:</p>
             </div>
 
             <form class="login" id="form-login" novalidate>
+
                 <div class="input-group">
-                    <input class="input-login"
+
+                    <span class="email-label">E-mail:</span>
+
+                    <input class="input-login input-email"
                            type="email"
                            id="email"
                            name="email"
@@ -25,7 +30,10 @@
                            aria-label="E-mail"
                            required>
 
-                    <div class="password-holder">
+                    <span class="password-label">Senha:</span>
+
+                    <div class="password-holder input-password-field">
+
                         <input class="input-password"
                                type="password"
                                id="password"
@@ -37,28 +45,47 @@
 
                         <button type="button"
                                 id="toggle-password"
+                                class="toggle-password"
                                 aria-label="Mostrar senha"
                                 aria-pressed="false">
+
                             <img src="/Imagens/eye-icon-size_16.png" alt="">
+
                         </button>
                     </div>
 
-                    <p class="mensagem-login" id="mensagem-login" role="alert" hidden></p>
+                    <p class="mensagem-login"
+                       id="mensagem-login"
+                       role="alert"
+                       hidden></p>
+
                 </div>
 
                 <div class="options">
-                    <a href="#">Esqueci a Senha!</a>
 
-                    <button class="login-entry" id="btn-entrar" type="submit">
+                    <div class="login-options">
+
+                        <label class="remember-me">
+                            <input type="checkbox" id="remember-me">
+                            <span>Lembre de mim</span>
+                        </label>
+
+                        <a class="i-forgor" href="/LOGIN/HTML/esqueci-senha.html">
+                            Esqueci a Senha!
+                        </a>
+
+                    </div>
+
+                    <button class="login-entry"
+                        id="btn-entrar"
+                        type="submit">
                         <span>Entrar</span>
                     </button>
 
-                    <label class="remember-me">
-                        <input type="checkbox" id="remember-me">
-                        <span>Lembre de mim</span>
-                    </label>
-
-                    <span class="no-account">Não tem uma conta? <a href="#">Crie uma!</a></span>
+                    <span class="no-account">
+                        Não tem uma conta?
+                        <a href="/LOGIN/HTML/cadastro.html">Crie uma!</a>
+                    </span>
                 </div>
             </form>
         </div>

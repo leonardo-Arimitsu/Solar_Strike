@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Homo Habilis: Caça e Pesca</title>
+    <link rel="stylesheet" href="/LOGIN/CSS/login.css">
+</head>
+<body>
+    <main>
+        <div class="login-container">
+
+            <div class="icone">
+                <h1>Esqueci a senha!</h1>
+                <p>Digite o email associado à sua conta para receber um link de recuperação na sua caixa de entrada:</p>
+            </div>
+
+            <form class="login" id="form-login" novalidate>
+
+                <div class="input-group recovery-input">
+
+                    <span class="email-label">E-mail:</span>
+
+                    <input class="input-login input-email"
+                           type="email"
+                           id="email"
+                           name="email"
+                           placeholder="Digite seu E-mail"
+                           autocomplete="email"
+                           aria-label="E-mail"
+                           required>
+
+                </div>
+
+                <div class="options">
+
+                    <button class="login-entry"
+                        id="btn-entrar"
+                        type="submit">
+                        <span>Enviar link de recuperação</span>
+                    </button>
+
+                    <a href="/LOGIN/HTML/redefinir-senha..html"> Sneaky link.</a>
+
+                    <span class="no-account">
+                        Voltar para a página de Login?
+                        <a href="/LOGIN/HTML/index.html">Clique aqui.</a>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="/LOGIN/JS/login.js"></script>
+</body>
+</html>

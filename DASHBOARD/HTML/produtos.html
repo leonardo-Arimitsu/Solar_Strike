@@ -8,10 +8,8 @@
 </head>
 <body>
     <header class="cabecalho">
-        <div class="cabecalho-textos">
-            <h1 class="titulo">Cadastro de Produtos</h1>
-            <h3 class="descricao">Cadastro Manual de Produtos</h3>
-        </div>
+        <h1 class="titulo">Cadastro de Produtos</h1>
+        <h3 class="descricao">Cadastro Manual de Produtos</h3>
         <button class="BTN_voltar" id="BTN_voltar" type="button" onclick="voltarDashboard()">
             Dashboard
         </button>
@@ -19,104 +17,135 @@
     <main>
         <section class="cadastro">
             <h2>Dados do Produto</h2>
+
             <form id="formProduto">
+                <input type="hidden" id="id">
                 <div class="grade">
-                    <input type="hidden" id="id">
-                    <div class="input-group">
-                        <label for="id">ID:</label>
-                        <input type="number" id="id" min="1" step="1"
-                            required placeholder="Digite o ID do produto">
-                    </div>
-                    <div class="input-group">
+
+                    <div class="input-group input-group--cheio">
                         <label for="nome">Nome:</label>
                         <input type="text" id="nome" required placeholder="Digite o nome do produto">
                     </div>
+
+                    <div class="input-group input-group--cheio">
+                        <label for="resumo">Resumo (texto curto do card):</label>
+                        <input type="text" id="resumo" placeholder="Ex: Leve, rápida e ideal para iscas artificiais">
+                    </div>
+
+                    <div class="input-group input-group--cheio">
+                        <label for="descricao">Descrição:</label>
+                        <textarea id="descricao" class="descricao-produto" placeholder="Digite a descrição do produto"></textarea>
+                    </div>
+
                     <div class="input-group">
                         <label for="categoria">Categoria:</label>
-                        <input type="text" id="categoria" required placeholder="Digite a categoria do produto">
+                        <select id="categoria" required>
+                            <option value="" selected disabled>Selecione a categoria</option>
+                            <option value="pesca">Pesca</option>
+                            <option value="caca">Caça</option>
+                        </select>
                     </div>
+
                     <div class="input-group">
-                        <label for="sub-categoria">Sub-categoria:</label>
-                        <textarea id="sub-categoria" class="descricao-produto"
-                            placeholder="Digite a sub-categoria do produto"></textarea>
+                        <label for="subcategoria">Subcategoria:</label>
+                        <input type="text" id="subcategoria" list="lista-sub" required placeholder="Ex: varas, carretilhas, iscas...">
+                        <datalist id="lista-sub"></datalist>
                     </div>
+
                     <div class="input-group">
-                        <label for="badge">Badge:</label>
-                        <input type="text" id="badge" required placeholder="Digite a badge do produto">
+                        <label for="marca">Marca:</label>
+                        <input type="text" id="marca" placeholder="Digite a marca do produto">
                     </div>
+
                     <div class="input-group">
-                        <label for="resumo">Resumo:</label>
-                        <input type="text" id="resumo" required placeholder="Digite um resumo do produto">
+                        <label for="fornecedor_produto">Fornecedor:</label>
+                        <input type="text" id="fornecedor_produto" placeholder="Digite o fornecedor do produto">
                     </div>
-                    <div class="input-group">
-                        <label for="descricao">Descrição:</label>
-                        <textarea id="descricao" class="descricao-produto"
-                            placeholder="Digite a descrição do produto"></textarea>
-                    </div>
+
                     <div class="input-group">
                         <label for="preco">Preço:</label>
-                        <input type="number" min="0" value="0" step="0.01"
-                            id="preco" required placeholder="Digite o preço do produto">
+                        <input type="number" min="0" step="0.01" id="preco" required placeholder="Digite o preço do produto">
                     </div>
+
                     <div class="input-group">
-                        <label for="parcela">Parcelas:</label>
-                        <input type="number" min="0" value="0" step="1"
-                            id="parcela" required placeholder="Digite a quantidade de parcelas">
+                        <label for="parcelas">Parcelas:</label>
+                        <input type="number" min="1" value="1" id="parcelas" required>
                     </div>
+
                     <div class="input-group">
                         <label for="estoque">Estoque:</label>
-                        <input type="number" min="0" step="1"
-                            id="estoque" required placeholder="Digite o estoque do produto">
+                        <input type="number" min="0" id="estoque" required placeholder="Digite o estoque do produto">
                     </div>
-                    <div class="input-group">
-                        <label for="imagem">Imagem:</label>
-                        <input type="file" accept="image/*" id="imagem" required>
-                    </div>
+
                     <div class="input-group">
                         <label for="status">Status do produto:</label>
-                        <select id="status" class="status" required>
+                        <select id="status" required>
                             <option value="" selected disabled>Selecione o status</option>
-                            <option value="disponivel">Disponível</option>
-                            <option value="indisponivel">Indisponível</option>
+                            <option value="disponivel">Disponivel</option>
+                            <option value="indisponivel">Indisponivel</option>
                             <option value="descontinuado">Descontinuado</option>
                         </select>
                     </div>
+
+                    <div class="input-group">
+                        <label for="badge">Selo (badge):</label>
+                        <select id="badge">
+                            <option value="">Nenhum</option>
+                            <option value="Destaque">Destaque</option>
+                            <option value="Novo">Novo</option>
+                            <option value="Mais vendido">Mais vendido</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="qtdImagens">Quantidade de imagens:</label>
+                        <input type="number" id="qtdImagens" min="1" max="10" value="1">
+                    </div>
+
+                    <div class="input-group input-group--cheio">
+                        <label for="especificacoes">Especificações (uma por linha, no formato Chave: valor):</label>
+                        <textarea id="especificacoes" class="descricao-produto" placeholder="Comprimento: 6'0&quot;&#10;Ação: Rápida&#10;Material: Carbono"></textarea>
+                    </div>
+
+                    <div class="input-group input-group--cheio">
+                        <label>Imagens do produto:</label>
+                        <p class="ajuda" id="contadorImagens"></p>
+                        <div id="slots" class="slots"></div>
+                    </div>
+
                 </div>
+
                 <div class="BTNs">
-                    <button class="btn-salvar" type="submit">
-                        Salvar Produto
-                    </button>
-                    <button type="button" class="btn-limpar" onclick="limparFormulario()">
-                        Novo
-                    </button>
+                    <div class="BTNs-grupo">
+                        <button class="btn-salvar" type="submit">Salvar Produto</button>
+                        <button type="button" class="btn-limpar" onclick="limparFormulario()">Novo</button>
+                    </div>
+                    <button type="button" class="btn-exportar" onclick="exportarJSON()">Exportar JSON</button>
                 </div>
             </form>
         </section>
 
         <section class="listar-produtos">
             <h2 class="h2">Produtos Cadastrados</h2>
-            <table class="tabela">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Categoria</th>
-                        <th>Sub-categoria</th>
-                        <th>Badge</th>
-                        <th>Resumo</th>
-                        <th>Descrição</th>
-                        <th>Preço</th>
-                        <th>Parcelas</th>
-                        <th>Estoque</th>
-                        <th>Imagem</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody id="tabela"></tbody>
-            </table>
+            <div class="tabela-wrapper">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Imagem</th>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Subcategoria</th>
+                            <th>Preço</th>
+                            <th>Estoque</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela"></tbody>
+                </table>
+            </div>
         </section>
     </main>
-
     <script src="/DASHBOARD/JS/produtos.js"></script>
 </body>
 </html>

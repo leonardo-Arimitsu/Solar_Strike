@@ -9,6 +9,9 @@ const PRODUCTS_URL = "/INDEX/JS/produtos.json";
 const CART_KEY = "homoHabilisCart";
 const FAVORITES_KEY = "homoHabilisFavorites";
 
+// Valor mínimo para frete grátis (apague a barra no HTML/JS se não quiser)
+const FREE_SHIPPING_MIN = 500;
+
 let products = [];
 let currentCatalog = null;
 
@@ -75,10 +78,25 @@ function getCategoryName(category) {
    LOCAL STORAGE
 ========================================= */
 
+/*
+   O carrinho guarda apenas { id, quantity }.
+   Nome, preço e imagem vêm sempre do produtos.json,
+   então o cliente nunca vê um preço desatualizado.
+*/
 function getCart() {
     try {
-        const cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
-        return Array.isArray(cart) ? cart : [];
+        const raw = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+
+        if (!Array.isArray(raw)) return [];
+
+        // Compatível com o formato antigo (ignora name/price).
+        return raw
+            .map(item => ({
+                id: String(item.id),
+                quantity: Number(item.quantity) || 0
+            }))
+            .filter(item => item.quantity > 0);
+
     } catch (error) {
         console.error("Erro ao ler carrinho:", error);
         return [];
@@ -101,6 +119,152 @@ function getFavorites() {
 
 function saveFavorites(favorites) {
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+}
+
+// Junta o carrinho com os dados atuais dos produtos e corrige o estoque.
+function getCartDetailed() {
+    return getCart()
+        .map(item => {
+            const product = getProductById(item.id);
+            if (!product) return null;
+
+            const stock = Number(product.estoque) || 0;
+            if (stock <= 0) return null;
+
+            return {
+                product,
+                quantity: Math.min(item.quantity, stock),
+                stock
+            };
+        })
+        .filter(Boolean);
+}
+
+
+/* =========================================
+   AVISO (TOAST)
+========================================= */
+
+let toastTimer;
+
+function showToast(message, withCartButton = false) {
+
+    const toast = document.getElementById("toast");
+
+    if (!toast) return;
+
+    toast.innerHTML =
+        `<span>${escapeHTML(message)}</span>` +
+        (withCartButton
+            ? `<button type="button" data-cart-open>Ver carrinho</button>`
+            : "");
+
+    toast.classList.add("toast--show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+        toast.classList.remove("toast--show");
+    }, 3500);
+}
+
+
+/* =========================================
+   MENU DO USUÁRIO (SESSÃO)
+   Depende do login.js (obterSessao, sair, URL_DASHBOARD, URL_LOGIN)
+========================================= */
+
+function closeUserMenu() {
+
+    const dropdown = document.querySelector(".user-dropdown");
+    const trigger = document.querySelector(".user-trigger");
+
+    if (dropdown) dropdown.hidden = true;
+    if (trigger) trigger.setAttribute("aria-expanded", "false");
+}
+
+function renderUserMenu() {
+
+    const box = document.getElementById("headerUser");
+
+    if (!box) return;
+
+    const session = typeof obterSessao === "function"
+        ? obterSessao()
+        : null;
+
+    const loginUrl = typeof URL_LOGIN === "string"
+        ? URL_LOGIN
+        : "/LOGIN/HTML/login.html";
+
+    // Visitante: botão "Entrar".
+    if (!session) {
+
+        box.innerHTML = `
+            <a href="${loginUrl}" class="header-login">
+                <span class="header-login__icon">👤</span>
+                <span>Entrar</span>
+            </a>
+        `;
+
+        return;
+    }
+
+    // Usuário logado.
+    const fullName = String(session.nome || "Usuário").trim();
+    const firstName = escapeHTML(fullName.split(" ")[0]);
+    const initial = escapeHTML(fullName.charAt(0).toUpperCase());
+
+    const adminLink = session.perfil === "admin" && typeof URL_DASHBOARD === "string"
+        ? `<a href="${URL_DASHBOARD}">Painel administrativo</a>`
+        : "";
+
+    box.innerHTML = `
+        <button
+            class="user-trigger"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+        >
+            <span class="user-avatar">${initial}</span>
+            <span class="user-name">Olá, ${firstName}</span>
+            <span aria-hidden="true">▾</span>
+        </button>
+
+        <div class="user-dropdown" hidden>
+
+            <div class="user-dropdown__info">
+                <strong>${escapeHTML(fullName)}</strong>
+                <small>${escapeHTML(session.email || "")}</small>
+            </div>
+
+            ${adminLink}
+
+            <button type="button" data-user-action="logout">Sair</button>
+
+        </div>
+    `;
+
+    const trigger = box.querySelector(".user-trigger");
+    const dropdown = box.querySelector(".user-dropdown");
+
+    trigger.addEventListener("click", event => {
+
+        event.stopPropagation();
+
+        const willOpen = dropdown.hidden;
+
+        dropdown.hidden = !willOpen;
+        trigger.setAttribute("aria-expanded", String(willOpen));
+    });
+
+    box.querySelector('[data-user-action="logout"]')
+        .addEventListener("click", () => {
+
+            sair(false);        // limpa a sessão sem redirecionar
+            renderUserMenu();   // volta o botão "Entrar"
+            showToast("Você saiu da sua conta.");
+        });
 }
 
 
@@ -497,7 +661,7 @@ function clearCatalogFilters() {
 
 
 /* =========================================
-   CARRINHO
+   CARRINHO — AÇÕES
 ========================================= */
 
 function addToCart(productId) {
@@ -505,108 +669,119 @@ function addToCart(productId) {
     const product = getProductById(productId);
 
     if (!product) {
-        alert("Produto não encontrado.");
+        showToast("Produto não encontrado.");
         return;
     }
 
-    const availableStock = Number(product.estoque) || 0;
+    const stock = Number(product.estoque) || 0;
 
-    if (availableStock <= 0) {
-        alert("Este produto está indisponível.");
+    if (stock <= 0) {
+        showToast("Este produto está indisponível.");
         return;
     }
 
     const cart = getCart();
+    const item = cart.find(entry => entry.id === String(productId));
 
-    const existingItem = cart.find(
-        item => String(item.id) === String(productId)
-    );
+    if (item) {
 
-    if (existingItem) {
-
-        if (existingItem.quantity >= availableStock) {
-            alert("Você atingiu o limite de unidades disponíveis.");
+        if (item.quantity >= stock) {
+            showToast("Você atingiu o limite de unidades em estoque.");
             return;
         }
 
-        existingItem.quantity += 1;
+        item.quantity += 1;
 
     } else {
 
         cart.push({
-            id: product.id,
-            name: product.nome,
-            price: Number(product.preco),
+            id: String(productId),
             quantity: 1
         });
 
     }
 
     saveCart(cart);
-    updateCartCount();
-    renderCart();
+    refreshCart();
 
-    const modal = document.getElementById("cartModal");
-
-    if (modal) {
-        modal.classList.add("cart-modal--active");
-    }
+    showToast(`${product.nome} adicionado ao carrinho.`, true);
 }
 
 
 function changeCartQuantity(productId, amount) {
 
     const cart = getCart();
-
-    const item = cart.find(
-        entry => String(entry.id) === String(productId)
-    );
+    const item = cart.find(entry => entry.id === String(productId));
 
     if (!item) return;
 
     const product = getProductById(productId);
-    const nextQuantity = item.quantity + amount;
+    const next = item.quantity + amount;
 
-    if (nextQuantity <= 0) {
+    if (next <= 0) {
         removeFromCart(productId);
         return;
     }
 
-    if (product && nextQuantity > Number(product.estoque)) {
-        alert("Não há mais unidades disponíveis.");
+    if (product && next > Number(product.estoque)) {
+        showToast("Não há mais unidades disponíveis.");
         return;
     }
 
-    item.quantity = nextQuantity;
+    item.quantity = next;
 
     saveCart(cart);
-    updateCartCount();
-    renderCart();
+    refreshCart();
 }
 
 
 function removeFromCart(productId) {
 
-    const cart = getCart().filter(
-        item => String(item.id) !== String(productId)
+    saveCart(
+        getCart().filter(item => item.id !== String(productId))
     );
 
-    saveCart(cart);
+    refreshCart();
+}
+
+
+function clearCart() {
+
+    if (!getCart().length) return;
+
+    if (!confirm("Remover todos os itens do carrinho?")) return;
+
+    saveCart([]);
+    refreshCart();
+}
+
+
+function refreshCart() {
     updateCartCount();
     renderCart();
 }
 
 
+/* =========================================
+   CARRINHO — EXIBIÇÃO
+========================================= */
+
 function updateCartCount() {
 
     const total = getCart().reduce(
-        (sum, item) => sum + Number(item.quantity || 0),
+        (sum, item) => sum + item.quantity,
         0
     );
 
     document.querySelectorAll(".cart-count").forEach(element => {
         element.textContent = total;
     });
+
+    const summary = document.getElementById("cartSummaryCount");
+
+    if (summary) {
+        summary.textContent = total ? `(${total})` : "";
+    }
 }
 
 
@@ -614,12 +789,13 @@ function renderCart() {
 
     const container = document.getElementById("cartItems");
     const totalElement = document.getElementById("cartTotal");
+    const shipping = document.getElementById("cartShipping");
 
     if (!container || !totalElement) return;
 
-    const cart = getCart();
+    const items = getCartDetailed();
 
-    if (cart.length === 0) {
+    if (!items.length) {
 
         container.innerHTML = `
             <div class="cart-empty">
@@ -630,57 +806,58 @@ function renderCart() {
         `;
 
         totalElement.textContent = formatMoney(0);
+
+        if (shipping) shipping.innerHTML = "";
+
         return;
     }
 
     let total = 0;
 
-    container.innerHTML = cart.map(item => {
+    container.innerHTML = items.map(({ product, quantity }) => {
 
-        const quantity = Number(item.quantity) || 0;
-        const price = Number(item.price) || 0;
+        const price = Number(product.preco) || 0;
         const subtotal = price * quantity;
 
         total += subtotal;
 
+        const id = escapeHTML(product.id);
+
         return `
-            <div class="cart-item">
+            <div class="cart-item" data-id="${id}">
+
+                <img
+                    class="cart-item__image"
+                    src="${escapeHTML(getProductImage(product))}"
+                    alt=""
+                    onerror="this.onerror=null;this.src='https://placehold.co/120x120?text=Produto'"
+                >
 
                 <div class="cart-item__details">
-                    <strong>${escapeHTML(item.name)}</strong>
-                    <span>${formatMoney(price)} cada</span>
-                    <small>Subtotal: ${formatMoney(subtotal)}</small>
-                </div>
 
-                <div class="cart-item__actions">
+                    <a href="produto.html?id=${encodeURIComponent(product.id)}">
+                        ${escapeHTML(product.nome)}
+                    </a>
+
+                    <span>${formatMoney(price)} cada</span>
 
                     <div class="quantity-control">
 
-                        <button
-                            type="button"
-                            aria-label="Diminuir quantidade"
-                            onclick="changeCartQuantity('${escapeHTML(item.id)}', -1)"
-                        >
-                            −
-                        </button>
+                        <button type="button" data-action="dec" aria-label="Diminuir quantidade">−</button>
 
                         <span>${quantity}</span>
 
-                        <button
-                            type="button"
-                            aria-label="Aumentar quantidade"
-                            onclick="changeCartQuantity('${escapeHTML(item.id)}', 1)"
-                        >
-                            +
-                        </button>
+                        <button type="button" data-action="inc" aria-label="Aumentar quantidade">+</button>
 
                     </div>
 
-                    <button
-                        class="cart-remove"
-                        type="button"
-                        onclick="removeFromCart('${escapeHTML(item.id)}')"
-                    >
+                </div>
+
+                <div class="cart-item__side">
+
+                    <strong>${formatMoney(subtotal)}</strong>
+
+                    <button class="cart-remove" type="button" data-action="remove">
                         Remover
                     </button>
 
@@ -692,24 +869,56 @@ function renderCart() {
     }).join("");
 
     totalElement.textContent = formatMoney(total);
+
+    if (shipping) {
+
+        const missing = FREE_SHIPPING_MIN - total;
+        const percent = Math.min(100, (total / FREE_SHIPPING_MIN) * 100);
+
+        shipping.innerHTML = missing > 0
+            ? `
+                <p>Faltam <strong>${formatMoney(missing)}</strong> para frete grátis</p>
+                <div class="cart-shipping__bar"><span style="width:${percent}%"></span></div>
+            `
+            : `
+                <p>🎉 Você ganhou <strong>frete grátis</strong>!</p>
+                <div class="cart-shipping__bar"><span style="width:100%"></span></div>
+            `;
+    }
 }
 
+
+/* =========================================
+   CARRINHO — ABRIR / FECHAR
+========================================= */
 
 function openCart() {
 
     renderCart();
 
-    document
-        .getElementById("cartModal")
-        ?.classList.add("cart-modal--active");
+    const drawer = document.getElementById("cartDrawer");
+    const overlay = document.getElementById("cartOverlay");
+
+    drawer?.classList.add("cart-drawer--open");
+    drawer?.setAttribute("aria-hidden", "false");
+
+    if (overlay) overlay.hidden = false;
+
+    document.body.classList.add("no-scroll");
 }
 
 
 function closeCart() {
 
-    document
-        .getElementById("cartModal")
-        ?.classList.remove("cart-modal--active");
+    const drawer = document.getElementById("cartDrawer");
+    const overlay = document.getElementById("cartOverlay");
+
+    drawer?.classList.remove("cart-drawer--open");
+    drawer?.setAttribute("aria-hidden", "true");
+
+    if (overlay) overlay.hidden = true;
+
+    document.body.classList.remove("no-scroll");
 }
 
 
@@ -742,21 +951,88 @@ function toggleFavorite(productId, button) {
 
 
 /* =========================================
-   FINALIZAÇÃO VISUAL DO PEDIDO
+   FINALIZAÇÃO DO PEDIDO
 ========================================= */
 
 function checkout() {
 
-    const cart = getCart();
+    if (!getCartDetailed().length) {
+        showToast("Seu carrinho está vazio.");
+        return;
+    }
 
-    if (cart.length === 0) {
-        alert("Seu carrinho está vazio.");
+    // Exige login para finalizar.
+    if (typeof obterSessao === "function" && !obterSessao()) {
+
+        alert("Entre na sua conta para finalizar a compra.");
+
+        window.location.href = typeof URL_LOGIN === "string"
+            ? URL_LOGIN
+            : "/LOGIN/HTML/login.html";
+
         return;
     }
 
     alert(
         "O carrinho está funcionando, mas a finalização de compra ainda precisa ser conectada a um sistema de pedidos e pagamento."
     );
+}
+
+
+/* =========================================
+   EVENTOS GLOBAIS
+========================================= */
+
+function setupGlobalEvents() {
+
+    // Clique no fundo escuro fecha o carrinho.
+    document.getElementById("cartOverlay")
+        ?.addEventListener("click", closeCart);
+
+    // Delegação: botões com data-cart-* e fechar menu do usuário.
+    document.addEventListener("click", event => {
+
+        if (event.target.closest("[data-cart-close]")) closeCart();
+        if (event.target.closest("[data-cart-open]")) openCart();
+        if (event.target.closest("[data-cart-clear]")) clearCart();
+        if (event.target.closest("[data-cart-checkout]")) checkout();
+
+        // Clique fora do menu do usuário fecha o dropdown.
+        if (!event.target.closest(".user-trigger")) closeUserMenu();
+    });
+
+    // Botões dentro do carrinho (+, −, remover).
+    document.getElementById("cartItems")?.addEventListener("click", event => {
+
+        const button = event.target.closest("[data-action]");
+        const item = event.target.closest(".cart-item");
+
+        if (!button || !item) return;
+
+        const id = item.dataset.id;
+        const action = button.dataset.action;
+
+        if (action === "inc") changeCartQuantity(id, 1);
+        if (action === "dec") changeCartQuantity(id, -1);
+        if (action === "remove") removeFromCart(id);
+    });
+
+    // Esc fecha carrinho e menu do usuário.
+    document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape") {
+            closeCart();
+            closeUserMenu();
+        }
+    });
+
+    // Sincroniza carrinho e sessão entre abas.
+    window.addEventListener("storage", event => {
+
+        if (event.key === CART_KEY) refreshCart();
+
+        if (event.key === "sessao") renderUserMenu();
+    });
 }
 
 
@@ -787,6 +1063,7 @@ async function loadProducts() {
     renderHome();
     setupCatalog();
 
+    // O carrinho depende dos produtos carregados.
     updateCartCount();
     renderCart();
 }
@@ -828,16 +1105,12 @@ function showCatalogError(error) {
 
 document.addEventListener("DOMContentLoaded", async () => {
 
-    // Fecha o carrinho ao clicar fora da caixa.
-    document.getElementById("cartModal")?.addEventListener("click", event => {
+    // Menu do usuário primeiro: aparece mesmo se o JSON falhar.
+    renderUserMenu();
 
-        if (event.target.id === "cartModal") {
-            closeCart();
-        }
+    setupGlobalEvents();
+    updateCartCount();
 
-    });
-
-    // Carrega o catálogo.
     try {
         await loadProducts();
     } catch (error) {

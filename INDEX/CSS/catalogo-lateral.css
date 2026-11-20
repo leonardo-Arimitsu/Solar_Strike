@@ -29,16 +29,10 @@
 
 .catalog-sidebar {
     position: sticky;
-    top: 20px;
-
-    width: 100%;
-    padding: 18px;
-
-    background: #fff;
-    border: 1px solid #e8e8e2;
-    border-radius: 10px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.035);
+    top: 99px;                        /* 79px do header + 20px de folga */
+    max-height: calc(100vh - 119px);  /* para a barra não passar do fim da tela */
+    overflow-y: auto;
+    z-index: 1;                       /* sempre abaixo do header (100) */
 }
 
 .sidebar-heading {
@@ -280,13 +274,16 @@
     }
 }
 
+@media (max-width: 800px) {
+    .catalog-sidebar {
+        position: static;
+        max-height: none;
+    }
+}
+
 @media (max-width: 760px) {
     .catalog-layout {
         grid-template-columns: 1fr;
-    }
-
-    .catalog-sidebar {
-        position: static;
     }
 
     .catalog-toolbar {

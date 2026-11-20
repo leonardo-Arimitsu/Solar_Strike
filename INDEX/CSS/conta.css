@@ -1,0 +1,512 @@
+/* =========================================================
+   PÁGINA "MINHA CONTA"
+   Usa as variáveis do index.css.
+   Carregar depois de loja-sessao-carrinho.css.
+========================================================= */
+
+/* O atributo hidden precisa vencer qualquer display definido abaixo */
+.account-page[hidden],
+#accountPage[hidden],
+.account-panel[hidden],
+.account-nav [hidden],
+.account-hero [hidden],
+.delete-confirm[hidden],
+.form-message[hidden] {
+    display: none;
+}
+
+
+/* =========================================================
+   CABEÇALHO DA CONTA
+========================================================= */
+
+.account-hero {
+    padding: 44px 0;
+    color: var(--white);
+    background:
+        linear-gradient(
+            135deg,
+            var(--green-950),
+            var(--green-700)
+        );
+}
+
+.account-hero__content {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.account-hero__avatar {
+    flex-shrink: 0;
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--yellow);
+    color: var(--green-950);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.account-hero__text {
+    min-width: 0;
+}
+
+.account-hero__role {
+    display: inline-block;
+    padding: 3px 9px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-radius: 4px;
+    color: var(--yellow-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .6px;
+}
+
+.account-hero h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: .95;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.account-hero p {
+    margin-top: 6px;
+    color: rgba(255, 255, 255, .78);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.account-hero small {
+    display: block;
+    margin-top: 2px;
+    color: rgba(255, 255, 255, .55);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.account-body {
+    padding: 40px 0 80px;
+    background: var(--cream);
+}
+
+.account-layout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   MENU LATERAL
+========================================================= */
+
+.account-nav {
+    position: sticky;
+    top: 100px;
+    display: grid;
+    padding: 8px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.account-nav a,
+.account-nav button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 14px;
+    background: none;
+    border: 0;
+    border-left: 3px solid transparent;
+    border-radius: 6px;
+    color: var(--gray-600);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.account-nav a:hover,
+.account-nav button:hover {
+    background: var(--gray-100);
+    color: var(--green-800);
+}
+
+.account-nav a[aria-current="page"] {
+    background: var(--cream);
+    border-left-color: var(--yellow);
+    color: var(--green-900);
+}
+
+.account-nav__badge {
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.account-nav .account-nav__logout {
+    margin-top: 6px;
+    border-top: 1px solid var(--border);
+    border-radius: 0 0 6px 6px;
+    color: #9b2929;
+}
+
+.account-nav .account-nav__logout:hover {
+    background: #fbefef;
+    color: #9b2929;
+}
+
+.account-nav a:focus-visible,
+.account-nav button:focus-visible {
+    outline: 2px solid var(--green-600);
+    outline-offset: -2px;
+}
+
+
+/* =========================================================
+   PAINÉIS
+========================================================= */
+
+.account-panel {
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.panel-header {
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+.panel-header h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 34px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--green-900);
+}
+
+.panel-header p {
+    margin-top: 6px;
+    color: var(--gray-600);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FORMULÁRIOS
+========================================================= */
+
+.account-form {
+    display: grid;
+    gap: 16px;
+    max-width: 460px;
+}
+
+.account-form h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: var(--green-900);
+}
+
+.account-form > p {
+    color: var(--gray-600);
+    font-size: 13px;
+}
+
+.field {
+    display: grid;
+    gap: 6px;
+}
+
+.field label {
+    color: var(--green-900);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 14px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    color: var(--gray-800);
+    font: inherit;
+    font-size: 14px;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.field input:focus,
+.field select:focus {
+    outline: 0;
+    border-color: var(--green-600);
+    box-shadow: 0 0 0 3px rgba(28, 103, 72, .15);
+}
+
+.field input[readonly],
+.field input:disabled {
+    background: var(--gray-100);
+    color: var(--gray-600);
+    cursor: not-allowed;
+}
+
+.field small {
+    color: var(--gray-600);
+    font-size: 12px;
+}
+
+.form-message {
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-message--ok {
+    background: #e8f4ed;
+    color: var(--green-700);
+}
+
+.form-message--error {
+    background: #fbefef;
+    color: #9b2929;
+}
+
+
+/* Botões da conta.
+   .btn vem do index.css; aqui só as variações e o reset de <button> */
+
+.account-form .btn,
+.account-empty .btn {
+    border: 0;
+    cursor: pointer;
+}
+
+.account-form .btn {
+    justify-self: start;
+}
+
+.btn--green {
+    background: var(--green-800);
+    color: var(--white);
+}
+
+.btn--green:hover {
+    background: var(--orange-dark);
+    transform: translateY(-2px);
+}
+
+.account-form .btn--danger {
+    background: var(--white);
+    border: 1px solid #9b2929;
+    color: #9b2929;
+}
+
+.account-form .btn--danger:hover {
+    background: #9b2929;
+    color: var(--white);
+}
+
+.btn:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.danger-zone {
+    margin-top: 34px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   FAVORITOS
+========================================================= */
+
+.account-content .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.account-loading {
+    grid-column: 1 / -1;
+    padding: 30px 0;
+    color: var(--gray-600);
+    text-align: center;
+}
+
+.account-empty {
+    grid-column: 1 / -1;
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.account-empty h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: var(--green-900);
+}
+
+.account-empty p {
+    margin-bottom: 10px;
+    color: var(--gray-600);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .account-content .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+
+    .account-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Menu vira uma faixa horizontal */
+    .account-nav {
+        position: static;
+        display: flex;
+        gap: 4px;
+        overflow-x: auto;
+    }
+
+    .account-nav a,
+    .account-nav button {
+        width: auto;
+        flex-shrink: 0;
+        white-space: nowrap;
+        border-left: 0;
+        border-bottom: 3px solid transparent;
+        border-radius: 6px 6px 0 0;
+    }
+
+    .account-nav a[aria-current="page"] {
+        border-bottom-color: var(--yellow);
+    }
+
+    .account-nav .account-nav__logout {
+        margin-top: 0;
+        border-top: 0;
+        border-radius: 6px 6px 0 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .account-hero {
+        padding: 32px 0;
+    }
+
+    .account-hero__avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 34px;
+    }
+
+    .account-panel {
+        padding: 22px 18px;
+    }
+
+    .account-content .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Confirmação de exclusão (dentro da página, sem confirm()) */
+
+.delete-confirm {
+    display: grid;
+    gap: 12px;
+    padding: 16px;
+    background: #fbefef;
+    border: 1px solid #e8c4c4;
+    border-radius: 8px;
+}
+
+.delete-confirm p {
+    color: #6d1c1c;
+    font-size: 13px;
+}
+
+.delete-confirm__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.account-form .btn--danger-solid {
+    background: #9b2929;
+    color: var(--white);
+}
+
+.account-form .btn--danger-solid:hover {
+    background: #7d1f1f;
+}
+
+.account-form .btn--ghost {
+    background: transparent;
+    border: 1px solid var(--gray-200);
+    color: var(--gray-600);
+}
+
+.account-form .btn--ghost:hover {
+    border-color: var(--gray-400);
+    color: var(--gray-800);
+}
+
+
+/* CEP + UF lado a lado */
+
+.field-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 110px;
+    gap: 14px;
+}
+
+.field select {
+    cursor: pointer;
+}

@@ -5,6 +5,8 @@
     "email": "admin@homohabilis.com",
     "senha": "Admin@2026",
     "perfil": "admin",
+    "uf": "SP",
+    "cep": "01001-000",
     "criadoEm": "2026-01-11T10:00:00.000Z"
   },
   {
@@ -13,6 +15,8 @@
     "email": "carlos@homohabilis.com",
     "senha": "Pesca@1234",
     "perfil": "usuario",
+    "uf": "RJ",
+    "cep": "20040-020",
     "criadoEm": "2026-02-12T10:00:00.000Z"
   },
   {
@@ -21,6 +25,8 @@
     "email": "marina@homohabilis.com",
     "senha": "Cacar@5678",
     "perfil": "usuario",
+    "uf": "MG",
+    "cep": "30130-010",
     "criadoEm": "2026-03-13T10:00:00.000Z"
   }
 ]

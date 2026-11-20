@@ -1,6 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
+/*
+   CATÁLOGO COM FILTRO LATERAL (pesca.html e caca.html)
 
-    const PRODUCTS_URL = "/INDEX/JS/produtos.json";
+   Depende do loja.js, que fornece:
+   - products (lista carregada do produtos.json)
+   - renderProductCard (card do produto, com carrinho e favoritos)
+   - eventos "products:loaded" e "products:error"
+
+   Este arquivo só cuida dos filtros, da ordenação e da lista.
+   O carrinho, o login e os favoritos ficam no loja.js.
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
 
     const searchInput = document.getElementById("catalogSearch");
     const categoryFilter = document.getElementById("categoryFilter");
@@ -26,11 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let allProducts = [];
     let filteredProducts = [];
 
+
     /* =====================================
        NORMALIZA TEXTO
     ===================================== */
 
-    function normalizeText(value) {
+    function normalize(value) {
         return String(value ?? "")
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
@@ -38,182 +49,42 @@ document.addEventListener("DOMContentLoaded", () => {
             .trim();
     }
 
-    /* =====================================
-       FORMATA MOEDA
-    ===================================== */
-
-    function formatPrice(value) {
-        return Number(value).toLocaleString("pt-BR", {
-            style: "currency",
-            currency: "BRL"
-        });
-    }
 
     /* =====================================
-       FORMATA PARCELAMENTO
+       DADOS (vêm do loja.js)
     ===================================== */
 
-    function installmentText(product) {
-        const installments = Number(product.parcelas);
-        const price = Number(product.preco);
+    function loadFromStore() {
 
-        if (!installments || installments <= 1) {
-            return "À vista";
+        allProducts = products.filter(product =>
+            normalize(product.categoria) === currentCategory
+        );
+
+        // Abre já com a categoria do link (ex.: pesca.html?categoria=varas).
+        const requested = new URLSearchParams(window.location.search).get("categoria");
+
+        if (
+            requested &&
+            [...categoryFilter.options].some(option => option.value === requested)
+        ) {
+            categoryFilter.value = requested;
         }
 
-        const installmentValue = price / installments;
-
-        return `ou ${installments}x de ${formatPrice(installmentValue)}`;
+        applyFilters();
     }
 
-    /* =====================================
-       CRIA CARD DO PRODUTO
-    ===================================== */
+    function showLoadError() {
 
-    function createProductCard(product) {
-
-        const article = document.createElement("article");
-        article.className = "product-card";
-        article.dataset.category = product.subcategoria;
-        article.dataset.price = product.preco;
-
-        const image = product.imagens?.[0] || "";
-
-        const badge = product.badge
-            ? `<span class="product-badge">${escapeHTML(product.badge)}</span>`
-            : "";
-
-        const categoryName = String(product.subcategoria || "")
-            .replaceAll("_", " ")
-            .toUpperCase();
-
-        article.innerHTML = `
-            <div class="product-image">
-
-                ${badge}
-
-                <button
-                    class="favorite"
-                    type="button"
-                    aria-label="Adicionar aos favoritos"
-                >
-                    ♡
-                </button>
-
-                <a
-                    href="produto.html?id=${encodeURIComponent(product.id)}"
-                    class="product-link"
-                >
-                    <img
-                        src="${escapeHTML(image)}"
-                        alt="${escapeHTML(product.nome)}"
-                        loading="lazy"
-                    >
-                </a>
-
-            </div>
-
-            <div class="product-info">
-
-                <span class="product-category">
-                    ${escapeHTML(categoryName)}
-                </span>
-
-                <h3>
-                    <a href="produto.html?id=${encodeURIComponent(product.id)}">
-                        ${escapeHTML(product.nome)}
-                    </a>
-                </h3>
-
-                <p>${escapeHTML(product.resumo || "")}</p>
-
-                <div class="product-price">
-                    ${formatPrice(product.preco)}
-                </div>
-
-                <span class="installment">
-                    ${installmentText(product)}
-                </span>
-
-                <button class="add-cart" type="button">
-                    Adicionar ao carrinho
-                </button>
-
-            </div>
+        productGrid.innerHTML = `
+            <p class="catalog-error">
+                Não foi possível carregar os produtos.
+                Verifique o caminho do arquivo produtos.json.
+            </p>
         `;
 
-        const favoriteButton = article.querySelector(".favorite");
-        const cartButton = article.querySelector(".add-cart");
-
-        favoriteButton.addEventListener("click", () => {
-            if (typeof window.toggleFavorite === "function") {
-                window.toggleFavorite(favoriteButton);
-            }
-        });
-
-        cartButton.addEventListener("click", () => {
-            if (typeof window.addToCart === "function") {
-                window.addToCart(product.nome, Number(product.preco));
-            } else {
-                console.error("A função addToCart não foi encontrada.");
-            }
-        });
-
-        return article;
+        resultCount.textContent = "Erro ao carregar catálogo.";
     }
 
-    /* =====================================
-       PROTEGE TEXTO INSERIDO NO HTML
-    ===================================== */
-
-    function escapeHTML(value) {
-        return String(value ?? "").replace(/[&<>"']/g, character => {
-            const entities = {
-                "&": "&amp;",
-                "<": "&lt;",
-                ">": "&gt;",
-                '"': "&quot;",
-                "'": "&#039;"
-            };
-
-            return entities[character];
-        });
-    }
-
-    /* =====================================
-       CARREGA PRODUTOS DO JSON
-    ===================================== */
-
-    async function loadProducts() {
-
-        try {
-            const response = await fetch(PRODUCTS_URL);
-
-            if (!response.ok) {
-                throw new Error(`Erro ao carregar produtos: ${response.status}`);
-            }
-
-            const products = await response.json();
-
-            allProducts = products.filter(product =>
-                normalizeText(product.categoria) === currentCategory
-            );
-
-            applyFilters();
-
-        } catch (error) {
-            console.error(error);
-
-            productGrid.innerHTML = `
-                <p class="catalog-error">
-                    Não foi possível carregar os produtos.
-                    Verifique o caminho do arquivo produtos.json.
-                </p>
-            `;
-
-            resultCount.textContent = "Erro ao carregar catálogo.";
-        }
-    }
 
     /* =====================================
        APLICA FILTROS
@@ -221,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function applyFilters() {
 
-        const search = normalizeText(searchInput.value);
+        const search = normalize(searchInput.value);
         const category = categoryFilter.value;
 
         const minPrice = minPriceInput.value === ""
@@ -236,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         filteredProducts = allProducts.filter(product => {
 
-            const searchableText = normalizeText([
+            const searchableText = normalize([
                 product.nome,
                 product.resumo,
                 product.descricao,
@@ -248,15 +119,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const matchesCategory =
                 category === "todos" ||
-                normalizeText(product.subcategoria) === normalizeText(category);
+                normalize(product.subcategoria) === normalize(category);
 
             const price = Number(product.preco);
 
-            const matchesMin =
-                minPrice === null || price >= minPrice;
-
-            const matchesMax =
-                maxPrice === null || price <= maxPrice;
+            const matchesMin = minPrice === null || price >= minPrice;
+            const matchesMax = maxPrice === null || price <= maxPrice;
 
             const matchesStock =
                 !onlyInStock || Number(product.estoque) > 0;
@@ -274,15 +142,14 @@ document.addEventListener("DOMContentLoaded", () => {
         renderProducts();
     }
 
+
     /* =====================================
        ORDENAÇÃO
     ===================================== */
 
     function sortFilteredProducts() {
 
-        const sort = sortProducts.value;
-
-        switch (sort) {
+        switch (sortProducts.value) {
 
             case "name-asc":
                 filteredProducts.sort((a, b) =>
@@ -303,14 +170,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
 
             default:
-                filteredProducts.sort((a, b) => {
-                    const badgeA = a.badge ? 1 : 0;
-                    const badgeB = b.badge ? 1 : 0;
-
-                    return badgeB - badgeA;
-                });
+                // Relevância: produtos com selo (Novo, Oferta...) primeiro.
+                filteredProducts.sort((a, b) =>
+                    (b.badge ? 1 : 0) - (a.badge ? 1 : 0)
+                );
         }
     }
+
 
     /* =====================================
        MOSTRA PRODUTOS
@@ -318,11 +184,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function renderProducts() {
 
-        productGrid.innerHTML = "";
-
-        filteredProducts.forEach(product => {
-            productGrid.appendChild(createProductCard(product));
-        });
+        productGrid.innerHTML = filteredProducts
+            .map(product => renderProductCard(product))
+            .join("");
 
         const total = filteredProducts.length;
 
@@ -333,6 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
         emptyMessage.hidden = total !== 0;
         productGrid.hidden = total === 0;
     }
+
 
     /* =====================================
        LIMPA FILTROS
@@ -347,33 +212,41 @@ document.addEventListener("DOMContentLoaded", () => {
         inStockFilter.checked = false;
         sortProducts.value = "relevance";
 
+        // Remove ?categoria=... da URL.
+        const url = new URL(window.location.href);
+        url.searchParams.delete("categoria");
+        window.history.replaceState({}, "", url);
+
         applyFilters();
     }
+
 
     /* =====================================
        EVENTOS
     ===================================== */
 
     searchInput.addEventListener("input", applyFilters);
-
     categoryFilter.addEventListener("change", applyFilters);
-
     minPriceInput.addEventListener("input", applyFilters);
-
     maxPriceInput.addEventListener("input", applyFilters);
-
     inStockFilter.addEventListener("change", applyFilters);
-
     sortProducts.addEventListener("change", applyFilters);
 
     clearButton.addEventListener("click", clearFilters);
-
     emptyClearButton.addEventListener("click", clearFilters);
+
 
     /* =====================================
        INICIALIZAÇÃO
+       Espera o loja.js terminar de carregar o produtos.json.
     ===================================== */
 
-    loadProducts();
+    document.addEventListener("products:loaded", loadFromStore);
+    document.addEventListener("products:error", showLoadError);
+
+    // Caso os produtos já tenham sido carregados antes deste ponto.
+    if (typeof products !== "undefined" && products.length) {
+        loadFromStore();
+    }
 
 });

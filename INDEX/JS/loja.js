@@ -9,6 +9,12 @@ const PRODUCTS_URL = "/INDEX/JS/produtos.json";
 const CART_KEY = "homoHabilisCart";
 const FAVORITES_KEY = "homoHabilisFavorites";
 
+// Caminho da página de login (fixo aqui, não depende do login.js)
+const LOGIN_URL = "/LOGIN/HTML/login.html";
+
+// Página "Minha conta"
+const CONTA_URL = "/INDEX/HTML/conta.html";
+
 // Valor mínimo para frete grátis (apague a barra no HTML/JS se não quiser)
 const FREE_SHIPPING_MIN = 500;
 
@@ -171,7 +177,7 @@ function showToast(message, withCartButton = false) {
 
 /* =========================================
    MENU DO USUÁRIO (SESSÃO)
-   Depende do login.js (obterSessao, sair, URL_DASHBOARD, URL_LOGIN)
+   Depende do login.js (obterSessao, sair, URL_DASHBOARD)
 ========================================= */
 
 function closeUserMenu() {
@@ -193,15 +199,11 @@ function renderUserMenu() {
         ? obterSessao()
         : null;
 
-    const loginUrl = typeof URL_LOGIN === "string"
-        ? URL_LOGIN
-        : "/LOGIN/HTML/login.html";
-
     // Visitante: botão "Entrar".
     if (!session) {
 
         box.innerHTML = `
-            <a href="${loginUrl}" class="header-login">
+            <a href="${LOGIN_URL}" class="header-login">
                 <span class="header-login__icon">👤</span>
                 <span>Entrar</span>
             </a>
@@ -238,6 +240,9 @@ function renderUserMenu() {
                 <small>${escapeHTML(session.email || "")}</small>
             </div>
 
+            <a href="${CONTA_URL}">Minha conta</a>
+            <a href="${CONTA_URL}#favoritos">Meus favoritos</a>
+
             ${adminLink}
 
             <button type="button" data-user-action="logout">Sair</button>
@@ -264,6 +269,9 @@ function renderUserMenu() {
             sair(false);        // limpa a sessão sem redirecionar
             renderUserMenu();   // volta o botão "Entrar"
             showToast("Você saiu da sua conta.");
+
+            // Páginas que exigem login (ex.: Minha conta) escutam isto e saem da tela.
+            document.dispatchEvent(new Event("session:ended"));
         });
 }
 
@@ -947,6 +955,8 @@ function toggleFavorite(productId, button) {
         button.textContent = active ? "♥" : "♡";
         button.setAttribute("aria-pressed", String(active));
     }
+
+    document.dispatchEvent(new Event("favorites:changed"));
 }
 
 
@@ -966,9 +976,7 @@ function checkout() {
 
         alert("Entre na sua conta para finalizar a compra.");
 
-        window.location.href = typeof URL_LOGIN === "string"
-            ? URL_LOGIN
-            : "/LOGIN/HTML/login.html";
+        window.location.href = LOGIN_URL;
 
         return;
     }
@@ -1032,6 +1040,10 @@ function setupGlobalEvents() {
         if (event.key === CART_KEY) refreshCart();
 
         if (event.key === "sessao") renderUserMenu();
+
+        if (event.key === FAVORITES_KEY) {
+            document.dispatchEvent(new Event("favorites:changed"));
+        }
     });
 }
 
@@ -1066,6 +1078,8 @@ async function loadProducts() {
     // O carrinho depende dos produtos carregados.
     updateCartCount();
     renderCart();
+
+    document.dispatchEvent(new Event("products:loaded"));
 }
 
 
@@ -1115,6 +1129,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         await loadProducts();
     } catch (error) {
         showCatalogError(error);
+        document.dispatchEvent(new Event("products:error"));
     }
 
 });

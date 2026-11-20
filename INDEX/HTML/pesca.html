@@ -8,7 +8,11 @@
 
     <link rel="stylesheet" href="/INDEX/CSS/index.css">
     <link rel="stylesheet" href="/INDEX/CSS/produto.css">
+    <!-- NOVO: estilos dos cards da loja (mesmos da página inicial) -->
+    <link rel="stylesheet" href="/INDEX/CSS/loja-vendas.css">
     <link rel="stylesheet" href="/INDEX/CSS/catalogo-lateral.css">
+    <!-- NOVO: menu do usuário + carrinho lateral + aviso (carregar por último) -->
+    <link rel="stylesheet" href="/INDEX/CSS/loja-sessao-carrinho.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,12 +48,16 @@
             </nav>
 
             <div class="header-actions">
-                <a href="/LOGIN/HTML/login.html" class="header-login">
-                    <span class="header-login__icon">👤</span>
-                    <span>Entrar</span>
-                </a>
 
-                <button class="cart-button" type="button" onclick="openCart()">
+                <!-- Preenchido pelo JS: "Entrar" (visitante) ou menu do usuário (logado) -->
+                <div class="header-user" id="headerUser">
+                    <a href="/LOGIN/HTML/login.html" class="header-login">
+                        <span class="header-login__icon">👤</span>
+                        <span>Entrar</span>
+                    </a>
+                </div>
+
+                <button class="cart-button" type="button" data-cart-open>
                     <span class="cart-icon">🛒</span>
                     <span>Carrinho</span>
                     <strong class="cart-count">0</strong>
@@ -225,30 +233,40 @@
         </div>
     </footer>
 
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-modal__box">
+    <!-- CARRINHO (painel lateral) -->
+    <div class="cart-overlay" id="cartOverlay" hidden></div>
 
-            <div class="cart-modal__header">
-                <h2>Seu carrinho</h2>
-                <button type="button" onclick="closeCart()">×</button>
-            </div>
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Carrinho de compras">
 
-            <div id="cartItems" class="cart-items"></div>
+        <header class="cart-drawer__header">
+            <h2>Seu carrinho <small id="cartSummaryCount"></small></h2>
+            <button type="button" data-cart-close aria-label="Fechar carrinho">×</button>
+        </header>
+
+        <div id="cartItems" class="cart-items"></div>
+
+        <footer class="cart-drawer__footer">
+            <div class="cart-shipping" id="cartShipping"></div>
 
             <div class="cart-total">
                 <span>Total</span>
                 <strong id="cartTotal">R$ 0,00</strong>
             </div>
 
-            <button class="checkout-button" type="button" onclick="checkout()">
-                Finalizar compra
-            </button>
+            <button class="checkout-button" type="button" data-cart-checkout>Finalizar compra</button>
+            <button class="cart-clear" type="button" data-cart-clear>Limpar carrinho</button>
+        </footer>
 
-        </div>
-    </div>
+    </aside>
 
-    <script src="/INDEX/JS/pesca.js"></script>
-    <script src="/INDEX/JS/catalogo-lateral.js"></script>
+    <!-- AVISO (toast) -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Ordem: login.js, loja.js, catalogo-lateral.js.
+         pesca.js / caca.js NÃO são mais usados (o carrinho agora vem do loja.js) -->
+    <script src="/LOGIN/JS/login.js" defer></script>
+    <script src="/INDEX/JS/loja.js" defer></script>
+    <script src="/INDEX/JS/catalogo-lateral.js" defer></script>
 
 </body>
 </html>

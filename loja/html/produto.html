@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produto | Homo Habilis Caça & Pesca</title>
+
+    <link rel="stylesheet" href="/loja/css/index.css">
+    <link rel="stylesheet" href="/loja/css/produto.css">
+    <link rel="stylesheet" href="/loja/css/loja-sessao-carrinho.css">
+    <link rel="stylesheet" href="/loja/css/recursos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="topbar">
+        <div class="container topbar__content">
+            <span>Enviamos para todo o Brasil</span>
+            <span>Compra segura • Atendimento especializado</span>
+        </div>
+    </div>
+
+
+    <header class="header">
+        <div class="container header__content">
+
+            <a href="index.html" class="logo">
+                <div class="logo__mark">HH</div>
+                <div class="logo__text">
+                    <strong>HOMO HABILIS</strong>
+                    <span>CAÇA & PESCA</span>
+                </div>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Início</a>
+                <a href="pesca.html" class="nav__link" id="navPesca">Pesca</a>
+                <a href="caca.html" class="nav__link" id="navCaca">Caça</a>
+                <a href="index.html#artigos" class="nav__link">Artigos</a>
+                <a href="index.html#contato" class="nav__link">Contato</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <!-- Preenchido pelo loja.js: "Entrar" (visitante) ou menu do usuário (logado) -->
+                <div class="header-user" id="headerUser">
+                    <a href="/login/html/login.html" class="header-login">
+                        <span class="header-login__icon">👤</span>
+                        <span>Entrar</span>
+                    </a>
+                </div>
+
+                <button class="cart-button" type="button" data-cart-open>
+                    <span class="cart-icon">🛒</span>
+                    <span>Carrinho</span>
+                    <strong class="cart-count">0</strong>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- O conteúdo é montado pelo produto.js -->
+        <section class="product-page">
+            <div class="container" id="productRoot">
+                <p class="product-loading">Carregando produto…</p>
+            </div>
+        </section>
+
+        <section class="section related" id="relatedSection" hidden>
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <h2>Você também pode gostar</h2>
+                    </div>
+                </div>
+                <div class="product-grid" id="relatedGrid"></div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container footer__grid">
+
+            <div>
+                <a href="index.html" class="logo logo--footer">
+                    <div class="logo__mark">HH</div>
+                    <div class="logo__text">
+                        <strong>HOMO HABILIS</strong>
+                        <span>CAÇA & PESCA</span>
+                    </div>
+                </a>
+                <p class="footer__description">
+                    Equipamentos para quem vive a natureza.
+                </p>
+            </div>
+
+            <div>
+                <h3>Navegação</h3>
+                <a href="index.html">Início</a>
+                <a href="pesca.html">Pesca</a>
+                <a href="caca.html">Caça</a>
+            </div>
+
+            <div>
+                <h3>Atendimento</h3>
+                <a href="#" data-link="contato" target="_blank" rel="noopener">WhatsApp / Contato</a>
+                <a href="#" data-link="instagram" target="_blank" rel="noopener">Instagram</a>
+                <a href="#" data-link="email">E-mail</a>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                © 2026 Homo Habilis Caça & Pesca.
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="cart-overlay" id="cartOverlay" hidden></div>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Carrinho de compras">
+
+        <header class="cart-drawer__header">
+            <h2>Seu carrinho <small id="cartSummaryCount"></small></h2>
+            <button type="button" data-cart-close aria-label="Fechar carrinho">×</button>
+        </header>
+
+        <div id="cartItems" class="cart-items"></div>
+
+        <footer class="cart-drawer__footer">
+            <div class="cart-shipping" id="cartShipping"></div>
+
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">R$ 0,00</strong>
+            </div>
+
+            <button class="checkout-button" type="button" data-cart-checkout>Finalizar compra</button>
+            <button class="cart-clear" type="button" data-cart-clear>Limpar carrinho</button>
+        </footer>
+
+    </aside>
+
+    <a class="contact-fab" data-link="contato" target="_blank" rel="noopener" aria-label="Falar com a loja">Fale conosco</a>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/shared/js/utils.js" defer></script>
+    <script src="/shared/js/auth.js" defer></script>
+    <script src="/shared/js/dados.js" defer></script>
+    <script src="/shared/js/analytics.js" defer></script>
+    <script src="/loja/js/loja.js" defer></script>
+    <script src="/loja/js/produto.js" defer></script>
+
+</body>
+
+</html>

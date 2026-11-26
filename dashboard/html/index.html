@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="/dashboard/css/dashboard.css">
+    <!-- Proteção: só administradores. Precisa rodar antes da página aparecer. -->
+    <script src="/shared/js/utils.js"></script>
+    <script src="/shared/js/auth.js"></script>
+    <script src="/shared/js/dados.js"></script>
+    <script src="/dashboard/js/guard.js"></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <h1 class="titulo">
+            Gerenciamento do Sistema
+        </h1>
+
+        <button id="BTN_sair" class="BTN_sair" type="button">
+            SAIR
+        </button>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <section class="boas-vindas">
+
+            <h2 class="BEMVINDO">
+                Seja bem-vindo!
+            </h2>
+
+            <p>
+                Selecione uma opção para continuar.
+            </p>
+
+
+        </section>
+
+
+        <section class="cards">
+
+            <button class="card" type="button" onclick="location.href='metricas.html'">
+                <span class="card-icone">📊</span>
+                <h3>Métricas</h3>
+                <p>Indicadores, meta de vendas e Pesca × Caça</p>
+            </button>
+
+            <button class="card" type="button" onclick="location.href='pedidos.html'">
+                <span class="card-icone">🧾</span>
+                <h3>Pedidos</h3>
+                <p>Pedidos, vendas manuais e carrinhos</p>
+            </button>
+
+            <button class="card" type="button" onclick="location.href='licencas.html'">
+                <span class="card-icone">🪪</span>
+                <h3>Licenças</h3>
+                <p>Aprovação para produtos controlados</p>
+            </button>
+
+            <button class="card" type="button" onclick="location.href='avaliacoes.html'">
+                <span class="card-icone">⭐</span>
+                <h3>Avaliações</h3>
+                <p>Moderação de avaliações</p>
+            </button>
+
+            <button class="card" type="button" onclick="abrirClientes()">
+
+                <span class="card-icone">
+                    🫂
+                </span>
+
+                <h3>
+                    Clientes
+                </h3>
+
+                <p>
+                    Cadastro dos clientes
+                </p>
+
+            </button>
+
+
+            <button class="card" type="button" onclick="abrirFornecedores()">
+
+                <span class="card-icone">
+                    🏢
+                </span>
+
+                <h3>
+                    Fornecedores
+                </h3>
+
+                <p>
+                    Cadastro de fornecedores
+                </p>
+
+            </button>
+
+
+            <button class="card" type="button" onclick="abrirFuncionarios()">
+
+                <span class="card-icone">
+                    🧑‍💼
+                </span>
+
+                <h3>
+                    Funcionários
+                </h3>
+
+                <p>
+                    Cadastro de funcionários
+                </p>
+
+            </button>
+
+
+            <button class="card" type="button" onclick="abrirProdutos()">
+
+                <span class="card-icone">
+                    🎣 🦌
+                </span>
+
+                <h3>
+                    Produtos
+                </h3>
+
+                <p>
+                    Cadastro de produtos
+                </p>
+
+            </button>
+
+
+            <button class="card" type="button" onclick="abrirManutencao()">
+
+                <span class="card-icone">
+                    ⚙️
+                </span>
+
+                <h3>
+                    Manutenção
+                </h3>
+
+                <p>
+                    Manutenção do sistema
+                </p>
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="/dashboard/js/dashboard.js"></script>
+
+</body>
+
+</html>

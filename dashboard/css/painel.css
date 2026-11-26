@@ -1,0 +1,243 @@
+/* Páginas do painel: métricas, pedidos, licenças e avaliações.
+   Usa as variáveis e o cabeçalho do abas.css (carregar antes). */
+
+.painel {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+    display: grid;
+    gap: 22px;
+}
+
+.painel-bloco {
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.painel-bloco h2 {
+    margin: 0 0 4px;
+    font-size: 20px;
+    color: var(--green-900);
+}
+
+.painel-bloco h3 {
+    margin: 18px 0 8px;
+    font-size: 15px;
+    color: var(--green-800);
+}
+
+.painel-bloco > p.nota {
+    margin: 0 0 14px;
+    color: var(--gray-600);
+    font-size: 13px;
+}
+
+.barra-ferramentas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.barra-ferramentas select,
+.barra-ferramentas input {
+    padding: 9px 10px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    font: inherit;
+}
+
+.btn-painel {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--green-800);
+    color: var(--white);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-painel:hover { background: var(--orange-dark); }
+.btn-painel--claro { background: var(--gray-100); color: var(--green-900); }
+.btn-painel--perigo { background: var(--orange-dark); }
+
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 14px;
+}
+
+.kpi {
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--cream);
+}
+
+.kpi strong {
+    display: block;
+    font-size: 26px;
+    color: var(--green-900);
+}
+
+.kpi span {
+    color: var(--gray-600);
+    font-size: 13px;
+}
+
+.grade-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;
+}
+
+.depto-pesca { border-top: 4px solid var(--water-500); }
+.depto-caca { border-top: 4px solid var(--green-600); }
+
+.meta-trilho {
+    height: 18px;
+    margin: 12px 0 6px;
+    border-radius: 99px;
+    background: var(--gray-100);
+    overflow: hidden;
+}
+
+.meta-trilho i {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
+}
+
+.meta-linha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.meta-linha div {
+    min-width: 140px;
+}
+
+.meta-linha small { display: block; color: var(--gray-600); }
+.meta-linha strong { font-size: 20px; }
+
+.barra-linha {
+    display: grid;
+    grid-template-columns: minmax(90px, 160px) 1fr auto;
+    gap: 10px;
+    align-items: center;
+    margin: 6px 0;
+    font-size: 13px;
+}
+
+.barra-rotulo {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.barra-trilho {
+    height: 10px;
+    border-radius: 99px;
+    background: var(--gray-100);
+    overflow: hidden;
+}
+
+.barra-trilho i {
+    display: block;
+    height: 100%;
+    background: var(--water-500);
+}
+
+.barra-valor { color: var(--gray-600); white-space: nowrap; }
+
+.colunas {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 150px;
+    padding-top: 8px;
+}
+
+.coluna {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.coluna i {
+    display: block;
+    width: 100%;
+    min-height: 2px;
+    border-radius: 3px 3px 0 0;
+    background: var(--yellow);
+}
+
+.colunas-eixo {
+    display: flex;
+    justify-content: space-between;
+    color: var(--gray-600);
+    font-size: 12px;
+}
+
+.vazio {
+    margin: 6px 0;
+    color: var(--gray-400);
+    font-size: 13px;
+}
+
+.tabela-rolagem {
+    overflow-x: auto;
+}
+
+.tabela-rolagem table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.tabela-rolagem th,
+.tabela-rolagem td {
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+}
+
+.tabela-rolagem th { background: var(--cream); color: var(--green-900); }
+
+.aviso-demo {
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #fff3d6;
+    color: #8a5a00;
+    font-size: 13px;
+}
+
+.form-linha {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+    align-items: end;
+}
+
+.form-linha label {
+    display: grid;
+    gap: 4px;
+    font-size: 13px;
+    color: var(--green-900);
+}
+
+.form-linha input,
+.form-linha select {
+    padding: 9px 10px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    font: inherit;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Funcionários</title>
+    <link rel="stylesheet" href="/dashboard/css/abas.css">
+    <!-- Proteção: só administradores. Precisa rodar antes da página aparecer. -->
+    <script src="/shared/js/utils.js"></script>
+    <script src="/shared/js/auth.js"></script>
+    <script src="/shared/js/dados.js"></script>
+    <script src="/dashboard/js/guard.js"></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho-textos">
+            <h1 class="titulo">Cadastro de Funcionários</h1>
+            <h3 class="descricao">Cadastro Manual de Funcionários</h3>
+        </div>
+        <button class="BTN_voltar" id="BTN_voltar" type="button" onclick="voltarDashboard()">
+            Dashboard
+        </button>
+    </header>
+    <main>
+        <section class="cadastro">
+            <h2>Dados do Funcionário</h2>
+            <!-- Formulário de Cadastro -->
+                <form id="formFuncionario">
+                    <input type="hidden" id="id">
+                    <div class="grade">
+                        <div class="input-group">
+                            <label>Nome:</label>
+                            <input type="text" id="nome" required placeholder="Digite o nome do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>CPF:</label>
+                            <input type="text" id="cpf" required placeholder="Digite o CPF do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>Telefone:</label>
+                            <input type="text" id="telefone" required placeholder="Digite o telefone do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>E-mail:</label>
+                            <input type="text" id="email" required placeholder="Digite o email do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>Cargo:</label>
+                            <input type="text" id="cargo" required placeholder="Digite o cargo do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>Departamento:</label>
+                            <input type="text" id="departamento" required placeholder="Digite o departamento do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>Data de adimissão:</label>
+                            <input type="date" id="admissao" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Turno:</label>
+                            <input type="text" id="turno" required placeholder="Digite o turno do funcionario">
+                        </div>
+                        <div class="input-group">
+                            <label>Status do funcionario</label>
+                            <select id="status" class="status" required>
+                                <option value="" selected disabled>
+                                    Selecione o status
+                                </option>
+                                <option value="Ativo">Ativo</option>
+                                <option value="Desligado">Desligado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="BTNs">
+                        <button class="btn-salvar" type="submit">
+                            Salvar Funcionário
+                        </button>
+                        <button type="button" class="btn-limpar" onclick="limparFormulario()">
+                            Novo
+                        </button>
+                    </div>
+                </form>
+        </section>
+        <section class="listar-funcionarios">
+            <h2 class="h2">FuncionáriosCadastrados</h2>
+            <table border="1" class="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>Cargo</th>
+                        <th>Departamento</th>
+                        <th>Admissão</th>
+                        <th>Turno</th>
+                        <th>Status</th>
+                            <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela">
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="/dashboard/js/cadastro-simples.js"></script>
+    <script src="/dashboard/js/funcionarios.js"></script>
+</body>
+</html>

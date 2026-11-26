@@ -1,0 +1,670 @@
+/* =========================================================
+   RECURSOS NOVOS DA LOJA
+   Estrelas, promoção, produto controlado, vídeos, avaliações,
+   contato e a nova página Minha conta.
+   Usa as variáveis do index.css. Carregar depois dos demais.
+========================================================= */
+
+/* ---------- Estrelas e avaliação ---------- */
+
+.stars {
+    color: var(--yellow);
+    letter-spacing: 1px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 2px 0 6px;
+}
+
+.product-rating small {
+    color: var(--gray-600);
+    font-size: 12px;
+}
+
+/* ---------- Promoção e selo controlado ---------- */
+
+.product-old-price {
+    display: inline-block;
+    margin-right: 6px;
+    color: var(--gray-400);
+    font-size: 13px;
+    text-decoration: line-through;
+}
+
+.product-discount {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 99px;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.product-badge--controlled {
+    background: #8a1f17;
+    color: var(--white);
+}
+
+/* ---------- Avatar com foto ---------- */
+
+.user-avatar--photo,
+.account-hero__avatar.has-photo,
+.photo-editor__preview.has-photo {
+    padding: 0;
+    overflow: hidden;
+}
+
+.user-avatar img,
+.account-hero__avatar img,
+.photo-editor__preview img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------- Botão de contato flutuante ---------- */
+
+.contact-fab {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 40;
+    padding: 12px 18px;
+    border-radius: 99px;
+    background: var(--green-800);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: var(--shadow-md);
+    transition: transform .2s, background .2s;
+}
+
+.contact-fab:hover {
+    background: var(--orange-dark);
+    transform: translateY(-2px);
+}
+
+/* ---------- Seções da home ---------- */
+
+.section--soft {
+    background: var(--cream);
+}
+
+.video-grid,
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.video-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.video-card__media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--green-900);
+    display: grid;
+    place-items: center;
+    color: var(--white);
+}
+
+.video-card__media img,
+.video-card__media iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+}
+
+.video-play {
+    position: relative;
+    width: 62px;
+    height: 62px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--green-950);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.video-card--soon .video-card__media span {
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    opacity: .8;
+}
+
+.video-card__body {
+    padding: 16px 18px 20px;
+}
+
+.video-card__body h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+}
+
+.video-card__body p {
+    margin: 0;
+    color: var(--gray-600);
+    font-size: 14px;
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.review-card p {
+    margin: 0;
+    color: var(--gray-800);
+}
+
+.review-card footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: auto;
+    font-size: 14px;
+}
+
+.review-card footer a {
+    color: var(--green-700);
+}
+
+.review-empty {
+    grid-column: 1 / -1;
+    padding: 28px;
+    text-align: center;
+    color: var(--gray-600);
+    background: var(--cream);
+    border-radius: var(--radius);
+}
+
+.about {
+    padding: 64px 0;
+    background: linear-gradient(135deg, var(--green-950), var(--green-700));
+    color: var(--white);
+}
+
+.about__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) auto;
+    gap: 32px;
+    align-items: center;
+}
+
+.about h2 {
+    margin: 8px 0 12px;
+}
+
+.about p {
+    max-width: 62ch;
+    opacity: .9;
+}
+
+.about__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media (max-width: 760px) {
+    .about__content { grid-template-columns: 1fr; }
+}
+
+/* ---------- Página de produto ---------- */
+
+.detail__rating {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--gray-600);
+    font-size: 14px;
+}
+
+.detail__old-price {
+    margin-top: 10px;
+    color: var(--gray-400);
+    text-decoration: line-through;
+}
+
+.detail__contact {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--green-700);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.controlled-notice {
+    margin: 16px 0;
+    padding: 14px 16px;
+    border-left: 4px solid #8a1f17;
+    border-radius: 8px;
+    background: #fdf1ef;
+    color: #5c1812;
+    font-size: 14px;
+}
+
+.controlled-notice p {
+    margin: 6px 0 0;
+}
+
+.controlled-notice a {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.reviews {
+    margin-top: 56px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+}
+
+.reviews__layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+    gap: 36px;
+    align-items: start;
+}
+
+@media (max-width: 800px) {
+    .reviews__layout { grid-template-columns: 1fr; }
+}
+
+.reviews__average {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.reviews__average strong {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 48px;
+    line-height: 1;
+}
+
+.rating-bar {
+    display: grid;
+    grid-template-columns: 28px 1fr 24px;
+    gap: 8px;
+    align-items: center;
+    font-size: 13px;
+}
+
+.rating-bar div {
+    height: 8px;
+    border-radius: 99px;
+    background: var(--gray-100);
+    overflow: hidden;
+}
+
+.rating-bar i {
+    display: block;
+    height: 100%;
+    background: var(--yellow);
+}
+
+.review-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.review-item header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    align-items: center;
+}
+
+.review-item time {
+    margin-left: auto;
+    color: var(--gray-400);
+    font-size: 13px;
+}
+
+.review-item p {
+    margin: 8px 0 0;
+}
+
+.verified {
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: #e8f5ec;
+    color: var(--green-700);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.review-delete {
+    margin-top: 8px;
+    border: 0;
+    background: none;
+    color: #9b2929;
+    font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.review-form {
+    display: grid;
+    gap: 12px;
+    margin-top: 22px;
+    padding: 18px;
+    background: var(--cream);
+    border-radius: var(--radius);
+}
+
+.review-form h3 {
+    margin: 0;
+}
+
+.review-form textarea {
+    min-height: 90px;
+    padding: 10px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    font: inherit;
+    resize: vertical;
+}
+
+.star-input {
+    display: flex;
+    gap: 4px;
+}
+
+.star-input button {
+    border: 0;
+    background: none;
+    font-size: 30px;
+    line-height: 1;
+    color: var(--gray-200);
+    cursor: pointer;
+}
+
+.star-input button.is-on {
+    color: var(--yellow);
+}
+
+.review-login {
+    margin-top: 18px;
+}
+
+.review-login a {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.form-message {
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* ---------- Minha conta (redesenhada) ---------- */
+
+.avatar-box {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.avatar-edit {
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.account-hero__avatar.has-photo {
+    background: var(--green-700);
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 14px;
+    padding: 24px 28px 8px;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--cream);
+    color: var(--green-900);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.stat-card strong {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 34px;
+    line-height: 1;
+}
+
+.stat-card span {
+    color: var(--gray-600);
+    font-size: 13px;
+}
+
+.stat-card:hover {
+    border-color: var(--yellow);
+}
+
+.overview-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    padding: 14px 28px 28px;
+}
+
+.overview-card {
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.overview-card h3 {
+    margin: 0 0 8px;
+}
+
+.overview-card p {
+    margin: 4px 0;
+}
+
+.overview-card a {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--green-700);
+    font-weight: 600;
+}
+
+.overview-card__hint {
+    color: var(--gray-600);
+    font-size: 13px;
+}
+
+.photo-editor {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.photo-editor h3 {
+    margin: 0 0 4px;
+}
+
+.photo-editor p {
+    margin: 0 0 12px;
+    color: var(--gray-600);
+    font-size: 14px;
+}
+
+.photo-editor__preview {
+    flex-shrink: 0;
+    width: 104px;
+    height: 104px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--green-950);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 54px;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.photo-editor__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.photo-editor .btn,
+.btn--ghost {
+    cursor: pointer;
+}
+
+.btn--ghost {
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    color: var(--green-900);
+}
+
+@media (max-width: 560px) {
+    .photo-editor { flex-direction: column; text-align: center; }
+    .photo-editor__actions { justify-content: center; }
+}
+
+.order-list,
+.my-reviews {
+    display: grid;
+    gap: 14px;
+    padding: 24px 28px;
+}
+
+.order-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.order-card header,
+.order-card footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: var(--cream);
+}
+
+.order-card header small {
+    display: block;
+    color: var(--gray-600);
+}
+
+.order-card ul {
+    margin: 0;
+    padding: 6px 18px;
+    list-style: none;
+}
+
+.order-card li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 14px;
+}
+
+.order-card li:last-child {
+    border-bottom: 0;
+}
+
+.pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 99px;
+    background: var(--gray-100);
+    color: var(--gray-800);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.pill--aguardando-pagamento,
+.pill--pendente { background: #fff3d6; color: #8a5a00; }
+
+.pill--pago,
+.pill--aprovada { background: #e0f2e7; color: #14513c; }
+
+.pill--enviado { background: #dcecf7; color: #0b4a73; }
+.pill--entregue { background: #d6efe3; color: #0d3b2d; }
+.pill--cancelado,
+.pill--recusada { background: #fbe3e0; color: #8a1f17; }
+
+.license-status {
+    padding: 24px 28px 0;
+}
+
+.license-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    background: var(--gray-100);
+}
+
+.license-banner--pendente { background: #fff3d6; }
+.license-banner--aprovada { background: #e0f2e7; }
+.license-banner--recusada { background: #fbe3e0; }
+
+.form-hint {
+    margin: 0;
+    color: var(--gray-600);
+    font-size: 13px;
+}
+
+.account-form--danger {
+    border-top: 1px solid var(--border);
+}

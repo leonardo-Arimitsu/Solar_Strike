@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Homo Habilis Caça &amp; Pesca</title>
+    <link rel="stylesheet" href="/login/css/login.css">
+</head>
+<body>
+    <main>
+        <div class="login-container">
+
+            <div class="icone">
+                <h1>Cadastro</h1>
+                <p>Bem-vindo à loja! Por favor, insira suas informações:</p>
+            </div>
+
+            <form class="login" id="form-cadastro" novalidate>
+
+                <div class="input-group">
+
+                    <label class="name-label" for="name">Nome:</label>
+
+                    <input class="input-login input-name"
+                           type="text"
+                           id="name"
+                           name="name"
+                           placeholder="Digite seu nome completo"
+                           autocomplete="name"
+                           aria-label="Nome completo"
+                           required>
+
+                    <label class="cep-label" for="cep">CEP:</label>
+
+                    <input class="input-login input-cep"
+                           type="text"
+                           id="cep"
+                           name="cep"
+                           placeholder="Digite seu CEP"
+                           autocomplete="postal-code"
+                           inputmode="numeric"
+                           maxlength="9"
+                           aria-label="CEP"
+                           required>
+
+                    <label class="uf-label" for="uf">UF:</label>
+
+                    <input class="input-login input-uf"
+                           type="text"
+                           id="uf"
+                           name="uf"
+                           placeholder="Ex.: SP"
+                           autocomplete="address-level1"
+                           maxlength="2"
+                           aria-label="UF"
+                           required>
+
+                    <label class="email-label" for="email">E-mail:</label>
+
+                    <input class="input-login input-email"
+                           type="email"
+                           id="email"
+                           name="email"
+                           placeholder="Digite seu E-mail"
+                           autocomplete="email"
+                           aria-label="E-mail"
+                           required>
+
+                    <label class="password-label" for="password">Senha:</label>
+
+                    <div class="password-holder input-password-field">
+
+                        <input class="input-password"
+                               type="password"
+                               id="password"
+                               name="password"
+                               placeholder="Digite sua Senha"
+                               autocomplete="new-password"
+                               aria-label="Senha"
+                               required>
+
+                        <button type="button"
+                                class="toggle-password"
+                                aria-label="Mostrar senha"
+                                aria-pressed="false">
+                            <img src="/shared/img/eye-icon-size_16.png" alt="">
+                        </button>
+
+                    </div>
+
+                    <label class="confirm-password-label" for="confirm-password">Confirme sua Senha:</label>
+
+                    <div class="password-holder input-confirm-field">
+
+                        <input class="input-password"
+                               type="password"
+                               id="confirm-password"
+                               name="confirm-password"
+                               placeholder="Confirme sua Senha"
+                               autocomplete="new-password"
+                               aria-label="Confirmar senha"
+                               required>
+
+                        <button type="button"
+                                class="toggle-password"
+                                aria-label="Mostrar senha"
+                                aria-pressed="false">
+                            <img src="/shared/img/eye-icon-size_16.png" alt="">
+                        </button>
+
+                    </div>
+
+                    <p class="mensagem-login"
+                       id="mensagem-cadastro"
+                       role="alert"
+                       hidden></p>
+
+                </div>
+
+                <div class="options">
+
+                    <button class="login-entry"
+                            id="btn-cadastrar"
+                            type="submit">
+                        <span>Crie sua conta!</span>
+                    </button>
+
+                    <span class="no-account">
+                        Já tem uma conta?
+                        <a href="/login/html/login.html">Faça login!</a>
+                    </span>
+
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="/shared/js/utils.js"></script>
+    <script src="/shared/js/auth.js"></script>
+    <script src="/shared/js/dados.js"></script>
+    <script src="/login/js/login.js"></script>
+</body>
+</html>

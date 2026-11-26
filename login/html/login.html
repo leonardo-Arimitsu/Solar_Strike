@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Homo Habilis Caça &amp; Pesca</title>
+    <link rel="stylesheet" href="/login/css/login.css">
+</head>
+<body>
+    <main>
+        <div class="login-container">
+
+            <div class="icone">
+                <h1>Login</h1>
+                <p>Bem-vindo de volta, acesse sua conta:</p>
+            </div>
+
+            <form class="login" id="form-login" novalidate>
+
+                <div class="input-group">
+
+                    <label class="email-label" for="email">E-mail:</label>
+
+                    <input class="input-login input-email"
+                           type="email"
+                           id="email"
+                           name="email"
+                           placeholder="Digite seu E-mail"
+                           autocomplete="email"
+                           aria-label="E-mail"
+                           required>
+
+                    <label class="password-label" for="password">Senha:</label>
+
+                    <div class="password-holder input-password-field">
+
+                        <input class="input-password"
+                               type="password"
+                               id="password"
+                               name="password"
+                               placeholder="Digite sua Senha"
+                               autocomplete="current-password"
+                               aria-label="Senha"
+                               required>
+
+                        <button type="button"
+                                id="toggle-password"
+                                class="toggle-password"
+                                aria-label="Mostrar senha"
+                                aria-pressed="false">
+
+                            <img src="/shared/img/eye-icon-size_16.png" alt="">
+
+                        </button>
+                    </div>
+
+                    <p class="mensagem-login"
+                       id="mensagem-login"
+                       role="alert"
+                       hidden></p>
+
+                </div>
+
+                <div class="options">
+
+                    <div class="login-options">
+
+                        <label class="remember-me">
+                            <input type="checkbox" id="remember-me">
+                            <span>Lembre de mim</span>
+                        </label>
+
+                        <a class="i-forgor" href="/login/html/esqueci-senha.html">
+                            Esqueci a Senha!
+                        </a>
+
+                    </div>
+
+                    <button class="login-entry"
+                        id="btn-entrar"
+                        type="submit">
+                        <span>Entrar</span>
+                    </button>
+
+                    <span class="no-account">
+                        Não tem uma conta?
+                        <a href="/login/html/cadastro.html">Crie uma!</a>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="/shared/js/utils.js"></script>
+    <script src="/shared/js/auth.js"></script>
+    <script src="/shared/js/dados.js"></script>
+    <script src="/login/js/login.js"></script>
+</body>
+</html>

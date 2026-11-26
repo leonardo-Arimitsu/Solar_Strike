@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licenças</title>
+    <link rel="stylesheet" href="/dashboard/css/abas.css">
+    <link rel="stylesheet" href="/dashboard/css/painel.css">
+    <!-- Proteção: só administradores. Precisa rodar antes da página aparecer. -->
+    <script src="/shared/js/utils.js"></script>
+    <script src="/shared/js/auth.js"></script>
+    <script src="/shared/js/dados.js"></script>
+    <script src="/dashboard/js/guard.js"></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho-textos">
+            <h1 class="titulo">Licenças</h1>
+            <h3 class="descricao">Aprovação de documentos para produtos controlados</h3>
+        </div>
+        <button class="BTN_voltar" id="BTN_voltar" type="button" onclick="voltarDashboard()">Dashboard</button>
+    </header>
+    <main class="painel">
+        <section class="painel-bloco">
+            <h2>Licenças de clientes</h2>
+            <p class="nota">Confira o documento antes de aprovar. Só clientes com licença aprovada e dentro da validade compram produtos controlados.</p>
+            <div class="barra-ferramentas">
+                <label for="filtroLicenca">Mostrar:</label>
+                <select id="filtroLicenca">
+                    <option value="pendente">Pendentes</option>
+                    <option value="">Todas</option>
+                    <option value="aprovada">Aprovadas</option>
+                    <option value="recusada">Recusadas</option>
+                </select>
+            </div>
+            <div class="tabela-rolagem"><table>
+                <thead><tr><th>Cliente</th><th>Documento</th><th>Número</th><th>Validade</th><th>Enviado em</th><th>Status</th><th>Ações</th></tr></thead>
+                <tbody id="tabelaLicencas"></tbody>
+            </table></div>
+        </section>
+    </main>
+    <script src="/dashboard/js/painel-comum.js"></script>
+    <script src="/dashboard/js/licencas.js"></script>
+</body>
+</html>

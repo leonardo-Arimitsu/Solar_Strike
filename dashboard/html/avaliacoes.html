@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliações</title>
+    <link rel="stylesheet" href="/dashboard/css/abas.css">
+    <link rel="stylesheet" href="/dashboard/css/painel.css">
+    <!-- Proteção: só administradores. Precisa rodar antes da página aparecer. -->
+    <script src="/shared/js/utils.js"></script>
+    <script src="/shared/js/auth.js"></script>
+    <script src="/shared/js/dados.js"></script>
+    <script src="/dashboard/js/guard.js"></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho-textos">
+            <h1 class="titulo">Avaliações</h1>
+            <h3 class="descricao">Moderação das avaliações de produtos</h3>
+        </div>
+        <button class="BTN_voltar" id="BTN_voltar" type="button" onclick="voltarDashboard()">Dashboard</button>
+    </header>
+    <main class="painel">
+        <section class="painel-bloco">
+            <h2>Avaliações dos clientes</h2>
+            <p class="nota">Exclua avaliações impróprias. A média dos produtos é recalculada na hora.</p>
+            <div class="tabela-rolagem"><table>
+                <thead><tr><th>Produto</th><th>Nota</th><th>Cliente</th><th>Comentário</th><th>Data</th><th>Ações</th></tr></thead>
+                <tbody id="tabelaAvaliacoes"></tbody>
+            </table></div>
+        </section>
+    </main>
+    <script src="/dashboard/js/painel-comum.js"></script>
+    <script src="/dashboard/js/avaliacoes.js"></script>
+</body>
+</html>

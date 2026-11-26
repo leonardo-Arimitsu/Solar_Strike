@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar senha | Homo Habilis Caça &amp; Pesca</title>
+    <link rel="stylesheet" href="/login/css/login.css">
+</head>
+<body>
+    <main>
+        <div class="login-container">
+
+            <div class="icone">
+                <h1>Esqueci a senha!</h1>
+                <p>Digite o email associado à sua conta para receber um link de recuperação na sua caixa de entrada:</p>
+            </div>
+
+            <form class="login" id="form-recuperar" novalidate>
+
+                <div class="input-group recovery-input">
+
+                    <label class="email-label" for="email">E-mail:</label>
+
+                    <input class="input-login input-email"
+                           type="email"
+                           id="email"
+                           name="email"
+                           placeholder="Digite seu E-mail"
+                           autocomplete="email"
+                           aria-label="E-mail"
+                           required>
+
+                    <p class="mensagem-login"
+                       id="mensagem-recuperar"
+                       role="status"
+                       hidden></p>
+
+                </div>
+
+                <div class="options">
+
+                    <button class="login-entry"
+                        id="btn-recuperar"
+                        type="submit">
+                        <span>Enviar link de recuperação</span>
+                    </button>
+
+                    <span class="no-account">
+                        Voltar para a página de Login?
+                        <a href="/login/html/login.html">Clique aqui.</a>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="/shared/js/utils.js"></script>
+    <script src="/shared/js/auth.js"></script>
+    <script src="/shared/js/dados.js"></script>
+    <script src="/login/js/login.js"></script>
+</body>
+</html>

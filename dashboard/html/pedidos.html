@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos e Carrinhos</title>
+    <link rel="stylesheet" href="/dashboard/css/abas.css">
+    <link rel="stylesheet" href="/dashboard/css/painel.css">
+    <!-- Proteção: só administradores. Precisa rodar antes da página aparecer. -->
+    <script src="/shared/js/utils.js"></script>
+    <script src="/shared/js/auth.js"></script>
+    <script src="/shared/js/dados.js"></script>
+    <script src="/dashboard/js/guard.js"></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho-textos">
+            <h1 class="titulo">Pedidos e Carrinhos</h1>
+            <h3 class="descricao">Acompanhe pedidos, registre vendas e veja os carrinhos</h3>
+        </div>
+        <button class="BTN_voltar" id="BTN_voltar" type="button" onclick="voltarDashboard()">Dashboard</button>
+    </header>
+    <main class="painel">
+        <section class="painel-bloco">
+            <h2>Registrar venda manual</h2>
+            <p class="nota">Use para vendas feitas fora do site (loja física, WhatsApp...). Entra nas métricas como Pago e baixa o estoque.</p>
+            <form id="formVenda" class="form-linha">
+                <label>Produto <select id="vendaProduto" required></select></label>
+                <label>Quantidade <input type="number" id="vendaQtd" min="1" value="1" required></label>
+                <label>Cliente (opcional) <input type="text" id="vendaCliente" maxlength="80" placeholder="Nome"></label>
+                <label>Canal
+                    <select id="vendaCanal">
+                        <option>Loja física</option><option>WhatsApp</option><option>Instagram</option><option>Telefone</option>
+                    </select>
+                </label>
+                <label>Origem da venda
+                    <select id="vendaOrigem">
+                        <option>Loja física</option><option>Redes sociais</option><option>Campanhas de anúncios</option>
+                        <option>Busca orgânica</option><option>Links promocionais</option><option>Direto</option>
+                    </select>
+                </label>
+                <button type="submit" class="btn-painel">Registrar venda</button>
+            </form>
+            <p class="vazio" id="msgVenda"></p>
+        </section>
+
+        <section class="painel-bloco">
+            <h2>Pedidos</h2>
+            <div class="barra-ferramentas">
+                <label for="filtroStatus">Status:</label>
+                <select id="filtroStatus"><option value="">Todos</option></select>
+                <button type="button" class="btn-painel btn-painel--claro" id="baixarPedidos">Baixar JSON dos pedidos</button>
+            </div>
+            <div class="tabela-rolagem"><table>
+                <thead><tr><th>Pedido</th><th>Data</th><th>Cliente</th><th>Canal / origem</th><th>Itens</th><th>Total</th><th>Status</th></tr></thead>
+                <tbody id="tabelaPedidos"></tbody>
+            </table></div>
+        </section>
+
+        <section class="painel-bloco">
+            <h2>Carrinhos por cliente</h2>
+            <p class="nota">Cada cliente tem o seu carrinho salvo em JSON (carrinhos). Útil para ver o que está parado e acompanhar abandono.</p>
+            <div class="barra-ferramentas">
+                <button type="button" class="btn-painel btn-painel--claro" id="baixarCarrinhos">Baixar JSON dos carrinhos</button>
+            </div>
+            <div class="tabela-rolagem"><table>
+                <thead><tr><th>Cliente</th><th>Itens</th><th>Total estimado</th><th>Atualizado em</th></tr></thead>
+                <tbody id="tabelaCarrinhos"></tbody>
+            </table></div>
+        </section>
+    </main>
+    <script src="/dashboard/js/painel-comum.js"></script>
+    <script src="/dashboard/js/pedidos.js"></script>
+</body>
+</html>

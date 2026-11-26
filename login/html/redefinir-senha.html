@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova senha | Homo Habilis Caça &amp; Pesca</title>
+    <link rel="stylesheet" href="/login/css/login.css">
+</head>
+<body>
+    <main>
+        <div class="login-container">
+
+            <div class="icone">
+                <h1>Altere sua senha</h1>
+                <p>Digite sua nova senha abaixo:</p>
+            </div>
+
+            <form class="login" id="form-redefinir" novalidate>
+
+                <div class="input-group">
+
+                    <label class="password-label" for="password">Nova senha:</label>
+
+                    <div class="password-holder input-password-field">
+
+                        <input class="input-password"
+                               type="password"
+                               id="password"
+                               name="password"
+                               placeholder="Digite sua Senha"
+                               autocomplete="new-password"
+                               aria-label="Senha"
+                               required>
+
+                        <button type="button"
+                                class="toggle-password"
+                                aria-label="Mostrar senha"
+                                aria-pressed="false">
+                            <img src="/shared/img/eye-icon-size_16.png" alt="">
+                        </button>
+
+                    </div>
+
+                    <label class="confirm-password-label" for="confirm-password">Confirme sua senha:</label>
+
+                    <div class="password-holder input-confirm-field">
+
+                        <input class="input-password"
+                               type="password"
+                               id="confirm-password"
+                               name="confirm-password"
+                               placeholder="Confirme sua Senha"
+                               autocomplete="new-password"
+                               aria-label="Confirmar senha"
+                               required>
+
+                        <button type="button"
+                                class="toggle-password"
+                                aria-label="Mostrar senha"
+                                aria-pressed="false">
+                            <img src="/shared/img/eye-icon-size_16.png" alt="">
+                        </button>
+
+                    </div>
+
+                    <p class="mensagem-login"
+                       id="mensagem-redefinir"
+                       role="alert"
+                       hidden></p>
+
+                </div>
+
+                <div class="options">
+
+                    <button class="login-entry"
+                            id="btn-redefinir"
+                            type="submit">
+                        <span>Alterar Senha</span>
+                    </button>
+
+                    <span class="no-account">Não esqueça dela dessa vez, ok?</span>
+
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="/shared/js/utils.js"></script>
+    <script src="/shared/js/auth.js"></script>
+    <script src="/shared/js/dados.js"></script>
+    <script src="/login/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+[
+  {
+    "id": "vara-pesca-profissional",
+    "nome": "Vara de Pesca Profissional",
+    "categoria": "pesca",
+    "subcategoria": "varas",
+    "badge": "Destaque",
+    "resumo": "Ação rápida e estrutura leve para pesca esportiva.",
+    "descricao": "Vara desenvolvida para quem pesca com frequência e precisa de resposta rápida na ferrada. Estrutura leve que reduz o cansaço em longas jornadas e boa sensibilidade para perceber o ataque.",
+    "preco": 389.9,
+    "parcelas": 6,
+    "estoque": 12,
+    "imagens": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDqtMYfgPnN_8LQR97HWVdS_9h_K9r9Xp4AZrGsNsw8aolnLbOvkMysdR&s=10"
+    ],
+    "especificacoes": {
+      "Comprimento": "6'0",
+      "Ação": "Rápida",
+      "Material": "Carbono",
+      "Indicada para": "Iscas artificiais"
+    },
+    "marca": "Homo Habilis",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "vara-tucunare-6",
+    "nome": "Vara Tucunaré 6'0",
+    "categoria": "pesca",
+    "subcategoria": "varas",
+    "badge": "Destaque",
+    "resumo": "Leve, rápida e ideal para iscas artificiais.",
+    "descricao": "Vara pensada para a pesca do tucunaré com iscas artificiais. Leve, com ação rápida e boa capacidade de arremesso.",
+    "preco": 299.9,
+    "parcelas": 6,
+    "estoque": 20,
+    "imagens": [
+      "https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Comprimento": "6'0\"",
+      "Ação": "Rápida",
+      "Indicada para": "Tucunaré"
+    },
+    "marca": "Homo Habilis",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "vara-predator-pro",
+    "nome": "Vara Predator Pro",
+    "categoria": "pesca",
+    "subcategoria": "varas",
+    "badge": "",
+    "resumo": "Potência para peixes de maior porte.",
+    "descricao": "Vara com mais potência no blank, indicada para peixes de maior porte e pescarias em estruturas fechadas.",
+    "preco": 459.9,
+    "parcelas": 8,
+    "estoque": 8,
+    "imagens": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDqtMYfgPnN_8LQR97HWVdS_9h_K9r9Xp4AZrGsNsw8aolnLbOvkMysdR&s=10"
+    ],
+    "especificacoes": {
+      "Ação": "Moderada-rápida",
+      "Material": "Carbono",
+      "Indicada para": "Peixes de maior porte"
+    },
+    "marca": "Predator",
+    "precoOriginal": 574.9,
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "carretilha-pro-200",
+    "nome": "Carretilha Pro 200",
+    "categoria": "pesca",
+    "subcategoria": "carretilhas",
+    "badge": "Novo",
+    "resumo": "Sistema de arremesso preciso e recuperação suave.",
+    "descricao": "Carretilha com freio de arremesso ajustável e recuperação suave, para quem busca precisão em cada lançamento.",
+    "preco": 649.9,
+    "parcelas": 10,
+    "estoque": 6,
+    "imagens": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Modelo": "200",
+      "Freio": "Magnético ajustável",
+      "Indicada para": "Pesca esportiva"
+    },
+    "marca": "Homo Habilis",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "carretilha-titan-100",
+    "nome": "Carretilha Titan 100",
+    "categoria": "pesca",
+    "subcategoria": "carretilhas",
+    "badge": "Novo",
+    "resumo": "Controle preciso durante o arremesso.",
+    "descricao": "Carretilha de perfil baixo com controle preciso durante o arremesso e construção resistente.",
+    "preco": 579.9,
+    "parcelas": 10,
+    "estoque": 9,
+    "imagens": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Modelo": "100",
+      "Perfil": "Baixo"
+    },
+    "marca": "Titan",
+    "precoOriginal": 695.9,
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "carretilha-black-water",
+    "nome": "Carretilha Black Water",
+    "categoria": "pesca",
+    "subcategoria": "carretilhas",
+    "badge": "",
+    "resumo": "Construção robusta para pesca esportiva.",
+    "descricao": "Carretilha robusta, pensada para pescarias intensas e uso frequente.",
+    "preco": 689.9,
+    "parcelas": 10,
+    "estoque": 5,
+    "imagens": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Construção": "Reforçada",
+      "Indicada para": "Pesca esportiva"
+    },
+    "marca": "Black Water",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "molinete-river-3000",
+    "nome": "Molinete River 3000",
+    "categoria": "pesca",
+    "subcategoria": "molinetes",
+    "badge": "",
+    "resumo": "Recuperação suave e estrutura leve.",
+    "descricao": "Molinete leve, com recuperação suave e tamanho versátil para diferentes tipos de pescaria.",
+    "preco": 329.9,
+    "parcelas": 6,
+    "estoque": 15,
+    "imagens": [
+      "https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tamanho": "3000",
+      "Estrutura": "Leve"
+    },
+    "marca": "River",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "kit-iscas-tucunare",
+    "nome": "Kit Iscas Tucunaré",
+    "categoria": "pesca",
+    "subcategoria": "iscas",
+    "badge": "Mais vendido",
+    "resumo": "Seleção de iscas para diferentes condições de água.",
+    "descricao": "Kit com iscas variadas para você se adaptar às condições da água, da superfície ao fundo.",
+    "preco": 149.9,
+    "parcelas": 3,
+    "estoque": 30,
+    "imagens": [
+      "https://images.tcdn.com.br/img/img_prod/685751/kit_com_as_principais_iscas_artificiais_para_pescaria_de_tucunare_na_amazonia_35393_1_8f6efe62d75bb4ac7ff594cc55d5d89b_20250918024125.jpg"
+    ],
+    "especificacoes": {
+      "Conteúdo": "Kit com iscas variadas",
+      "Indicado para": "Tucunaré"
+    },
+    "marca": "Homo Habilis",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "isca-predator-110",
+    "nome": "Isca Predator 110",
+    "categoria": "pesca",
+    "subcategoria": "iscas",
+    "badge": "",
+    "resumo": "Perfil de natação desenvolvido para predadores.",
+    "descricao": "Isca artificial com perfil de natação pensado para atrair peixes predadores.",
+    "preco": 69.9,
+    "parcelas": 1,
+    "estoque": 40,
+    "imagens": [
+      "https://images.unsplash.com/photo-1534943441045-1009d7cb9bb9?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tamanho": "110 mm",
+      "Tipo": "Artificial"
+    },
+    "marca": "Predator",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "bolsa-tackle-pro",
+    "nome": "Bolsa Tackle Pro",
+    "categoria": "pesca",
+    "subcategoria": "acessorios",
+    "badge": "",
+    "resumo": "Organização prática para equipamentos e iscas.",
+    "descricao": "Bolsa com compartimentos para organizar iscas, anzóis e acessórios na hora da pescaria.",
+    "preco": 189.9,
+    "parcelas": 3,
+    "estoque": 14,
+    "imagens": [
+      "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tipo": "Bolsa organizadora",
+      "Uso": "Pesca"
+    },
+    "marca": "Homo Habilis",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "mochila-expedition-45l",
+    "nome": "Mochila Expedition 45L",
+    "categoria": "caca",
+    "subcategoria": "mochilas",
+    "badge": "",
+    "resumo": "Grande capacidade e construção resistente.",
+    "descricao": "Mochila de grande capacidade, com construção resistente para longas jornadas em campo.",
+    "preco": 429.9,
+    "parcelas": 8,
+    "estoque": 10,
+    "imagens": [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Capacidade": "45 litros",
+      "Uso": "Campo e expedição"
+    },
+    "marca": "Expedition",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "jaqueta-field-pro",
+    "nome": "Jaqueta Field Pro",
+    "categoria": "caca",
+    "subcategoria": "vestuario",
+    "badge": "Destaque",
+    "resumo": "Proteção e conforto para atividades ao ar livre.",
+    "descricao": "Jaqueta para atividades ao ar livre, com foco em proteção e conforto durante todo o dia.",
+    "preco": 499.9,
+    "parcelas": 8,
+    "estoque": 11,
+    "imagens": [
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tipo": "Jaqueta",
+      "Uso": "Campo"
+    },
+    "marca": "Field",
+    "precoOriginal": 649.9,
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "colete-expedition",
+    "nome": "Colete Expedition",
+    "categoria": "caca",
+    "subcategoria": "vestuario",
+    "badge": "",
+    "resumo": "Organização e praticidade para campo.",
+    "descricao": "Colete com bolsos para manter o essencial sempre à mão durante a atividade.",
+    "preco": 349.9,
+    "parcelas": 6,
+    "estoque": 7,
+    "imagens": [
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tipo": "Colete",
+      "Uso": "Campo"
+    },
+    "marca": "Expedition",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "binoculo-ranger-10x42",
+    "nome": "Binóculo Ranger 10x42",
+    "categoria": "caca",
+    "subcategoria": "optica",
+    "badge": "Novo",
+    "resumo": "Visão clara para observação em campo.",
+    "descricao": "Binóculo com ampliação de 10x e lentes de 42 mm, para observação clara e confortável.",
+    "preco": 799.9,
+    "parcelas": 10,
+    "estoque": 4,
+    "imagens": [
+      "https://images.unsplash.com/photo-1517825738774-7de9363ef735?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Ampliação": "10x",
+      "Objetiva": "42 mm"
+    },
+    "marca": "Ranger",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "kit-outdoor-field",
+    "nome": "Kit Outdoor Field",
+    "categoria": "caca",
+    "subcategoria": "equipamentos",
+    "badge": "",
+    "resumo": "Conjunto compacto para atividades em campo.",
+    "descricao": "Conjunto compacto com itens essenciais para atividades em campo.",
+    "preco": 259.9,
+    "parcelas": 4,
+    "estoque": 18,
+    "imagens": [
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tipo": "Kit",
+      "Uso": "Campo"
+    },
+    "marca": "Field",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "kit-field-essentials",
+    "nome": "Kit Field Essentials",
+    "categoria": "caca",
+    "subcategoria": "acessorios",
+    "badge": "",
+    "resumo": "Acessórios essenciais para atividades outdoor.",
+    "descricao": "Acessórios essenciais reunidos em um único kit para suas atividades outdoor.",
+    "preco": 199.9,
+    "parcelas": 3,
+    "estoque": 22,
+    "imagens": [
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+    ],
+    "especificacoes": {
+      "Tipo": "Kit de acessórios",
+      "Uso": "Campo"
+    },
+    "marca": "Field",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "linha-multifilamento-030",
+    "nome": "Linha Multifilamento 0,30 mm",
+    "categoria": "pesca",
+    "subcategoria": "linhas",
+    "badge": "Novo",
+    "resumo": "Resistente e sensível, ideal para iscas artificiais.",
+    "descricao": "Linha multifilamento de 4 fios com baixo estiramento, ótima para pesca esportiva em água doce.",
+    "preco": 54.9,
+    "parcelas": 3,
+    "estoque": 40,
+    "imagens": [],
+    "especificacoes": {
+      "Diâmetro": "0,30 mm",
+      "Comprimento": "300 m",
+      "Resistência": "35 lb"
+    },
+    "marca": "Homo Habilis",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "kit-anzois-circle",
+    "nome": "Kit de Anzóis Circle",
+    "categoria": "pesca",
+    "subcategoria": "anzois",
+    "badge": "",
+    "resumo": "Kit com 50 anzóis de aço carbono.",
+    "descricao": "Anzóis circle com ponta química afiada e bom poder de fisgada. Acompanha estojo organizador.",
+    "preco": 29.9,
+    "parcelas": 1,
+    "estoque": 60,
+    "imagens": [],
+    "especificacoes": {
+      "Quantidade": "50 un.",
+      "Material": "Aço carbono"
+    },
+    "marca": "Homo Habilis",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "lanterna-tatica-recarregavel",
+    "nome": "Lanterna Tática Recarregável",
+    "categoria": "caca",
+    "subcategoria": "lanternas",
+    "badge": "Novo",
+    "resumo": "Alto alcance, recarga USB-C e 3 modos.",
+    "descricao": "Lanterna de LED com corpo em alumínio, resistente a respingos, com modos forte, médio e estroboscópico.",
+    "preco": 119.9,
+    "parcelas": 4,
+    "estoque": 25,
+    "imagens": [],
+    "especificacoes": {
+      "Alcance": "300 m",
+      "Bateria": "Recarregável USB-C",
+      "Modos": "3"
+    },
+    "marca": "Field",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "barraca-trek-3p",
+    "nome": "Barraca Trek 3 Pessoas",
+    "categoria": "caca",
+    "subcategoria": "camping",
+    "badge": "",
+    "resumo": "Leve, impermeável e fácil de montar.",
+    "descricao": "Barraca de camping para 3 pessoas com sobreteto impermeável e estrutura de fibra.",
+    "preco": 459.0,
+    "parcelas": 6,
+    "estoque": 8,
+    "imagens": [],
+    "especificacoes": {
+      "Capacidade": "3 pessoas",
+      "Peso": "3,2 kg"
+    },
+    "marca": "Expedition",
+    "video": "",
+    "controlado": false
+  },
+  {
+    "id": "colete-balistico-iiia",
+    "nome": "Colete Balístico Nível IIIA",
+    "categoria": "caca",
+    "subcategoria": "regulamentados",
+    "badge": "Controlado",
+    "resumo": "Item de uso controlado: venda mediante comprovação de autorização.",
+    "descricao": "Equipamento de proteção de uso restrito. A venda depende de verificação da documentação do comprador, conforme a legislação aplicável.",
+    "preco": 2890.0,
+    "parcelas": 10,
+    "estoque": 3,
+    "imagens": [],
+    "especificacoes": {
+      "Nível de proteção": "IIIA",
+      "Uso": "Controlado"
+    },
+    "marca": "Ranger",
+    "video": "",
+    "controlado": true,
+    "requisitos": "Venda restrita a clientes com autorização válida. Envie sua documentação em Minha conta > Licença e aguarde a aprovação da loja."
+  }
+]
